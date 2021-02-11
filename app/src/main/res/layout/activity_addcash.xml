@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pokerbacck"
+    tools:context=".activity.AddcashActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topc"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/fullpayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:src="@drawable/fullpayment"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:background="@drawable/chips_bg"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:text="Chips"
+            android:textColor="@color/w1"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/crosss"
+            app:layout_constraintStart_toEndOf="@+id/fullpayment" />
+
+
+        <ImageView
+            android:id="@+id/crosss"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:src="@drawable/ic_close_cross"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topm"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintTop_toBottomOf="@id/topc">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ist"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.25">
+
+            <ImageView
+                android:id="@+id/carda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/new_ic_add_10"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/new_ic_chips"
+                app:layout_constraintBottom_toBottomOf="@+id/carda"
+                app:layout_constraintEnd_toEndOf="@+id/carda"
+                app:layout_constraintStart_toStartOf="@+id/carda"
+                app:layout_constraintTop_toTopOf="@+id/carda" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/second"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toEndOf="@id/ist"
+            app:layout_constraintWidth_percent="0.25">
+
+            <ImageView
+                android:id="@+id/cardb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/new_ic_add_100"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="35dp"
+                android:src="@drawable/new_ic_chips"
+                app:layout_constraintBottom_toBottomOf="@+id/cardb"
+                app:layout_constraintEnd_toEndOf="@+id/cardb"
+                app:layout_constraintStart_toStartOf="@+id/cardb"
+                app:layout_constraintTop_toTopOf="@+id/cardb" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/third"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toEndOf="@id/second"
+            app:layout_constraintWidth_percent="0.25">
+
+            <ImageView
+                android:id="@+id/cardc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/new_ic_add_500"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/new_ic_chips"
+                app:layout_constraintBottom_toBottomOf="@+id/cardc"
+                app:layout_constraintEnd_toEndOf="@+id/cardc"
+                app:layout_constraintStart_toStartOf="@+id/cardc"
+                app:layout_constraintTop_toTopOf="@+id/cardc" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fourth"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toEndOf="@id/third"
+            app:layout_constraintWidth_percent="0.25">
+
+            <ImageView
+                android:id="@+id/cardd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/new_ic_add_1500"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="35dp"
+                android:src="@drawable/new_ic_chips"
+                app:layout_constraintBottom_toBottomOf="@+id/cardd"
+                app:layout_constraintEnd_toEndOf="@+id/cardd"
+                app:layout_constraintStart_toStartOf="@+id/cardd"
+                app:layout_constraintTop_toTopOf="@+id/cardd" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topb"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintTop_toBottomOf="@id/topm">
+
+        <TextView
+            android:id="@+id/tamount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:text="Other Amount"
+            android:textColor="@color/w1"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/enteramount"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:background="@drawable/enter_amount_bg"
+            android:gravity="center"
+            android:hint="Please Enter the Recharge Amount"
+            android:inputType="numberDecimal"
+            android:textColor="@color/w1"
+            android:textColorHint="@color/w1"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/renow"
+            app:layout_constraintStart_toEndOf="@id/tamount"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/renow"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:src="@drawable/ic_recharge"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

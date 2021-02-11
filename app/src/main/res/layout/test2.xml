@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pokerimage">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.19"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/datacontainer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/topbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.56">
+
+            <TextView
+                android:id="@+id/idlar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/ic1"
+                android:gravity="center|end"
+                android:paddingEnd="10dp"
+                android:text="ID: 0885545"
+                android:textColor="@color/w1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/idlar2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/ic2"
+                android:gravity="center"
+                android:paddingStart="15dp"
+                android:text="ID: 88"
+                android:textColor="@color/w1"
+                app:layout_constraintStart_toEndOf="@id/idlar"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/cashout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:elevation="10dp"
+                android:src="@drawable/cashout"
+                app:layout_constraintBottom_toBottomOf="@id/idlar2"
+                app:layout_constraintStart_toEndOf="@id/idlar2"
+                app:layout_constraintTop_toTopOf="@id/idlar2"></ImageView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/datacontainer2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toEndOf="@id/datacontainer"
+            app:layout_constraintWidth_percent="0.44">
+
+            <TextView
+                android:id="@+id/flash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:drawableTop="@drawable/h1"
+                android:gravity="center"
+                android:text="Flash Sale"
+                android:textColor="@color/w1"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/bind"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/bind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:drawableTop="@drawable/h2"
+                android:gravity="center"
+                android:text="Flash Sale"
+                android:textColor="@color/w1"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/bonus"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/bonus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:drawableTop="@drawable/h3"
+                android:gravity="center"
+                android:text="Flash Sale"
+                android:textColor="@color/w1"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/supp1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintTop_toBottomOf="@id/topcontainer"></View>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/seccontainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        app:layout_constraintTop_toBottomOf="@id/supp1">
+
+        <ImageView
+            android:id="@+id/bonusper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:src="@drawable/wholtim"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/anouncement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:src="@drawable/anounvr"
+            app:layout_constraintStart_toEndOf="@+id/bonusper"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/thirdcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.35"
+        app:layout_constraintTop_toBottomOf="@id/seccontainer">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ist"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.25">
+
+            <ImageView
+                android:id="@+id/carda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:src="@drawable/carda"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></ImageView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/second"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toEndOf="@id/ist"
+            app:layout_constraintWidth_percent="0.25">
+
+            <ImageView
+                android:id="@+id/cardb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:src="@drawable/playcard"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></ImageView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/third"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toEndOf="@id/second"
+            app:layout_constraintWidth_percent="0.25">
+
+            <ImageView
+                android:id="@+id/cardc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:src="@drawable/commingsoon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></ImageView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fourth"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toEndOf="@id/third"
+            app:layout_constraintWidth_percent="0.25">
+
+            <ImageView
+                android:id="@+id/cardd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:src="@drawable/commingsoon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></ImageView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/supp3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintTop_toBottomOf="@id/thirdcontainer"></View>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/forthcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintTop_toBottomOf="@id/supp3">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/b1container"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/support"
+                android:layout_width="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/support"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/rule"
+                android:layout_width="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/support"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/rr"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/rule"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/emm"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/b2container"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.4"
+            app:layout_constraintStart_toEndOf="@id/b1container"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/bottom"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:drawableRight="@drawable/arrw"
+                android:drawablePadding="@dimen/_40sdp"
+                android:gravity="center"
+                android:text="ADD CASH"
+                android:textColor="@color/w1"
+                android:textSize="20sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

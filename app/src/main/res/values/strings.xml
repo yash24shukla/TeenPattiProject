@@ -1,0 +1,18 @@
+<resources>
+
+    <string name="app_name" translatable="false">Teen Patti Premium</string>
+    <string name="facebookid" translatable="false">1586773798170977</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb1586773798170977</string>
+    <string name="mp_cardfilp" translatable="false">sounds/CardFlip3.mp3</string>
+    <string name="mp_coinfilp" translatable="false">sounds/ChipAnimation.mp3</string>
+    <string name="mp_playerleft" translatable="false">sounds/SwapButton.mp3</string>
+    <string name="mp_playerjointtable" translatable="false">sounds/JoinTable.mp3</string>
+    <string name="Internet_Connetion_Message" translatable="false">Please check your internet connection</string>
+    <string name="mp_playerWinning" translatable="false">sounds/teenpattiwingamesound.mp3</string>
+    <string name="Something_wronge" translatable="false">Something Went Wrong</string>
+    <string name="mp_buttonClick" translatable="false">sounds/button_sound.ogg</string>
+    <string name="anouncementBanner" translatable="false">Welcome to TeenPatti Premium, stay tuned for updates here</string>
+    <string name="anouncementUrl" translatable="false"> http://teenpattipremium.com/</string>
+    <string name="slideShowBtn" translatable="false"> Slide Show </string>
+
+</resources>

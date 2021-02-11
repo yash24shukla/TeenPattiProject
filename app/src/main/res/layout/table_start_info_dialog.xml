@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_25sdp"
+        card_view:cardBackgroundColor="@color/ColorYellow"
+        card_view:cardCornerRadius="@dimen/_7sdp"
+        card_view:cardElevation="3dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_4sdp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/back_dialog" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/_40sdp"
+                    android:paddingRight="@dimen/_40sdp">
+
+                    <TextView
+                        android:id="@+id/txtTableName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/bold"
+                        android:gravity="center"
+                        android:padding="@dimen/_10sdp"
+                        android:text="Table Name"
+                        android:textColor="@color/w1"
+                        android:textSize="@dimen/_15sdp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_10sdp">
+
+                        <EditText
+                            android:id="@+id/edtPassword"
+                            android:layout_width="match_parent"
+
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ic_edittext"
+                            android:drawableLeft="@drawable/login_lock_screen"
+                            android:drawablePadding="@dimen/_10sdp"
+                            android:hint="Enter Table Password"
+                            android:padding="@dimen/_10sdp"
+                            android:textColor="@color/edittext_text"
+                            android:textColorHint="@color/w3"
+                            android:textSize="@dimen/_13sdp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="10dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/regu"
+                                    android:gravity="left"
+                                    android:text="Boot Value"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/txtInfoBootValue"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.7"
+                                    android:fontFamily="@font/bold"
+                                    android:gravity="left"
+                                    android:text="4"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="@dimen/_14sdp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:alpha="0.2"
+                                android:background="@color/ColorYellow" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="10dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/regu"
+                                    android:gravity="left"
+                                    android:text="Maximum Blinds"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/txtInfoMaxBlind"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.7"
+                                    android:fontFamily="@font/bold"
+                                    android:gravity="left"
+                                    android:text="4"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="@dimen/_14sdp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:alpha="0.2"
+                                android:background="@color/ColorYellow" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:alpha="0.2"
+                            android:background="@color/ColorYellow" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="10dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/regu"
+                                    android:gravity="left"
+                                    android:text="Chaal Limit"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/txtInfoChaalLimit"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.7"
+                                    android:fontFamily="@font/bold"
+                                    android:gravity="left"
+                                    android:text="4"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="@dimen/_14sdp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:alpha="0.2"
+                                android:background="@color/ColorYellow" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="10dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/regu"
+                                    android:gravity="left"
+                                    android:text="Pot Limit"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="@dimen/_11sdp" />
+
+                                <TextView
+                                    android:id="@+id/txtInfoPotLimit"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.7"
+                                    android:fontFamily="@font/bold"
+                                    android:gravity="left"
+                                    android:text="4"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="@dimen/_14sdp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:alpha="0.2"
+                                android:background="@color/ColorYellow" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/txtInfoTableUserConnected"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:text="Simple Table"
+                        android:textColor="@android:color/white"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/txtFullTable"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:fontFamily="@font/regu"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/ColorYellow"
+                        android:textSize="@dimen/_14sdp" />
+
+
+                </LinearLayout>
+
+
+                <com.skydoves.elasticviews.ElasticLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    app:layout_duration="300"
+                    app:layout_scale="0.8">
+
+                    <TextView
+                        android:id="@+id/txtInfoStart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:alpha="0.5"
+                        android:background="@drawable/btn_other"
+                        android:enabled="false"
+                        android:paddingLeft="@dimen/_20sdp"
+                        android:paddingTop="@dimen/_7sdp"
+                        android:paddingRight="@dimen/_20sdp"
+                        android:paddingBottom="@dimen/_7sdp"
+                        android:text="START"
+                        android:textColor="@color/black" />
+                </com.skydoves.elasticviews.ElasticLayout>
+
+
+            </LinearLayout>
+
+
+            <com.skydoves.elasticviews.ElasticImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/imgInfoCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/cancel"
+                app:imageView_duration="300"
+                app:imageView_scale="0.8" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

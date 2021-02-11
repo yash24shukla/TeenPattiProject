@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_300sdp"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/back_dialog" />
+
+    <ImageView
+        android:id="@+id/imgback1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/_40sdp"
+        android:layout_marginRight="@dimen/_minus40sdp"
+        android:alpha="0.15"
+        android:scaleType="fitXY"
+        android:src="@drawable/splash_bc_1" />
+
+    <ImageView
+        android:id="@+id/imgback2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_minus40sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginLeft="@dimen/_40sdp"
+        android:layout_marginRight="@dimen/_minus40sdp"
+
+        android:alpha="0.15"
+        android:scaleType="fitXY"
+        android:src="@drawable/splash_bc_2" />
+
+
+
+    <ScrollView
+        android:padding="@dimen/_20sdp"
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="@dimen/_300sdp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="Highesthand Wins : Ranking From High to Low is :"
+                android:textColor="@color/ColorYellow"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="1. Trail or Set"
+                android:textColor="@android:color/white" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+
+                android:src="@drawable/ic_info_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="2. Pure Sequence"
+                android:textColor="@android:color/white" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_info_2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="3. Sequence(run)"
+                android:textColor="@android:color/white" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_info_3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="4. Color"
+                android:textColor="@android:color/white" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_info_4" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="5. Pair"
+                android:textColor="@android:color/white" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_info_5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="6. High Card"
+                android:textColor="@android:color/white" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_info_6" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <ImageView
+        android:id="@+id/imgClose"
+        android:padding="@dimen/_5sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/_minus30sdp"
+        android:src="@drawable/cancel" />
+
+
+</RelativeLayout>

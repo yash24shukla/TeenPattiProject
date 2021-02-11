@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginEnd="120dp"
+        android:background="@drawable/add_bank_bg"
+        android:gravity="center"
+        android:paddingStart="80dp"
+        android:paddingEnd="10dp">
+
+        <ImageView
+            android:id="@+id/closeIv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="13dp"
+            android:src="@drawable/ic_close_cross"
+            android:tint="@color/black" />
+
+        <TextView
+            android:id="@+id/addBankTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:text="Add Bank Account"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/beneNameEt"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/addBankTv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/thatback"
+            android:gravity="center"
+            android:hint="Beneficiary Name"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/accNumEt"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/beneNameEt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/thatback"
+            android:gravity="center"
+            android:hint="Account number"
+            android:inputType="number"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/ifscCodeEt"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/accNumEt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/thatback"
+            android:gravity="center"
+            android:hint="IFSC Code"
+            android:inputType="number"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/panNumEt"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ifscCodeEt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/thatback"
+            android:gravity="center"
+            android:hint="PAN Number"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="14sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/saveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/panNumEt"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="13dp"
+            android:backgroundTint="#FAE63A"
+            android:fontFamily="@font/bold"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:textColor="#570C02"
+            app:cornerRadius="@dimen/_15sdp" />
+    </RelativeLayout>
+</RelativeLayout>

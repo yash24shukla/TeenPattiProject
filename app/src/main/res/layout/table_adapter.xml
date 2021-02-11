@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.skydoves.elasticviews.ElasticLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/LayoutTable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_duration="300"
+        app:layout_scale="0.8">
+
+
+        <RelativeLayout
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/table_box_ring" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgcolor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/_33sdp"
+                android:paddingTop="@dimen/_38sdp"
+                android:paddingRight="@dimen/_33sdp"
+                android:paddingBottom="@dimen/_20sdp"
+                android:scaleType="centerCrop"
+                android:src="@color/b1" />
+
+            <ImageView
+                android:id="@+id/imgRound"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:padding="@dimen/_35sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/table_box_back" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp">
+
+                <TextView
+                    android:id="@+id/txtTableAdp1"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+
+                    android:fontFamily="@font/bold"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:text="Table 1 sldsls"
+                    android:textColor="@color/w1"
+                    android:textSize="@dimen/_15sdp" />
+
+
+
+                <TextView
+                    android:id="@+id/txtTableAdp2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seat 6"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txtTableAdp3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Simple Table"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txtTableAd4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="user 3/6"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:src="@drawable/table_star_2" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:src="@drawable/table_star_2" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:src="@drawable/table_star_2" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:src="@drawable/table_star1" />
+
+            <ImageView
+                android:id="@+id/imgTableLock"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:src="@drawable/vc_lockkk" />
+        </RelativeLayout>
+    </com.skydoves.elasticviews.ElasticLayout>
+
+</LinearLayout>

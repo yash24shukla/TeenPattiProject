@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1C2039</color>
+    <color name="colorPrimaryDark">#1C2039</color>
+    <color name="colorAccent">#1C2039</color>
+
+    <color name="textview_light">#d1d1d1</color>
+
+    <color name="picasso_placeholder">#d1d1d1</color>
+
+    <color name="edittext_hint">#d1d1d1</color>
+    <color name="edittext_text">#ffffff</color>
+
+    <color name="ColorYellow">#fc9315</color>
+
+
+    <color name="mtrl_textinput_default_box_stroke_color">#55000000</color>
+
+    <color name="w1">#ffffff</color>
+    <color name="yellow">#F5DF12</color>
+    <color name="red">#EB1313</color>
+
+    <color name="w2">#d1ffffff</color>
+
+    <color name="w3">#bbffffff</color>
+
+    <color name="b1">#000000</color>
+    <color name="b2">#333333</color>
+    <color name="grey">#5E5E5E</color>
+
+    <color name="transparant">#8A000000</color>
+
+    <color name="msg_error_color">#98144D</color>
+
+
+    <color name="color_background">#77000000</color>
+
+    <color name="Progress_color">#418CEA</color>
+    <color name="messg">#fff</color>
+    <color name="messg2">#000</color>
+
+
+</resources>

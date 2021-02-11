@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.skydoves.elasticviews.ElasticLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/LayoutTable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_duration="300"
+            app:layout_scale="0.8">
+
+            <RelativeLayout
+                android:layout_width="170dp"
+                android:layout_height="170dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/new_table_bg" />
+
+                <ImageView
+                    android:id="@+id/imgRound"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="15dp"
+                    android:src="@drawable/new_table_bg_2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical"
+                    android:padding="22dp">
+
+                    <ImageView
+                        android:id="@+id/imgTableLock"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="top|center"
+                        android:src="@drawable/new_ic_lock"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/txtTableAdp1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/bold"
+                        android:gravity="center"
+                        android:text="Table 1"
+                        android:textColor="@color/w1"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </RelativeLayout>
+        </com.skydoves.elasticviews.ElasticLayout>
+    </LinearLayout>
+</layout>

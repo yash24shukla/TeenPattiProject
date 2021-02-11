@@ -1,0 +1,2 @@
+include ':app', ':ucrop'
+rootProject.name='TeenPattiProject'

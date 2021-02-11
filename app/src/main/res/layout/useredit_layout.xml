@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/backteenpatti" />
+
+    <ImageView
+        android:id="@+id/imgback1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/_40sdp"
+        android:layout_marginRight="@dimen/_minus40sdp"
+        android:alpha="0.5"
+        android:scaleType="fitXY"
+        android:src="@drawable/splash_bc_1" />
+
+    <ImageView
+        android:id="@+id/imgback2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/_40sdp"
+        android:layout_marginRight="@dimen/_minus40sdp"
+
+        android:alpha="0.5"
+        android:scaleType="fitXY"
+        android:src="@drawable/splash_bc_1" />
+
+    <ImageView
+        android:id="@+id/imgback3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:scaleType="fitXY"
+        android:src="@drawable/splash_bc_2" />
+
+
+    <ImageView
+        android:id="@+id/imgback4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:scaleType="fitXY"
+
+        android:src="@drawable/splash_bc_2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/RlImageUpload"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp">
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/imgUserImage"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_person_defult"
+                        app:civ_border_color="@android:color/white"
+                        app:civ_border_width="0.8dp" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/vc_edit_pencill" />
+
+
+                </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/txtUSerName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_40sdp"
+                    android:background="@drawable/ic_edittext"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="Anu Patel"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtUserNm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_40sdp"
+
+                    android:background="@drawable/edittext_not"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="anupatel"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_14sdp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_40sdp"
+
+                    android:background="@drawable/edittext_not"
+                    android:gravity="left"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/txtUserChips"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:alpha="0.7"
+                        android:drawableLeft="@drawable/coin_green"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:fontFamily="@font/regu"
+                        android:gravity="center"
+
+                        android:text="Chips : 32000"
+                        android:textColor="@android:color/white"
+                        android:textSize="14dp" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/txtAddChips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/regu"
+                    android:text="Add Chips"
+                    android:textColor="@color/w1"
+                    android:textSize="@dimen/_15sdp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Switch
+
+                    android:id="@+id/SwitchNotification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:buttonTint="#FFD761"
+                    android:text="Notification"
+                    android:textColor="@android:color/white"
+                    android:visibility="gone" />
+
+                <Switch
+                    android:id="@+id/SwitchSound"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:buttonTint="#FFD761"
+                    android:text="Sound"
+                    android:textColor="@android:color/white"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/SwitchVibrate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:buttonTint="#FFD761"
+                    android:text="Vibrate"
+                    android:textColor="@android:color/white"
+                    android:theme="@style/SCBSwitch" />
+
+
+                <com.skydoves.elasticviews.ElasticButton
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/table_back"
+                    android:text="Check Game History"
+                    android:textColor="@android:color/white"
+                    android:visibility="gone"
+                    app:button_duration="300"
+                    app:button_scale="0.8" />
+
+                <com.skydoves.elasticviews.ElasticButton
+                    android:id="@+id/btnChangePassword"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:background="@drawable/btn_other"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="Change Password"
+                    android:textColor="@android:color/black"
+                    app:button_duration="300"
+                    app:button_scale="0.8" />
+
+                <com.skydoves.elasticviews.ElasticButton
+                    android:id="@+id/btnLogout"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:background="@drawable/btn_other"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="Logout"
+                    android:textColor="@android:color/black"
+                    app:button_duration="300"
+                    app:button_scale="0.8" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <com.skydoves.elasticviews.ElasticImageView
+        android:id="@+id/imgBack"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:padding="@dimen/_10sdp"
+        android:src="@drawable/vc_login_back"
+        app:layout_duration="300"
+        app:layout_scale="0.8" />
+
+
+    <com.skydoves.elasticviews.ElasticLayout
+        android:id="@+id/llSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/_10sdp"
+        app:layout_duration="300"
+        app:layout_scale="0.8">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_blind"
+            android:gravity="center"
+            android:paddingBottom="@dimen/_10sdp"
+            android:text="SAVE"
+            android:textColor="@color/w1"
+            android:textSize="@dimen/_11sdp" />
+
+    </com.skydoves.elasticviews.ElasticLayout>
+
+
+</RelativeLayout>

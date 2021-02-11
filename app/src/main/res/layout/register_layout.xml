@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/kensburn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/backteenpatti" />
+
+    <ImageView
+        android:id="@+id/imgback1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/_40sdp"
+        android:layout_marginRight="@dimen/_minus40sdp"
+        android:alpha="0.5"
+        android:scaleType="fitXY"
+        android:src="@drawable/splash_bc_1" />
+
+    <ImageView
+        android:id="@+id/imgback2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/_40sdp"
+        android:layout_marginRight="@dimen/_minus40sdp"
+        android:alpha="0.5"
+        android:scaleType="fitXY"
+        android:src="@drawable/splash_bc_1" />
+
+    <ImageView
+        android:id="@+id/imgback3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:scaleType="fitXY"
+        android:src="@drawable/splash_bc_2" />
+
+
+    <ImageView
+        android:id="@+id/imgback4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:scaleType="fitXY"
+        android:src="@drawable/splash_bc_2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom|left"
+            android:layout_weight="0.7">
+
+            <ImageView
+                android:layout_width="@dimen/_170sdp"
+                android:layout_height="@dimen/_175sdp"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/logotrans" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_30sdp"
+                    android:layout_marginRight="@dimen/_40sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginBottom="5dp"
+                        android:drawableLeft="@drawable/vc_crownn"
+                        android:drawableRight="@drawable/vc_crownn"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="@font/bold"
+                        android:gravity="bottom"
+                        android:text="Register"
+                        android:textColor="#ffffff"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:visibility="gone"
+                        android:id="@+id/edtLoginDisplay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/ic_edittext"
+                        android:drawableLeft="@drawable/ic_display_name"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:fontFamily="@font/regu"
+                        android:hint="Display Name"
+                        android:inputType="text"
+                        android:padding="@dimen/_10sdp"
+                        android:textColor="@color/edittext_text"
+                        android:textColorHint="@color/w3"
+                        android:textSize="@dimen/_13sdp" />
+
+                    <EditText
+                        android:id="@+id/edtLoginMobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/ic_edittext"
+                        android:drawableLeft="@android:drawable/stat_sys_phone_call"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:fontFamily="@font/regu"
+                        android:hint="phone"
+                        android:inputType="text"
+                        android:padding="@dimen/_10sdp"
+                        android:textColor="@color/edittext_text"
+                        android:textColorHint="@color/w3"
+                        android:textSize="@dimen/_13sdp" />
+
+
+                    <EditText
+                        android:visibility="gone"
+                        android:id="@+id/edtLoginUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/ic_edittext"
+                        android:drawableLeft="@drawable/ic_user_username"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:fontFamily="@font/regu"
+                        android:hint="Username"
+                        android:inputType="text"
+                        android:padding="@dimen/_10sdp"
+                        android:textColor="@color/edittext_text"
+                        android:textColorHint="@color/w3"
+                        android:textSize="@dimen/_13sdp" />
+
+                    <EditText
+                        android:id="@+id/edtLoginPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/ic_edittext"
+                        android:drawableLeft="@drawable/login_lock_screen"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:fontFamily="@font/regu"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:padding="@dimen/_10sdp"
+                        android:textColor="@color/edittext_text"
+                        android:textColorHint="@color/w3"
+                        android:textSize="@dimen/_13sdp" />
+
+                    <EditText
+                        android:id="@+id/edtLoginURL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/ic_edittext"
+                        android:drawableLeft="@drawable/login_lock_screen"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:fontFamily="@font/regu"
+                        android:hint="Enter Url"
+                        android:inputType="text"
+                        android:padding="@dimen/_10sdp"
+                        android:textColor="@color/edittext_text"
+                        android:textColorHint="@color/w3"
+                        android:textSize="@dimen/_13sdp"
+                        android:visibility="gone" />
+
+
+                    <!--        <ImageView
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:src="@drawable/login_pg_button" />-->
+
+                    <com.skydoves.elasticviews.ElasticButton
+                        android:id="@+id/btnLoginSubmit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/btn_other"
+                        android:fontFamily="@font/bold"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:text="REGISTER"
+                        android:textColor="@color/black"
+                        app:button_duration="300"
+                        app:button_scale="0.8" />
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llTableAmountTransfer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txtTableAmountTransfer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@android:color/white"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+    <com.skydoves.elasticviews.ElasticImageView
+        android:id="@+id/imgBack"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:padding="@dimen/_10sdp"
+        android:src="@drawable/cancel"
+        android:visibility="gone"
+        app:layout_duration="300"
+        app:layout_scale="0.8" />
+
+</RelativeLayout>

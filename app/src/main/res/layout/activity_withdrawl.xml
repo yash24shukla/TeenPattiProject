@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cashback"
+    tools:context=".activity.WithdrawlActivity">
+
+    <ImageView
+        android:id="@+id/cancel"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="@dimen/_20sdp"
+        android:src="@drawable/ic_close_cross"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/rules"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/new_ic_help"
+        app:layout_constraintBottom_toBottomOf="@id/cancel"
+        app:layout_constraintEnd_toStartOf="@id/cancel"
+        app:layout_constraintTop_toTopOf="@id/cancel" />
+
+    <ImageView
+        android:id="@+id/suppt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:src="@drawable/support"
+        app:layout_constraintBottom_toBottomOf="@id/cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cancel" />
+
+    <View
+        android:id="@+id/spview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        app:layout_constraintTop_toBottomOf="@id/suppt" />
+
+    <TextView
+        android:id="@+id/balncemoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/regu"
+        android:text="Balance"
+        android:textColor="@color/w1"
+        app:layout_constraintEnd_toEndOf="@id/balncemoneyval"
+        app:layout_constraintStart_toStartOf="@id/balncemoneyval"
+        app:layout_constraintTop_toBottomOf="@id/spview" />
+
+    <TextView
+        android:id="@+id/withdmoeny"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/regu"
+        android:text="Withdrawable"
+        android:textColor="@color/w1"
+        app:layout_constraintEnd_toEndOf="@id/withdmoenyval"
+        app:layout_constraintStart_toStartOf="@+id/withdmoenyval"
+        app:layout_constraintTop_toBottomOf="@id/spview" />
+
+    <TextView
+        android:id="@+id/balncemoneyval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/new_ic_edit_bg"
+        android:drawableStart="@drawable/new_ic_poker"
+        android:fontFamily="@font/bold"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:textColor="@color/w1"
+        app:layout_constraintEnd_toStartOf="@id/withdmoenyval"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@id/cnt"
+        app:layout_constraintTop_toBottomOf="@id/balncemoney" />
+
+    <TextView
+        android:id="@+id/withdmoenyval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/new_ic_edit_bg"
+        android:drawableStart="@drawable/new_ic_money"
+        android:fontFamily="@font/bold"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:textColor="@color/w1"
+        app:layout_constraintEnd_toEndOf="@id/cnt"
+        app:layout_constraintStart_toEndOf="@id/balncemoneyval"
+        app:layout_constraintTop_toBottomOf="@id/withdmoeny" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cnt"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_50sdp"
+        android:background="@drawable/bigback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/withdmoenyval">
+
+        <TextView
+            android:id="@+id/amntTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Amount"
+            android:textColor="@color/w1"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:background="@drawable/new_ic_edit_bg"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:padding="@dimen/_5sdp"
+            android:textColor="@color/w1"
+            android:textColorHint="@color/w1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/amntTv"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/allbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:backgroundTint="#C4C4C4"
+            android:fontFamily="@font/regu"
+            android:text="All"
+            android:textAllCaps="false"
+            android:textColor="#5B1885"
+            app:cornerRadius="@dimen/_15sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:text="Withdrawal Via Account"
+        android:textColor="@color/w1"
+        app:layout_constraintStart_toStartOf="@id/cnt"
+        app:layout_constraintTop_toBottomOf="@id/cnt" />
+
+    <ImageView
+        android:id="@+id/bnkcard"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:src="@drawable/new_ic_add_bank"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@id/cnt"
+        app:layout_constraintTop_toBottomOf="@id/cnt" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/widbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:backgroundTint="#FAE63A"
+        android:fontFamily="@font/bold"
+        android:text="Withdraw"
+        android:textAllCaps="false"
+        android:textColor="#570C02"
+        app:cornerRadius="@dimen/_15sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bnkcard" />
+</androidx.constraintlayout.widget.ConstraintLayout>

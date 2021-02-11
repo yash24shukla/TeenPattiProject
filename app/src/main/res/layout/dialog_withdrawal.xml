@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginEnd="120dp"
+        android:background="@drawable/add_bank_bg"
+        android:gravity="center"
+        android:paddingStart="80dp"
+        android:paddingEnd="10dp">
+
+        <ImageView
+            android:id="@+id/closeIv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp"
+            android:src="@drawable/ic_close_cross" />
+
+        <TextView
+            android:id="@+id/addBankTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/closeIv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="Thank you for placing withdrawal request, you will be credited with amount soon or our team will get in touch with you soon"
+            android:textColor="@color/grey"
+            android:textSize="16sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/saveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/addBankTv"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="15dp"
+            android:backgroundTint="#FAE63A"
+            android:fontFamily="@font/bold"
+            android:text="Done"
+            android:textAllCaps="false"
+            android:textColor="#570C02"
+            app:cornerRadius="@dimen/_15sdp" />
+    </RelativeLayout>
+</RelativeLayout>

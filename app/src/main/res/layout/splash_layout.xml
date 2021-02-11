@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/backteenpatti" />
+
+    <ImageView
+        android:id="@+id/imgback1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/_40sdp"
+        android:layout_marginRight="@dimen/_minus40sdp"
+        android:alpha="0.5"
+        android:scaleType="fitXY"
+        android:src="@drawable/splash_bc_1" />
+
+    <ImageView
+        android:id="@+id/imgback2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/_40sdp"
+        android:layout_marginRight="@dimen/_minus40sdp"
+        android:alpha="0.5"
+        android:scaleType="fitXY"
+        android:src="@drawable/splash_bc_1" />
+
+    <ImageView
+        android:id="@+id/imgback3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:scaleType="fitXY"
+        android:src="@drawable/splash_bc_2" />
+
+
+    <ImageView
+        android:id="@+id/imgback4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:scaleType="fitXY"
+        android:src="@drawable/splash_bc_2" />
+
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_150sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/logotrans" />
+
+
+
+
+    <!--
+        <com.github.glomadrian.grav.GravView
+            android:id="@+id/grav"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
+            app:array_colors="@array/bubble"
+            app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGenerator"
+            app:regular_cell_size="300"
+            app:regular_variance="200"
+            app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGenerator"
+            app:ball_from_size="10dp"
+            app:ball_to_size="20dp"
+            app:animationGenerators="@array/BubbleAnimations"
+            app:side_to_side_min_duration="1000"
+            app:side_to_side_max_duration="10000"
+            app:side_to_side_direction="leftToRight"
+            app:shake_direction="vertical"
+            app:shake_min_duration="10000"
+            app:shake_max_duration="20000"
+            app:shake_variance="1000dp"
+            />
+    -->
+
+
+</RelativeLayout>

@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backteenpatti">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lay1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.5">
+
+            <ImageView
+                android:id="@+id/ticon"
+                android:layout_width="150dp"
+                android:layout_height="220dp"
+                android:src="@drawable/logotrans"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:fontFamily="@font/bold"
+                android:gravity="bottom|center"
+                android:text="Welcome back to Teen Patti Premium"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@id/txt1Layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ticon"
+                app:layout_constraintTop_toTopOf="@id/ticon" />
+
+            <LinearLayout
+                android:id="@+id/txt1Layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@id/txt2Layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ticon"
+                app:layout_constraintTop_toBottomOf="@id/tit">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/new_login_cards" />
+
+                <TextView
+                    android:id="@+id/tx1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|start"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="10dp"
+                    android:text="India's Best Teen Patti Premium"
+                    android:textColor="#ffff" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/txt2Layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@id/txt3Layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ticon"
+                app:layout_constraintTop_toBottomOf="@id/txt1Layout">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/new_login_mobile" />
+
+                <TextView
+                    android:id="@+id/tx2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|start"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="10dp"
+                    android:text="Best Mobile Teen Patti Experiance"
+                    android:textColor="#ffff" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/txt3Layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/ticon"
+                app:layout_constraintStart_toEndOf="@id/ticon"
+                app:layout_constraintTop_toBottomOf="@id/txt2Layout">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/new_login_rewards" />
+
+                <TextView
+                    android:id="@+id/tx3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="10dp"
+                    android:text="Exiting Rewards"
+                    android:textColor="#ffff" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/lay1"
+            app:layout_constraintWidth_percent="0.5">
+
+
+            <EditText
+                android:id="@+id/edtLoginUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/ic_edittext"
+                android:drawableLeft="@drawable/ic_user_username"
+                android:drawablePadding="@dimen/_10sdp"
+                android:fontFamily="@font/regu"
+                android:hint="Username"
+                android:inputType="text"
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/edittext_text"
+                android:textColorHint="@color/w3"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <EditText
+                android:id="@+id/edtLoginPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/ic_edittext"
+                android:drawableLeft="@drawable/login_lock_screen"
+                android:drawablePadding="@dimen/_10sdp"
+                android:fontFamily="@font/regu"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/edittext_text"
+                android:textColorHint="@color/w3"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintTop_toBottomOf="@id/edtLoginUsername" />
+
+
+            <EditText
+                android:id="@+id/edtLoginURL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/ic_edittext"
+                android:drawableLeft="@drawable/login_lock_screen"
+                android:drawablePadding="@dimen/_10sdp"
+                android:fontFamily="@font/regu"
+                android:hint="Enter Url"
+                android:inputType="text"
+                android:padding="@dimen/_10sdp"
+                android:textColor="@color/edittext_text"
+                android:textColorHint="@color/w3"
+                android:textSize="@dimen/_13sdp"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <!--        <ImageView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:src="@drawable/login_pg_button" />-->
+
+            <FrameLayout
+                android:id="@+id/loginLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:layout_constraintEnd_toStartOf="@id/forgotPasswordTv"
+                app:layout_constraintStart_toStartOf="@id/edtLoginPassword"
+                app:layout_constraintTop_toBottomOf="@id/edtLoginPassword">
+
+                <com.skydoves.elasticviews.ElasticButton
+                    android:id="@+id/btnLoginSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:background="@drawable/btn_other"
+                    android:fontFamily="@font/bold"
+                    android:text="LOGIN"
+                    android:textColor="@color/black"
+                    app:button_duration="300"
+                    app:button_scale="0.8" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/forgotPasswordTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Forgot Password?"
+                android:textColor="@color/w1"
+                app:layout_constraintBottom_toBottomOf="@+id/loginLayout"
+                app:layout_constraintEnd_toEndOf="@id/edtLoginPassword"
+                app:layout_constraintStart_toEndOf="@id/loginLayout"
+                app:layout_constraintTop_toTopOf="@id/loginLayout">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/btnRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:padding="10dp"
+                android:text="New User?"
+                android:textColor="@color/w1"
+                app:layout_constraintEnd_toEndOf="@id/v1"
+                app:layout_constraintStart_toStartOf="@id/v1"
+                app:layout_constraintTop_toBottomOf="@id/loginLayout" />
+
+            <TextView
+                android:id="@+id/join"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:padding="10dp"
+                android:text="Join Now"
+                android:textColor="@color/yellow"
+                app:layout_constraintEnd_toEndOf="@id/v2"
+                app:layout_constraintStart_toStartOf="@+id/v2"
+                app:layout_constraintTop_toBottomOf="@id/loginLayout" />
+
+            <View
+                android:id="@+id/v1"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="1dp"
+                android:background="@color/w1"
+                app:layout_constraintEnd_toStartOf="@+id/or"
+                app:layout_constraintStart_toStartOf="@id/edtLoginPassword"
+                app:layout_constraintTop_toBottomOf="@id/btnRegister" />
+
+            <TextView
+                android:id="@+id/or"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="OR"
+                android:textColor="@color/w1"
+                app:layout_constraintBottom_toBottomOf="@id/v1"
+                app:layout_constraintEnd_toStartOf="@id/v2"
+                app:layout_constraintStart_toEndOf="@id/v1"
+                app:layout_constraintTop_toTopOf="@id/v1" />
+
+            <View
+                android:id="@+id/v2"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="1dp"
+                android:background="@color/w1"
+                app:layout_constraintEnd_toEndOf="@id/edtLoginPassword"
+                app:layout_constraintStart_toEndOf="@id/or"
+                app:layout_constraintTop_toBottomOf="@id/btnRegister" />
+
+            <LinearLayout
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/fbbtn"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/btnRegister"
+                app:layout_constraintTop_toBottomOf="@id/or">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="3dp"
+                    android:src="@drawable/new_login_fb" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingStart="7dp"
+                    android:paddingEnd="7dp"
+                    android:text="Login with\nFacebook"
+                    android:textColor="@color/w1" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/embtn"
+                android:gravity="center"
+                android:text="Register"
+                android:textColor="@color/w1"
+                app:layout_constraintEnd_toEndOf="@id/edtLoginPassword"
+                app:layout_constraintStart_toStartOf="@id/btnRegister"
+                app:layout_constraintTop_toBottomOf="@id/or" />
+
+            <FrameLayout
+                android:id="@+id/vec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/agreeIv"
+                app:layout_constraintStart_toStartOf="@id/edtLoginPassword"
+                app:layout_constraintTop_toTopOf="@id/agreeIv">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/new_login_tick_bg" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:src="@drawable/new_login_tick" />
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/agreeIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:src="@drawable/new_login_agreement"
+                app:layout_constraintStart_toEndOf="@id/vec"
+                app:layout_constraintTop_toBottomOf="@+id/signup" />
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/red_circle"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="+18"
+                android:textColor="@color/w1"
+                app:layout_constraintEnd_toEndOf="@id/edtLoginPassword"
+                app:layout_constraintTop_toBottomOf="@id/signup" />
+
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/btnRegister"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_gravity="center"-->
+            <!--                android:layout_margin="10dp"-->
+            <!--                android:fontFamily="@font/bold"-->
+            <!--                android:gravity="center"-->
+            <!--                android:paddingLeft="20dp"-->
+            <!--                android:paddingRight="20dp"-->
+            <!--                android:text="Don't have account ?\nRegister Now"-->
+            <!--                android:textColor="@color/w2" />-->
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

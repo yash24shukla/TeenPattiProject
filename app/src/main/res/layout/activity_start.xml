@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pokerimage">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.19"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/datacontainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/topbar"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            app:layout_constraintEnd_toStartOf="@id/datacontainer2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.6">
+
+            <LinearLayout
+                android:id="@+id/idlar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center|start"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/totalChips"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profileIv"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:elevation="10dp"
+                    android:src="@drawable/start_user_pg"
+                    app:civ_border_color="@color/w1"
+                    app:civ_border_width="1dp" />
+
+                <TextView
+                    android:id="@+id/usernameTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-15dp"
+                    android:background="@drawable/start_top_bg"
+                    android:gravity="center"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="5dp"
+                    android:singleLine="true"
+                    android:textColor="@color/w1"
+                    android:textSize="12sp"
+                    tools:text="Krishnan poyyamozhi" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/totalChips"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/cashout"
+                app:layout_constraintStart_toEndOf="@id/idlar"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/chipIv"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="-5dp"
+                    android:elevation="10dp"
+                    android:src="@drawable/start_cash_bbl" />
+
+                <TextView
+                    android:id="@+id/chipBalTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="-35dp"
+                    android:layout_toStartOf="@id/addIv"
+                    android:layout_toEndOf="@+id/chipIv"
+                    android:background="@drawable/start_top_bg"
+                    android:gravity="center"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="25dp"
+                    android:singleLine="true"
+                    android:textColor="@color/w1"
+                    android:textSize="11sp"
+                    tools:text="ID: 0885545" />
+
+                <ImageView
+                    android:id="@+id/addIv"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="-20dp"
+                    android:elevation="10dp"
+                    android:src="@drawable/start_cash_add" />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/cashout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/totalChips"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/totalChips"
+                app:layout_constraintTop_toTopOf="@id/totalChips">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_horizontal"
+                    android:elevation="10dp"
+                    android:src="@drawable/start_cash_out" />
+            </FrameLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/datacontainer2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/datacontainer"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.4">
+
+            <LinearLayout
+                android:id="@+id/flash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/bind"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/commingsoon"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/start_flash_sale"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Flash Sale"
+                    android:textColor="@color/w1"
+                    android:textSize="12sp"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/bind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/bonus"
+                app:layout_constraintStart_toEndOf="@id/flash"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/commingsoon"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/start_bind_bonus"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Bind Bonus"
+                    android:textColor="@color/w1"
+                    android:textSize="12sp"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/bonus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/bind"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/commingsoon"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/start_daily_bonus"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Daily Bonus"
+                    android:textColor="@color/w1"
+                    android:textSize="12sp"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/supp1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintTop_toBottomOf="@id/topcontainer" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/seccontainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        app:layout_constraintTop_toBottomOf="@id/supp1">
+
+        <View
+            android:id="@+id/bonusper"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/anouncement"
+            android:layout_width="@dimen/_300sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:background="@drawable/anounce_bg"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:paddingStart="@dimen/_50sdp"
+            android:paddingEnd="@dimen/_3sdp"
+            android:singleLine="true"
+            android:text="Welcome to TeenPatti Premium, stay tuned for updates here"
+            android:textColor="@color/w1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button2"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintStart_toEndOf="@+id/bonusper"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlSymmetry">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/openUpadateBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:text="update"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.053"
+            app:layout_constraintStart_toEndOf="@+id/anouncement"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/thirdcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.39"
+        app:layout_constraintTop_toBottomOf="@id/seccontainer">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ist"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toStartOf="@id/third"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.25">
+
+            <ImageView
+                android:id="@+id/carda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:src="@drawable/carda"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/second"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toEndOf="@id/ist"
+            app:layout_constraintWidth_percent="0.25">
+
+            <ImageView
+                android:id="@+id/cardb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/new_ic_coming_soon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/third"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toStartOf="@id/fourth"
+            app:layout_constraintStart_toEndOf="@id/second"
+            app:layout_constraintWidth_percent="0.25">
+
+            <ImageView
+                android:id="@+id/cardc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/new_ic_coming_soon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fourth"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/third"
+            app:layout_constraintWidth_percent="0.25">
+
+            <ImageView
+                android:id="@+id/cardd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/new_ic_coming_soon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/supp3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintTop_toBottomOf="@id/thirdcontainer" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/forthcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.16"
+        app:layout_constraintTop_toBottomOf="@id/supp3">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/b1container"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/b2container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.70">
+
+            <ImageView
+                android:id="@+id/support"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/support"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/rule"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/rule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/new_start_rules"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/email"
+                app:layout_constraintStart_toEndOf="@id/support"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/new_start_email"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/setting"
+                app:layout_constraintStart_toEndOf="@id/rule"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/new_start_settings"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/email"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/b2container"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/new_add_cash_bg"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/b1container"
+            app:layout_constraintWidth_percent="0.30">
+
+            <ImageView
+                android:id="@+id/addCashLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/new_add_cash_logo" />
+
+            <TextView
+                android:id="@+id/addCash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableRight="@drawable/new_ic_right_arrow"
+                android:drawablePadding="@dimen/_20sdp"
+                android:fontFamily="@font/bold"
+                android:gravity="center"
+                android:text="ADD CASH"
+                android:textColor="@color/w1"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/addCashLogo"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

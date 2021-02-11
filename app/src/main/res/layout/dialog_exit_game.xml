@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_200sdp"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/back_dialog"
+        android:paddingTop="@dimen/_40sdp"
+        android:paddingBottom="@dimen/_20sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.skydoves.elasticviews.ElasticButton
+                    android:id="@+id/btndClosCancel"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_other_menu"
+                    android:drawableLeft="@drawable/menu_btn_close"
+                    android:fontFamily="@font/bold"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:text="CLOSE"
+                    android:textColor="@color/w1"
+                    android:textSize="@dimen/_11sdp"
+                    app:button_duration="300"
+                    app:button_scale="0.8" />
+
+
+                <com.skydoves.elasticviews.ElasticButton
+                    android:id="@+id/btndClosExit"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_other_menu"
+                    android:drawableLeft="@drawable/menu_btn_exit"
+                    android:fontFamily="@font/bold"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:text="BACK TO LOBBY"
+
+                    android:textColor="@color/w1"
+                    android:textSize="@dimen/_11sdp"
+                    app:button_duration="300"
+                    app:button_scale="0.8" />
+
+
+                <com.skydoves.elasticviews.ElasticButton
+                    android:id="@+id/btnndSetting"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_other_menu"
+                    android:drawableLeft="@drawable/menu_setting"
+                    android:fontFamily="@font/bold"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:text="OPEN SETTING"
+
+                    android:textColor="@color/w1"
+                    android:textSize="@dimen/_11sdp"
+                    app:button_duration="300"
+                    app:button_scale="0.8" />
+
+
+                <com.skydoves.elasticviews.ElasticButton
+                    android:id="@+id/btnndInfo"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_other_menu"
+                    android:drawableLeft="@drawable/menu_btn_help"
+                    android:fontFamily="@font/bold"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:text="INFO TABLE"
+                    android:textAllCaps="true"
+                    android:textColor="@color/w1"
+                    android:textSize="@dimen/_11sdp"
+                    app:button_duration="300"
+                    app:button_scale="0.8" />
+
+                <com.skydoves.elasticviews.ElasticLayout
+                    android:id="@+id/recharge"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_other_menu"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|start"
+                        android:layout_marginStart="7dp"
+                        android:src="@drawable/new_ic_rupee" />
+
+                    <com.skydoves.elasticviews.ElasticButton
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@null"
+                        android:id="@+id/rechargeBtn"
+                        android:fontFamily="@font/bold"
+                        android:text="RECHARGE"
+                        android:textAllCaps="true"
+                        android:textColor="@color/w1"
+                        android:textSize="@dimen/_11sdp"
+                        app:button_duration="300"
+                        app:button_scale="0.8" />
+
+                </com.skydoves.elasticviews.ElasticLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

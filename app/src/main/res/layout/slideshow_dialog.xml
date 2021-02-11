@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+
+    <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_30sdp"
+        card_view:cardBackgroundColor="@color/ColorYellow"
+        card_view:cardCornerRadius="@dimen/_10sdp"
+        card_view:cardElevation="3dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200sdp"
+
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/_4sdp"
+            android:background="@drawable/back_dialog"
+            android:gravity="center"
+            android:padding="@dimen/_10sdp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:orientation="vertical"
+
+                    android:padding="@dimen/_30sdp">
+
+                    <TextView
+                        android:id="@+id/txtSlideDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="@dimen/_10sdp"
+                        android:paddingBottom="5dp"
+                        android:text="two ask for side show"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_14sdp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:orientation="vertical">
+
+                            <com.skydoves.elasticviews.ElasticButton xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/txtSlideAccept"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/_33sdp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/btn_other"
+                                android:fontFamily="@font/bold"
+                                android:gravity="center"
+                                android:paddingLeft="@dimen/_20sdp"
+                                android:paddingRight="@dimen/_20sdp"
+                                android:text="ACCEPT"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/_11sdp"
+
+                                android:visibility="visible"
+                                app:button_duration="300"
+
+                                app:button_scale="0.8" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.skydoves.elasticviews.ElasticButton xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/txtSlideDecline"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/_33sdp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/btn_other"
+                                android:fontFamily="@font/bold"
+                                android:gravity="center"
+                                android:paddingLeft="@dimen/_20sdp"
+                                android:paddingRight="@dimen/_20sdp"
+                                android:text="DECLINE"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/_11sdp"
+                                android:visibility="visible"
+                                app:button_duration="300"
+
+                                app:button_scale="0.8" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

@@ -1,0 +1,67 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--        <item name="android:windowIsTranslucent">true</item>-->
+        <!--        <item name="android:windowAnimationStyle">@null</item>-->
+        <item name="android:windowBackground">@color/color_background</item>
+        <item name="android:fontFamily">@font/regu</item>
+
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+
+    </style>
+    <!--        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>-->
+
+
+    <style name="DialogSlideAnim" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+
+    </style>
+
+    <style name="DialogAnimation2" parent="Theme.MaterialComponents.Dialog">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowEnterAnimation">@android:anim/slide_in_left</item>
+        <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
+    </style>
+
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_up_dialog</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_down</item>
+    </style>
+
+
+    <style name="DialogSlideAnim_Left" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowAnimationStyle">@style/DialogAnimation_Left</item>
+
+    </style>
+
+    <style name="DialogAnimation_Left">
+        <item name="android:windowEnterAnimation">@anim/from_left_up</item>
+        <item name="android:windowExitAnimation">@anim/from_left_down</item>
+    </style>
+
+    <style name="SCBSwitch" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">#FFD761</item>
+
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">#f1f1f1
+        </item>
+
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">#88ffffff
+        </item>
+    </style>
+
+</resources>
