@@ -169,8 +169,55 @@
         android:id="@+id/topb"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/topm">
+
+        <Button
+            android:id="@+id/renowPaykun"
+            android:layout_width="112dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/paykunbg"
+            android:text="Paykun"
+
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/enteramount"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.457" />
+
+        <EditText
+            android:id="@+id/enteramount"
+            android:layout_width="167dp"
+            android:layout_height="30dp"
+            android:background="@drawable/enter_amount_bg"
+            android:gravity="center"
+            android:hint="Please Enter the Recharge Amount"
+            android:inputType="numberDecimal"
+            android:textColor="@color/w1"
+            android:textColorHint="@color/w1"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/renow"
+            app:layout_constraintHorizontal_bias="0.413"
+            app:layout_constraintStart_toEndOf="@id/tamount"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.493" />
+
+        <ImageView
+            android:id="@+id/renow"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_recharge"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.455" />
 
         <TextView
             android:id="@+id/tamount"
@@ -182,32 +229,6 @@
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/enteramount"
-            android:layout_width="220dp"
-            android:layout_height="40dp"
-            android:background="@drawable/enter_amount_bg"
-            android:gravity="center"
-            android:hint="Please Enter the Recharge Amount"
-            android:inputType="numberDecimal"
-            android:textColor="@color/w1"
-            android:textColorHint="@color/w1"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/renow"
-            app:layout_constraintStart_toEndOf="@id/tamount"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/renow"
-            android:layout_width="150dp"
-            android:layout_height="35dp"
-            android:layout_marginEnd="@dimen/_20sdp"
-            android:src="@drawable/ic_recharge"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

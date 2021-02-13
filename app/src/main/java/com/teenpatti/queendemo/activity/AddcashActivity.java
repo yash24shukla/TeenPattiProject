@@ -12,10 +12,15 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.paykun.sdk.PaykunApiCall;
+import com.paykun.sdk.eventbus.Events;
+import com.paykun.sdk.eventbus.GlobalBus;
+import com.paykun.sdk.helper.PaykunHelper;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 import com.teenpatti.queendemo.R;
@@ -27,6 +32,8 @@ import com.teenpatti.queendemo.model.ShowToast;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -36,6 +43,7 @@ import java.util.List;
 public class AddcashActivity extends AppCompatActivity implements PaymentResultListener {
     ImageView renow, close;
     ImageView fullPaymentIv;
+    Button renowPaykun;
     EditText enteramount;
     View ist, second, third, fourth;
     String chips;
@@ -57,6 +65,30 @@ public class AddcashActivity extends AppCompatActivity implements PaymentResultL
         second = findViewById(R.id.second);
         third = findViewById(R.id.third);
         fourth = findViewById(R.id.fourth);
+        renowPaykun = findViewById(R.id.renowPaykun) ;
+
+
+
+        renowPaykun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (TextUtils.isEmpty(enteramount.getText().toString().trim())) {
+                    Toast.makeText(AddcashActivity.this, "Please enter amount", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                String samount = enteramount.getText().toString();
+                if (samount.equalsIgnoreCase("100")) {
+                    chips = "125";
+                } else if (samount.equalsIgnoreCase("1500")) {
+                    chips = "1530";
+                } else {
+                    chips = samount;
+                }
+                paykunPayment(samount);
+
+            }
+        });
+
 
         close.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +97,8 @@ public class AddcashActivity extends AppCompatActivity implements PaymentResultL
 
             }
         });
+
+
         renow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,6 +156,74 @@ public class AddcashActivity extends AppCompatActivity implements PaymentResultL
             }
         });
     }
+    private void paykunPayment(String samount) {
+        final float amount = Float.parseFloat(samount) * 100;
+
+        JSONObject object = new JSONObject();
+        try {
+            object.put("merchant_id","515923232856163");
+            object.put("access_token","757D3122F51AA854783080BEE5A87FFE");
+            object.put("customer_name","");
+            object.put("customer_email","");
+            object.put("customer_phone","");
+            object.put("product_name","Teenpatti Premium");
+            object.put("order_no",System.currentTimeMillis()); // order no. should have 10 to 30 character in numeric format
+            object.put("amount",samount);  // minimum amount should be 10
+            object.put("isLive",true); // need to send false if you are in sandbox mode
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        new PaykunApiCall.Builder(AddcashActivity.this).sendJsonObject(object); // Paykun api to initialize your payment and send info.
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        GlobalBus.getBus().register(AddcashActivity.this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        GlobalBus.getBus().unregister(AddcashActivity.this);
+    }
+    @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
+    public void getResults(Events.PaymentMessage message) {
+        if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_SUCCESS)){
+            // do your stuff here
+            // message.getTransactionId() will return your failed or succeed transaction id
+            /* if you want to get your transaction detail call message.getTransactionDetail()
+             *  getTransactionDetail return all the field from server and you can use it here as per your need
+             *  For Example you want to get Order id from detail use message.getTransactionDetail().order.orderId */
+            if(!TextUtils.isEmpty(message.getTransactionId())) {
+                Toast.makeText(getApplicationContext(), "Your Transaction is succeed with transaction id : "+message.getTransactionId() , Toast.LENGTH_SHORT).show();
+                Log.v("order id"," getting order id value : "+message.getTransactionDetail().order.orderId);
+                makeApiCall() ;
+            }
+        }
+        else if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_FAILED)){
+            // do your stuff here
+            Toast.makeText(getApplicationContext(),"Your Transaction is failed",Toast.LENGTH_SHORT).show();
+        }
+        else if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_SERVER_ISSUE)){
+            // do your stuff here
+            Toast.makeText(getApplicationContext(),PaykunHelper.MESSAGE_SERVER_ISSUE,Toast.LENGTH_SHORT).show();
+        }else if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_ACCESS_TOKEN_MISSING)){
+            // do your stuff here
+            Toast.makeText(getApplicationContext(),"Access Token missing",Toast.LENGTH_SHORT).show();
+        }
+        else if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_MERCHANT_ID_MISSING)){
+            // do your stuff here
+            Toast.makeText(getApplicationContext(),"Merchant Id is missing",Toast.LENGTH_SHORT).show();
+        }
+        else if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_INVALID_REQUEST)){
+            Toast.makeText(getApplicationContext(),"Invalid Request",Toast.LENGTH_SHORT).show();
+        }
+        else if(message.getResults().equalsIgnoreCase(PaykunHelper.MESSAGE_NETWORK_NOT_AVAILABLE)){
+            Toast.makeText(getApplicationContext(),"Network is not available",Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
     private void paymentCheckout(String samount) {
         final float amount = Float.parseFloat(samount) * 100;

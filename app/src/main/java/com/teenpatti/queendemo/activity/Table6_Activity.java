@@ -1735,8 +1735,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                             lastbet = jsonTable.getString("lastBet");
                             txtPlayRs.setText(jsonTable.getString("lastBet"));
 
-                            txtPlayBlind.setText("Blind\n" + jsonTable.getString("lastBet"));
-                            txtPlayChaal.setText("Chaal\n" + jsonTable.getString("lastBet"));
+                            txtPlayBlind.setText("Blind\n" + String.valueOf(Math.round(Double.parseDouble(jsonTable.getString("lastBet"))  * 100.0) / 100.0));
+                            txtPlayChaal.setText("Chaal\n" + String.valueOf(Math.round(Double.parseDouble(jsonTable.getString("lastBet"))  * 100.0) / 100.0));
 
                             txtCoinTable2.setText(SelectTable.getBoot());
                             txtCoinTable3.setText(SelectTable.getBoot());
@@ -2109,8 +2109,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                             lastbet = jsonTable.getString("lastBet");
                             txtPlayRs.setText(jsonTable.getString("lastBet"));
 
-                            txtPlayBlind.setText("Blind\n" + jsonTable.getString("lastBet"));
-                            txtPlayChaal.setText("Chaal\n" + jsonTable.getString("lastBet"));
+                            txtPlayBlind.setText("Blind\n" + String.valueOf(Math.round(Double.parseDouble(jsonTable.getString("lastBet"))  * 100.0) / 100.0));
+                            txtPlayChaal.setText("Chaal\n" + String.valueOf(Math.round(Double.parseDouble(jsonTable.getString("lastBet"))  * 100.0) / 100.0));
 
                             txtCoinTable2.setText(SelectTable.getBoot());
                             txtCoinTable3.setText(SelectTable.getBoot());
@@ -2488,8 +2488,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                             if (Myturn.equals("true")) {
                                 lastbet = String.valueOf(Float.parseFloat(txtPlayRs.getText().toString()) + Float.parseFloat(txtPlayRs.getText().toString())) + "";
                                 txtPlayRs.setText(lastbet);
-                                txtPlayBlind.setText("Blind\n" + lastbet);
-                                txtPlayChaal.setText("Chaal\n" + lastbet);
+                                txtPlayBlind.setText("Blind\n" + String.valueOf(Math.round(Double.parseDouble(lastbet)  * 100.0) / 100.0));
+                                txtPlayChaal.setText("Chaal\n" + String.valueOf(Math.round(Double.parseDouble(lastbet)  * 100.0) / 100.0));
                             }
                             CurrentAction = "Chaal";
 
@@ -2696,7 +2696,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                                 }
                                 JSONObject jsontable = new JSONObject(json.getString("table"));
-                                txtTableAmountTransfer.setText(jsontable.getString("amount") + "");
+                                txtTableAmountTransfer.setText(String.valueOf(Math.round(Double.parseDouble(jsontable.getString("amount"))  * 100.0) / 100.0));
                                 final JSONObject jsonObject_playerinfo = new JSONObject(jObje_Otherplayer.getString("playerInfo"));
                                 llTableAmountTransfer.setVisibility(View.VISIBLE);
                                 Log.e("transfer won", txtPlay6Id.getText().toString() + "   " + jObje_Otherplayer.getString("id"));
@@ -3138,8 +3138,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                 }, 400);
 
                                 txtPlayRs.setText(lastbet);
-                                txtPlayBlind.setText("Blind\n" + lastbet);
-                                txtPlayChaal.setText("Chaal\n" + lastbet);
+                                txtPlayBlind.setText("Blind\n" + String.valueOf(Math.round(Double.parseDouble(lastbet)  * 100.0) / 100.0));
+                                txtPlayChaal.setText("Chaal\n" + String.valueOf(Math.round(Double.parseDouble(lastbet)  * 100.0) / 100.0));
                                 txtPlayMinus.setAlpha(0.5f);
                                 txtPlayMinus.setEnabled(false);
                                 txtPlayPlue.setAlpha(1f);
@@ -3469,8 +3469,9 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                     }
                                 }
                                 txtPlayRs.setText(lastbet);
-                                txtPlayBlind.setText("Blind\n" + lastbet);
-                                txtPlayChaal.setText("Chaal\n" + lastbet);
+                                txtPlayBlind.setText("Blind\n" + String.valueOf(Math.round(Double.parseDouble(lastbet)  * 100.0) / 100.0));
+
+                                txtPlayChaal.setText("Chaal\n" + String.valueOf(Math.round(Double.parseDouble(lastbet)  * 100.0) / 100.0));
                                 txtPlayMinus.setAlpha(0.5f);
                                 txtPlayMinus.setEnabled(false);
                                 txtPlayPlue.setAlpha(1f);
@@ -4105,8 +4106,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
 
                                 txtPlayRs.setText(jsontable.getString("lastBet"));
-                                txtPlayBlind.setText("Blind\n" + jsontable.getString("lastBet"));
-                                txtPlayChaal.setText("Chaal\n" + jsontable.getString("lastBet"));
+                                txtPlayBlind.setText("Blind\n" + String.valueOf(Math.round(Double.parseDouble(jsontable.getString("lastBet"))  * 100.0) / 100.0));
+                                txtPlayChaal.setText("Chaal\n" + String.valueOf(Math.round(Double.parseDouble(jsontable.getString("lastBet"))  * 100.0) / 100.0));
                                 lastbet = jsontable.getString("lastBet");
                                 txtPlayMinus.setAlpha(0.5f);
                                 txtPlayMinus.setEnabled(false);
@@ -4697,8 +4698,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                 lastbet = jsontable.getString("lastBet");
 
                                 txtPlayRs.setText(lastbet);
-                                txtPlayBlind.setText("Blind\n" + lastbet);
-                                txtPlayChaal.setText("Chaal\n" + lastbet);
+                                txtPlayBlind.setText("Blind\n" +  String.valueOf(Math.round(Double.parseDouble(lastbet)  * 100.0) / 100.0));
+                                txtPlayChaal.setText("Chaal\n" + String.valueOf(Math.round(Double.parseDouble(lastbet)  * 100.0) / 100.0));
                                 txtPlayMinus.setAlpha(0.5f);
                                 txtPlayMinus.setEnabled(false);
                                 txtPlayPlue.setAlpha(1f);
@@ -5918,6 +5919,44 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                             name = "K";
                             priority = 2;
                         }
+                        else if (numberrr.equals("2")) {
+
+
+                            priority = 5;
+                        }
+                        else if (numberrr.equals("3")) {
+
+
+                            priority = 6;
+                        }else if (numberrr.equals("4")) {
+
+
+                            priority = 7;
+                        }else if (numberrr.equals("5")) {
+
+
+                            priority = 8;
+                        }else if (numberrr.equals("6")) {
+
+
+                            priority = 9;
+                        }else if (numberrr.equals("7")) {
+
+
+                            priority = 10;
+                        }else if (numberrr.equals("8")) {
+
+
+                            priority = 11;
+                        }else if (numberrr.equals("9")) {
+
+
+                            priority = 12;
+                        }else if (numberrr.equals("10")) {
+
+
+                            priority = 13;
+                        }
 
                         rank = (int) Float.parseFloat(numberrr);
 
@@ -6412,7 +6451,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                             JSONObject json_userinfo = new JSONObject();
 
                             json_userinfo.put("action", "Accepted");
-                            json_userinfo.put("amount",Float.parseFloat(txtPlayRs.getText().toString()));
+                            json_userinfo.put("amount", Float.valueOf(String.valueOf(Math.round(Double.parseDouble(txtPlayRs.getText().toString())  * 100.0) / 100.0)));
                             json_userinfo.put("blind", false);
                             json_userinfo.put("show", true);
                             json_userinfo.put("tableId", table_id);
@@ -6465,7 +6504,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                             JSONObject json_userinfo = new JSONObject();
 
-                            json_userinfo.put("amount", Float.parseFloat(txtPlayRs.getText().toString()));
+                            json_userinfo.put("amount",Float.valueOf(String.valueOf(Math.round(Double.parseDouble(txtPlayRs.getText().toString())  * 100.0) / 100.0)));
                             json_userinfo.put("blind", false);
 
                             json.put("bet", json_userinfo);
@@ -6527,7 +6566,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                             json.put("tableInfo", Json_Table_Info);
                             JSONObject json_userinfo = new JSONObject();
                             json_userinfo.put("action", "Chaal");
-                            json_userinfo.put("amount", Float.parseFloat(txtPlayRs.getText().toString()));
+                            json_userinfo.put("amount", Float.valueOf(String.valueOf(Math.round(Double.parseDouble(txtPlayRs.getText().toString())  * 100.0) / 100.0)));
                             json_userinfo.put("blind", false);
                             json_userinfo.put("show", false);
                             json_userinfo.put("tableId", table_id);
@@ -6703,7 +6742,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                             json.put("tableInfo", Json_Table_Info);
                             JSONObject json_userinfo = new JSONObject();
                             json_userinfo.put("action", "Blind");
-                            json_userinfo.put("amount",Float.parseFloat(txtPlayRs.getText().toString()));
+                            json_userinfo.put("amount",Float.valueOf(String.valueOf(Math.round(Double.parseDouble(txtPlayRs.getText().toString())  * 100.0) / 100.0)));
                             json_userinfo.put("blind", true);
                             json_userinfo.put("show", false);
                             json_userinfo.put("tableId", table_id);
@@ -6744,8 +6783,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                 float minusamount = Float.parseFloat(txtPlayRs.getText().toString()) / 2;
                 float minus = Float.parseFloat(txtPlayRs.getText().toString()) - minusamount;
                 txtPlayRs.setText(minus + "");
-                txtPlayBlind.setText("Blind\n" + minus);
-                txtPlayChaal.setText("Chaal\n" + minus);
+                txtPlayBlind.setText("Blind\n" + String.valueOf(Math.round(Double.parseDouble(String.valueOf(minus))  * 100.0) / 100.0));
+                txtPlayChaal.setText("Chaal\n" +  String.valueOf(Math.round(Double.parseDouble(String.valueOf(minus))  * 100.0) / 100.0));
                 if ( Float.parseFloat(lastbet) ==  Float.parseFloat(txtPlayRs.getText().toString())) {
                     txtPlayMinus.setAlpha(0.5f);
                     txtPlayMinus.setEnabled(false);
@@ -6762,8 +6801,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                 float minus = Float.parseFloat(txtPlayRs.getText().toString()) + Float.parseFloat(txtPlayRs.getText().toString());
                 txtPlayRs.setText(minus + "");
-                txtPlayBlind.setText("Blind\n" + minus);
-                txtPlayChaal.setText("Chaal\n" + minus);
+                txtPlayBlind.setText("Blind\n" + String.valueOf(Math.round(Double.parseDouble(String.valueOf(minus))  * 100.0) / 100.0));
+                txtPlayChaal.setText("Chaal\n" + String.valueOf(Math.round(Double.parseDouble(String.valueOf(minus))  * 100.0) / 100.0));
                 if ( Float.parseFloat(lastbet) <  Float.parseFloat(txtPlayRs.getText().toString())) {
                     txtPlayMinus.setAlpha(1f);
                     txtPlayMinus.setEnabled(true);
@@ -6803,7 +6842,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
         }
 
         StopTimer = 1;
-        Log.e(TAG + " emit ", "seeMyCards " + json.toString());
+        Log.d(TAG + " emit ", "seeMyCards " + json.toString());
         mSocket.emit("seeMyCards", json);
     }
 

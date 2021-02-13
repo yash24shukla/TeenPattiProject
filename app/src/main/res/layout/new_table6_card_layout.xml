@@ -33,6 +33,7 @@
 
         <ImageView
             android:id="@+id/imgpl2card1icon"
+
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp" />
     </RelativeLayout>
@@ -64,6 +65,7 @@
 
         <ImageView
             android:id="@+id/imgpl2card2icon"
+
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp" />
     </RelativeLayout>
@@ -96,6 +98,7 @@
         <ImageView
             android:id="@+id/imgpl2card3icon"
             android:layout_width="@dimen/_40sdp"
+
             android:layout_height="@dimen/_40sdp" />
 
         <ImageView
@@ -133,6 +136,7 @@
         <ImageView
             android:id="@+id/imgpl3card1icon"
             android:layout_width="@dimen/_40sdp"
+
             android:layout_height="@dimen/_40sdp" />
     </RelativeLayout>
 
@@ -160,6 +164,7 @@
 
         <ImageView
             android:id="@+id/imgpl3card2icon"
+
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp" />
     </RelativeLayout>
@@ -188,11 +193,13 @@
 
         <ImageView
             android:id="@+id/imgpl3card3icon"
+
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp" />
 
         <ImageView
             android:id="@+id/imgpl3card3Big"
+
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp" />
 
@@ -224,7 +231,9 @@
             android:layout_height="@dimen/_40sdp" />
 
         <ImageView
+             
             android:id="@+id/imgpl4card1icon"
+
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp" />
     </RelativeLayout>
@@ -253,6 +262,7 @@
 
         <ImageView
             android:id="@+id/imgpl4card2icon"
+
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp" />
     </RelativeLayout>
@@ -279,7 +289,9 @@
             android:layout_height="@dimen/_40sdp" />
 
         <ImageView
+             
             android:id="@+id/imgpl4card3icon"
+
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp" />
 
@@ -345,6 +357,7 @@
 
         <ImageView
             android:id="@+id/imgpl5card2icon"
+
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp" />
     </RelativeLayout>
@@ -371,7 +384,9 @@
             android:layout_height="@dimen/_40sdp" />
 
         <ImageView
+             
             android:id="@+id/imgpl5card3icon"
+
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp" />
 
@@ -410,6 +425,7 @@
 
         <ImageView
             android:id="@+id/imgcard1icon"
+
             android:layout_width="@dimen/_50sdp"
             android:layout_height="@dimen/_50sdp" />
     </RelativeLayout>
@@ -435,11 +451,13 @@
         <ImageView
             android:id="@+id/imgcard2num"
             android:layout_width="@dimen/_50sdp"
+
             android:layout_height="@dimen/_50sdp" />
 
         <ImageView
             android:id="@+id/imgcard2icon"
             android:layout_width="@dimen/_50sdp"
+
             android:layout_height="@dimen/_50sdp" />
     </RelativeLayout>
 
@@ -469,6 +487,7 @@
         <ImageView
             android:id="@+id/imgcard3icon"
             android:layout_width="@dimen/_50sdp"
+
             android:layout_height="@dimen/_50sdp" />
 
         <ImageView

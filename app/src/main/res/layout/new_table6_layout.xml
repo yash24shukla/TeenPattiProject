@@ -17,10 +17,11 @@
 
 
     <ImageView
+        android:id="@+id/backgroundtable"
         android:layout_width="701dp"
         android:layout_height="358dp"
-        android:layout_centerHorizontal="true"
 
+        android:layout_centerHorizontal="true"
         android:scaleType="centerCrop"
         android:src="@drawable/table_ledy" />
 
@@ -192,7 +193,7 @@
         <LinearLayout
             android:id="@+id/llPlayer2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="137dp"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="3dp"
@@ -271,7 +272,7 @@
             <TextView
                 android:id="@+id/txtPlay2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="26dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/_minus7sdp"
                 android:fontFamily="@font/regu"
@@ -1387,7 +1388,7 @@
         android:layout_alignParentBottom="true"
         android:gravity="center"
         android:padding="@dimen/_5sdp"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <TextView
             android:id="@+id/txtBottomBootValue"
