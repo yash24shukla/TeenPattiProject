@@ -2,13 +2,16 @@ package com.teenpatti.queendemo.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -47,6 +50,9 @@ public class AddcashActivity extends AppCompatActivity implements PaymentResultL
     EditText enteramount;
     View ist, second, third, fourth;
     String chips;
+    View promptsView ;
+    Button paykunselectbtn , razorpayselectbtn;
+    AlertDialog.Builder alertDialogBuilder ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +62,7 @@ public class AddcashActivity extends AppCompatActivity implements PaymentResultL
 
         setContentView(R.layout.activity_addcash);
         Checkout.preload(getApplicationContext());
+        LayoutInflater li = this.getLayoutInflater();
 
         enteramount = findViewById(R.id.enteramount);
         renow = findViewById(R.id.renow);
@@ -66,8 +73,12 @@ public class AddcashActivity extends AppCompatActivity implements PaymentResultL
         third = findViewById(R.id.third);
         fourth = findViewById(R.id.fourth);
         renowPaykun = findViewById(R.id.renowPaykun) ;
+        promptsView = li.inflate(R.layout.select_aymentmethod, null);
+        alertDialogBuilder = new AlertDialog.Builder(this);
 
-
+        paykunselectbtn = (Button) promptsView.findViewById(R.id.selectPaykunBtn);
+        razorpayselectbtn = (Button) promptsView.findViewById(R.id.selectRazorpayBtn);
+        alertDialogBuilder.setView(promptsView);
 
         renowPaykun.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,31 +142,70 @@ public class AddcashActivity extends AppCompatActivity implements PaymentResultL
             @Override
             public void onClick(View view) {
                 chips = "10";
-                paymentCheckout("10");
+                buildDialogBox("10");
+
+//                paymentCheckout("10");
             }
         });
         second.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 chips = "125";
-                paymentCheckout("100");
+                buildDialogBox("100");
+//                paymentCheckout("100");
             }
         });
         third.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 chips = "500";
-                paymentCheckout("500");
+                buildDialogBox("500");
+//                paymentCheckout("500");
             }
         });
         fourth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 chips = "1530";
-                paymentCheckout("1500");
+                buildDialogBox("1500");
+//                paymentCheckout("1500");
             }
         });
     }
+
+    private void buildDialogBox(final String finalamount) {
+
+        paykunselectbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                paykunPayment(finalamount)  ;
+            }
+        });
+        razorpayselectbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                paymentCheckout(finalamount);
+
+            }
+        });
+        alertDialogBuilder
+                .setCancelable(false)
+                .setNegativeButton("Ok",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+
+
+        // create alert dialog
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // show it
+        alertDialog.show();
+    }
+
     private void paykunPayment(String samount) {
         final float amount = Float.parseFloat(samount) * 100;
 

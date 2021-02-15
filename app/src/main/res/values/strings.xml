@@ -14,5 +14,7 @@
     <string name="anouncementBanner" translatable="false">Welcome to TeenPatti Premium, stay tuned for updates here</string>
     <string name="anouncementUrl" translatable="false"> http://teenpattipremium.com/</string>
     <string name="slideShowBtn" translatable="false"> Slide Show </string>
+    <string name="select_paykun" translatable="false"> Paykun </string>
+    <string name="select_razorpay" translatable="false"> Razorpay </string>
 
 </resources>
