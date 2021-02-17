@@ -186,8 +186,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="@dimen/_60sdp"
-        android:layout_marginBottom="@dimen/_85sdp"
+        android:layout_marginLeft="@dimen/_40sdp"
+        android:layout_marginBottom="@dimen/_75sdp"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -224,6 +224,16 @@
                     android:layout_centerInParent="true"
                     android:src="@drawable/vc_gift_icon" />
 
+                <ImageView
+                    android:id="@+id/imgPl2Pic"
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:elevation="1dp"
+                    android:src="@drawable/ic_person_defult" />
+
+
                 <ProgressBar
                     android:id="@+id/Progresspl2"
                     style="?android:attr/progressBarStyleHorizontal"
@@ -237,7 +247,6 @@
                     android:progressDrawable="@drawable/circular_progrss_bar"
                     android:secondaryProgress="0"
                     android:visibility="gone" />
-
 
                 <TextView
                     android:id="@+id/txtPl2ChalBlind"
@@ -256,23 +265,13 @@
                     android:textColor="@color/w3"
                     android:textSize="@dimen/_7sdp" />
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/imgPl2Pic"
-                    android:layout_width="@dimen/_55sdp"
-                    android:layout_height="@dimen/_55sdp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/ic_person_defult"
-                    app:civ_border_color="@android:color/white"
-                    app:civ_border_width="0.8dp" />
-
 
             </RelativeLayout>
 
             <TextView
                 android:id="@+id/txtPlay2"
                 android:layout_width="wrap_content"
-                android:layout_height="26dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/_minus7sdp"
                 android:fontFamily="@font/regu"
@@ -435,7 +434,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="@dimen/_70sdp"
+        android:layout_marginLeft="@dimen/_30sdp"
         android:layout_marginTop="@dimen/_35sdp"
         android:orientation="horizontal">
 
@@ -471,6 +470,17 @@
                     android:layout_centerInParent="true"
                     android:src="@drawable/vc_gift_icon" />
 
+                <ImageView
+                    android:id="@+id/imgPl3Pic"
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:elevation="1dp"
+                    android:src="@drawable/ic_person_defult" />
+
+
                 <ProgressBar
                     android:id="@+id/Progresspl3"
                     style="?android:attr/progressBarStyleHorizontal"
@@ -484,7 +494,6 @@
                     android:progressDrawable="@drawable/circular_progrss_bar"
                     android:secondaryProgress="0"
                     android:visibility="gone" />
-
 
                 <TextView
                     android:id="@+id/txtPl3ChalBlind"
@@ -502,17 +511,6 @@
                     android:text="Chaal"
                     android:textColor="@color/w3"
                     android:textSize="@dimen/_7sdp" />
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/imgPl3Pic"
-                    android:layout_width="@dimen/_55sdp"
-                    android:layout_height="@dimen/_55sdp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:layout_margin="@dimen/_5sdp"
-                    android:src="@drawable/ic_person_defult"
-                    app:civ_border_color="@android:color/white"
-                    app:civ_border_width="0.8dp" />
 
 
             </RelativeLayout>
@@ -670,7 +668,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_marginTop="@dimen/_30sdp"
-        android:layout_marginRight="@dimen/_70sdp"
+        android:layout_marginRight="@dimen/_30sdp"
         android:orientation="horizontal">
 
 
@@ -705,6 +703,18 @@
                     android:layout_centerInParent="true"
                     android:src="@drawable/vc_gift_icon" />
 
+                <ImageView
+                    android:id="@+id/imgPl4Pic"
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:elevation="1dp"
+
+                    android:src="@drawable/ic_person_defult" />
+
+
                 <ProgressBar
                     android:id="@+id/Progresspl4"
                     style="?android:attr/progressBarStyleHorizontal"
@@ -738,19 +748,6 @@
                     android:text="Chaal"
                     android:textColor="@color/w3"
                     android:textSize="@dimen/_7sdp" />
-
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/imgPl4Pic"
-                    android:layout_width="@dimen/_55sdp"
-                    android:layout_height="@dimen/_55sdp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:layout_margin="@dimen/_5sdp"
-
-                    android:src="@drawable/ic_person_defult"
-                    app:civ_border_color="@android:color/white"
-                    app:civ_border_width="0.8dp" />
 
 
             </RelativeLayout>
@@ -925,7 +922,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <RelativeLayout
                 android:layout_width="@dimen/_85sdp"
@@ -950,6 +947,17 @@
                     android:src="@drawable/vc_gift_icon" />
 
 
+                <ImageView
+                    android:id="@+id/imgPl5Pic"
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:elevation="1dp"
+
+                    android:src="@drawable/ic_person_defult" />
+
+
                 <ProgressBar
                     android:id="@+id/Progresspl5"
                     style="?android:attr/progressBarStyleHorizontal"
@@ -967,7 +975,6 @@
                     android:secondaryProgress="0"
                     android:visibility="gone" />
 
-
                 <TextView
                     android:id="@+id/txtPl5ChalBlind"
                     android:layout_width="match_parent"
@@ -980,20 +987,11 @@
                     android:layout_marginBottom="@dimen/_15sdp"
                     android:background="@drawable/half_circle_image"
                     android:gravity="center|bottom"
+                    android:elevation="2dp"
                     android:paddingBottom="@dimen/_8sdp"
                     android:text="Chaal"
                     android:textColor="@color/w3"
                     android:textSize="@dimen/_7sdp" />
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/imgPl5Pic"
-                    android:layout_width="@dimen/_55sdp"
-                    android:layout_height="@dimen/_55sdp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/ic_person_defult"
-                    app:civ_border_color="@android:color/white"
-                    app:civ_border_width="0.8dp" />
 
 
             </RelativeLayout>
@@ -1001,9 +999,9 @@
             <TextView
                 android:id="@+id/txtPlay5"
                 android:layout_width="wrap_content"
-                android:layout_height="29dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/_minus7sdp"
+
                 android:fontFamily="@font/regu"
                 android:gravity="center"
                 android:text="Player"
@@ -1064,7 +1062,7 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/_10sdp"
                 android:src="@drawable/ic_player_wait"
-                android:visibility="gone" />
+                android:visibility="visible" />
 
         </LinearLayout>
 
@@ -1217,15 +1215,14 @@
                         android:layout_centerVertical="true">
 
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:id="@+id/imgPl6Pic"
                             android:layout_width="@dimen/_60sdp"
                             android:layout_height="@dimen/_60sdp"
                             android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
                             android:src="@drawable/ic_person_defult"
-                            app:civ_border_color="@android:color/white"
-                            app:civ_border_width="0.8dp" />
+                          />
 
                         <ImageView
                             android:id="@+id/imgGift6"
@@ -1292,7 +1289,7 @@
 
             <LinearLayout
                 android:id="@+id/llPl6CardDisplay"
-                android:layout_width="@dimen/_80sdp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1.6"
@@ -1462,16 +1459,16 @@
         android:src="@drawable/information"
         android:visibility="gone" />
 
-    <include
-        layout="@layout/new_table6_card_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="-2dp"
-        android:layout_marginLeft="-2dp"
-        android:layout_marginTop="0dp" />
+<!--    <include-->
+<!--        layout="@layout/new_table6_card_layout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentLeft="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_marginStart="-2dp"-->
+<!--        android:layout_marginLeft="-2dp"-->
+<!--        android:layout_marginTop="0dp" />-->
 
     <com.skydoves.elasticviews.ElasticImageView
         android:id="@+id/imgBack"

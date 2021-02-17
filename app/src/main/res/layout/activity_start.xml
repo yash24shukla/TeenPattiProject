@@ -271,42 +271,11 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/seccontainer"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.13"
         app:layout_constraintTop_toBottomOf="@id/supp1">
-
-        <View
-            android:id="@+id/bonusper"
-            android:layout_width="@dimen/_100sdp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_20sdp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/anouncement"
-            android:layout_width="@dimen/_300sdp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:background="@drawable/anounce_bg"
-            android:ellipsize="marquee"
-            android:focusable="true"
-            android:gravity="center"
-            android:marqueeRepeatLimit="marquee_forever"
-            android:paddingStart="@dimen/_50sdp"
-            android:paddingEnd="@dimen/_3sdp"
-            android:singleLine="true"
-            android:text="Welcome to TeenPatti Premium, stay tuned for updates here"
-            android:textColor="@color/w1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button2"
-            app:layout_constraintHorizontal_bias="0.05"
-            app:layout_constraintStart_toEndOf="@+id/bonusper"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="RtlSymmetry">
-
-        </TextView>
 
         <Button
             android:id="@+id/openUpadateBtn"
@@ -315,11 +284,44 @@
             android:layout_marginEnd="30dp"
             android:text="update"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/inviteBtn"
             app:layout_constraintHorizontal_bias="0.053"
             app:layout_constraintStart_toEndOf="@+id/anouncement"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.4" />
+
+        <ImageView
+            android:id="@+id/inviteBtn"
+            android:layout_width="102dp"
+            app:layout_constraintStart_toEndOf="@+id/openUpadateBtn"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/invitefriends" />
+
+        <TextView
+            android:id="@+id/anouncement"
+            android:layout_width="@dimen/_300sdp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/anounce_bg"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:gravity="center"
+            android:layout_marginStart="150dp"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:paddingStart="@dimen/_50sdp"
+            android:paddingEnd="@dimen/_3sdp"
+            android:singleLine="true"
+            android:text="Welcome to TeenPatti Premium, stay tuned for updates here"
+            android:textColor="@color/w1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/openUpadateBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlSymmetry">
+
+        </TextView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

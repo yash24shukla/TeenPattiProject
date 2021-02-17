@@ -1895,10 +1895,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                                     txtPlay6.setText(otheruser.getPlayerinfo().getUserName());
                                     if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                        Picasso.get()
-                                                .load(otheruser.getPlayerinfo().getProfilePics())
-                                                .placeholder(R.drawable.ic_person_defult)
-                                                .into(imgPl6Pic);
+
                                     if (otheruser.getSlot().equals("slot5")) {
                                         txtPlay6Slot.setText("slot5");
                                         txtPlay5Slot.setText("slot4");
@@ -1934,10 +1931,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                 } else {
                                     if (otheruser.getSlot().equals(txtPlay2Slot.getText().toString())) {
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                            Picasso.get()
-                                                    .load(otheruser.getPlayerinfo().getProfilePics())
-                                                    .placeholder(R.drawable.ic_person_defult)
-                                                    .into(imgPl2Pic);
+
                                         txtPlay2.setText(otheruser.getPlayerinfo().getUserName());
                                         llPlayer2WaitPlayer.setVisibility(View.GONE);
                                         llPlayer2.setVisibility(View.VISIBLE);
@@ -1951,10 +1945,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         txtPlay2Rs.setText(otheruser.getPlayerinfo().getChips());
                                     } else if (otheruser.getSlot().equals(txtPlay3Slot.getText().toString())) {
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                            Picasso.get()
-                                                    .load(otheruser.getPlayerinfo().getProfilePics())
-                                                    .placeholder(R.drawable.ic_person_defult)
-                                                    .into(imgPl3Pic);
+
                                         txtPlay3.setText(otheruser.getPlayerinfo().getUserName());
                                         llPlayer3WaitPlayer.setVisibility(View.GONE);
                                         llPlayer3.setVisibility(View.VISIBLE);
@@ -1978,10 +1969,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         llPlayer4.setVisibility(View.VISIBLE);
                                         txtPlay4.setText(otheruser.getPlayerinfo().getUserName());
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                            Picasso.get()
-                                                    .load(otheruser.getPlayerinfo().getProfilePics())
-                                                    .placeholder(R.drawable.ic_person_defult)
-                                                    .into(imgPl4Pic);
+
                                         Log.e(TAG, otheruser.getSlot() + "  " + txtPlay4Slot.getText().toString() + "   id   " + jObje_Otherplayer.getString("id"));
                                         txtPlay4Id.setText(jObje_Otherplayer.getString("id"));
                                         txtPlay4Rs.setText(otheruser.getPlayerinfo().getChips());
@@ -1998,20 +1986,14 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         llPlayer5.setVisibility(View.VISIBLE);
                                         txtPlay5.setText(otheruser.getPlayerinfo().getUserName());
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                            Picasso.get()
-                                                    .load(otheruser.getPlayerinfo().getProfilePics())
-                                                    .placeholder(R.drawable.ic_person_defult)
-                                                    .into(imgPl5Pic);
+
                                         Log.e(TAG, otheruser.getSlot() + "  " + txtPlay5Slot.getText().toString() + "   id   " + jObje_Otherplayer.getString("id"));
                                         txtPlay5Id.setText(jObje_Otherplayer.getString("id"));
                                         txtPlay5Rs.setText(otheruser.getPlayerinfo().getChips());
                                     } else if (otheruser.getSlot().equals(txtPlay6Slot.getText().toString())) {
                                         txtPlay6.setText(otheruser.getPlayerinfo().getUserName());
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                            Picasso.get()
-                                                    .load(otheruser.getPlayerinfo().getProfilePics())
-                                                    .placeholder(R.drawable.ic_person_defult)
-                                                    .into(imgPl6Pic);
+
                                         arrcurrentplayer.add("6");
                                         llCoinTable6.startAnimation(ani6_back);
                                         if (jObje_Otherplayer.getString("turn").equals("true"))
@@ -2271,10 +2253,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                                     txtPlay6.setText(otheruser.getPlayerinfo().getUserName());
                                     if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                        Picasso.get()
-                                                .load(otheruser.getPlayerinfo().getProfilePics())
-                                                .placeholder(R.drawable.ic_person_defult)
-                                                .into(imgPl6Pic);
+
                                     if (otheruser.getSlot().equals("slot5")) {
                                         txtPlay6Slot.setText("slot5");
                                         txtPlay5Slot.setText("slot4");
@@ -2310,10 +2289,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                 } else {
                                     if (otheruser.getSlot().equals(txtPlay2Slot.getText().toString())) {
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                            Picasso.get()
-                                                    .load(otheruser.getPlayerinfo().getProfilePics())
-                                                    .placeholder(R.drawable.ic_person_defult)
-                                                    .into(imgPl2Pic);
+
                                         txtPlay2.setText(otheruser.getPlayerinfo().getUserName());
                                         llPlayer2WaitPlayer.setVisibility(View.GONE);
                                         llPlayer2.setVisibility(View.VISIBLE);
@@ -2327,10 +2303,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         txtPlay2Rs.setText(otheruser.getPlayerinfo().getChips());
                                     } else if (otheruser.getSlot().equals(txtPlay3Slot.getText().toString())) {
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                            Picasso.get()
-                                                    .load(otheruser.getPlayerinfo().getProfilePics())
-                                                    .placeholder(R.drawable.ic_person_defult)
-                                                    .into(imgPl3Pic);
+
                                         txtPlay3.setText(otheruser.getPlayerinfo().getUserName());
                                         llPlayer3WaitPlayer.setVisibility(View.GONE);
                                         llPlayer3.setVisibility(View.VISIBLE);
@@ -2354,10 +2327,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         llPlayer4.setVisibility(View.VISIBLE);
                                         txtPlay4.setText(otheruser.getPlayerinfo().getUserName());
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                            Picasso.get()
-                                                    .load(otheruser.getPlayerinfo().getProfilePics())
-                                                    .placeholder(R.drawable.ic_person_defult)
-                                                    .into(imgPl4Pic);
+
                                         Log.e(TAG, otheruser.getSlot() + "  " + txtPlay4Slot.getText().toString() + "   id   " + jObje_Otherplayer.getString("id"));
                                         txtPlay4Id.setText(jObje_Otherplayer.getString("id"));
                                         txtPlay4Rs.setText(otheruser.getPlayerinfo().getChips());
@@ -2374,20 +2344,14 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         llPlayer5.setVisibility(View.VISIBLE);
                                         txtPlay5.setText(otheruser.getPlayerinfo().getUserName());
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                            Picasso.get()
-                                                    .load(otheruser.getPlayerinfo().getProfilePics())
-                                                    .placeholder(R.drawable.ic_person_defult)
-                                                    .into(imgPl5Pic);
+
                                         Log.e(TAG, otheruser.getSlot() + "  " + txtPlay5Slot.getText().toString() + "   id   " + jObje_Otherplayer.getString("id"));
                                         txtPlay5Id.setText(jObje_Otherplayer.getString("id"));
                                         txtPlay5Rs.setText(otheruser.getPlayerinfo().getChips());
                                     } else if (otheruser.getSlot().equals(txtPlay6Slot.getText().toString())) {
                                         txtPlay6.setText(otheruser.getPlayerinfo().getUserName());
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                            Picasso.get()
-                                                    .load(otheruser.getPlayerinfo().getProfilePics())
-                                                    .placeholder(R.drawable.ic_person_defult)
-                                                    .into(imgPl6Pic);
+
                                         arrcurrentplayer.add("6");
                                         llCoinTable6.startAnimation(ani6_back);
                                         if (jObje_Otherplayer.getString("turn").equals("true"))
@@ -4309,10 +4273,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                                     txtPlay6.setText(otheruser.getPlayerinfo().getUserName());
                                     if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                        Picasso.get()
-                                                .load(otheruser.getPlayerinfo().getProfilePics())
-                                                .placeholder(R.drawable.ic_person_defult)
-                                                .into(imgPl6Pic);
+
                                     if (otheruser.getSlot().equals("slot5")) {
                                         txtPlay6Slot.setText("slot5");
                                         txtPlay5Slot.setText("slot4");
@@ -4347,11 +4308,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                                 } else {
                                     if (otheruser.getSlot().equals(txtPlay2Slot.getText().toString())) {
-                                        if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                            Picasso.get()
-                                                    .load(otheruser.getPlayerinfo().getProfilePics())
-                                                    .placeholder(R.drawable.ic_person_defult)
-                                                    .into(imgPl2Pic);
+
                                         txtPlay2.setText(otheruser.getPlayerinfo().getUserName());
                                         llPlayer2WaitPlayer.setVisibility(View.GONE);
                                         llPlayer2.setVisibility(View.VISIBLE);
@@ -4362,11 +4319,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         txtPlay2Rs.setText(otheruser.getPlayerinfo().getChips());
                                     } else if (otheruser.getSlot().equals(txtPlay3Slot.getText().toString())) {
                                         txtPlay3.setText(otheruser.getPlayerinfo().getUserName());
-                                        if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                            Picasso.get()
-                                                    .load(otheruser.getPlayerinfo().getProfilePics())
-                                                    .placeholder(R.drawable.ic_person_defult)
-                                                    .into(imgPl3Pic);
+
                                         llPlayer3WaitPlayer.setVisibility(View.GONE);
                                         llPlayer3.setVisibility(View.VISIBLE);
                                         llPlayer3.setAlpha(1f);
@@ -4380,21 +4333,13 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         llPlayer4.setAlpha(1f);
                                         llPlayer4.setVisibility(View.VISIBLE);
                                         txtPlay4.setText(otheruser.getPlayerinfo().getUserName());
-                                        if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                            Picasso.get()
-                                                    .load(otheruser.getPlayerinfo().getProfilePics())
-                                                    .placeholder(R.drawable.ic_person_defult)
-                                                    .into(imgPl4Pic);
+
                                         txtPlay4Id.setText(jObje_Otherplayer.getString("id"));
 //                                        txtPl4ChalBlind.setText("New");
                                         txtPlay4Rs.setText(otheruser.getPlayerinfo().getChips());
                                     } else if (otheruser.getSlot().equals(txtPlay5Slot.getText().toString())) {
                                         llPlayer5.setAlpha(1f);
-                                        if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                            Picasso.get()
-                                                    .load(otheruser.getPlayerinfo().getProfilePics())
-                                                    .placeholder(R.drawable.ic_person_defult)
-                                                    .into(imgPl5Pic);
+
                                         llPlayer5WaitPlayer.setVisibility(View.GONE);
                                         llPlayer5.setVisibility(View.VISIBLE);
 //                                        txtPl5ChalBlind.setText("New");
@@ -4403,11 +4348,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         txtPlay5Rs.setText(otheruser.getPlayerinfo().getChips());
                                     } else if (otheruser.getSlot().equals(txtPlay6Slot.getText().toString())) {
                                         txtPlay6.setText(otheruser.getPlayerinfo().getUserName());
-                                        if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                            Picasso.get()
-                                                    .load(otheruser.getPlayerinfo().getProfilePics())
-                                                    .placeholder(R.drawable.ic_person_defult)
-                                                    .into(imgPl6Pic);
+
                                         txtPlay6Id.setText(jObje_Otherplayer.getString("id"));
                                         llPlayer6.setAlpha(1f);
 //                                        txtPl6ChalBlind.setText("new");
@@ -4843,10 +4784,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                     Log.e("profilePic nuskds.", otheruser.getPlayerinfo().getProfilePics());
                                     if (!otheruser.getPlayerinfo().getProfilePics().trim().equals("")) {
 
-                                        Picasso.get()
-                                                .load(otheruser.getPlayerinfo().getProfilePics())
-                                                .placeholder(R.drawable.ic_person_defult)
-                                                .into(imgPl6Pic);
+
                                     }
 
                                     if (otheruser.getSlot().equals("slot5")) {
@@ -4886,20 +4824,13 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         txtPlay2Id.setText(jObje_Otherplayer.getString("id"));
                                         txtPlay2Rs.setText(otheruser.getPlayerinfo().getChips());
                                         txtPlay2.setText(otheruser.getPlayerinfo().getUserName());
-                                        if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                            Picasso.get()
-                                                    .load(otheruser.getPlayerinfo().getProfilePics())
-                                                    .placeholder(R.drawable.ic_person_defult)
-                                                    .into(imgPl2Pic);
+
                                         llPlayer2WaitPlayer.setVisibility(View.GONE);
                                         llPlayer2.setVisibility(View.VISIBLE);
                                     } else if (otheruser.getSlot().equals(txtPlay3Slot.getText().toString())) {
                                         txtPlay3.setText(otheruser.getPlayerinfo().getUserName());
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                            Picasso.get()
-                                                    .load(otheruser.getPlayerinfo().getProfilePics())
-                                                    .placeholder(R.drawable.ic_person_defult)
-                                                    .into(imgPl3Pic);
+
                                         txtPlay3Id.setText(jObje_Otherplayer.getString("id"));
                                         txtPlay3Rs.setText(otheruser.getPlayerinfo().getChips());
                                         llPlayer3WaitPlayer.setVisibility(View.GONE);
@@ -4908,10 +4839,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                                         txtPlay4.setText(otheruser.getPlayerinfo().getUserName());
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                            Picasso.get()
-                                                    .load(otheruser.getPlayerinfo().getProfilePics())
-                                                    .placeholder(R.drawable.ic_person_defult)
-                                                    .into(imgPl4Pic);
+
                                         txtPlay4Id.setText(jObje_Otherplayer.getString("id"));
                                         txtPlay4Rs.setText(otheruser.getPlayerinfo().getChips());
                                         llPlayer4WaitPlayer.setVisibility(View.GONE);
@@ -4920,10 +4848,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                                         txtPlay5.setText(otheruser.getPlayerinfo().getUserName());
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                            Picasso.get()
-                                                    .load(otheruser.getPlayerinfo().getProfilePics())
-                                                    .placeholder(R.drawable.ic_person_defult)
-                                                    .into(imgPl5Pic);
+
                                         txtPlay5Id.setText(jObje_Otherplayer.getString("id"));
                                         txtPlay5Rs.setText(otheruser.getPlayerinfo().getChips());
                                         llPlayer5WaitPlayer.setVisibility(View.GONE);
@@ -4931,10 +4856,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                     } else if (otheruser.getSlot().equals(txtPlay6Slot.getText().toString())) {
                                         txtPlay6.setText(otheruser.getPlayerinfo().getUserName());
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
-                                            Picasso.get()
-                                                    .load(otheruser.getPlayerinfo().getProfilePics())
-                                                    .placeholder(R.drawable.ic_person_defult)
-                                                    .into(imgPl6Pic);
+
                                         txtPlay6Id.setText(jObje_Otherplayer.getString("id"));
 //                                        txtPlay6Rs.setText(otheruser.getPlayerinfo().getChips());
                                         convertedChipformat = Math.round(Double.parseDouble(otheruser.getPlayerinfo().getChips())  * 100.0) / 100.0;
@@ -5907,54 +5829,16 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                         if (numberrr.equals("1")) {
                             name = "A";
-                            priority = 1;
+                            priority = 14;
                         } else if (numberrr.equals("11")) {
                             name = "J";
-                            priority = 4;
+                            priority = 11;
                         } else if (numberrr.equals("12")) {
                             name = "Q";
-                            priority = 3;
+                            priority = 12;
                         } else if (numberrr.equals("13")) {
 
                             name = "K";
-                            priority = 2;
-                        }
-                        else if (numberrr.equals("2")) {
-
-
-                            priority = 5;
-                        }
-                        else if (numberrr.equals("3")) {
-
-
-                            priority = 6;
-                        }else if (numberrr.equals("4")) {
-
-
-                            priority = 7;
-                        }else if (numberrr.equals("5")) {
-
-
-                            priority = 8;
-                        }else if (numberrr.equals("6")) {
-
-
-                            priority = 9;
-                        }else if (numberrr.equals("7")) {
-
-
-                            priority = 10;
-                        }else if (numberrr.equals("8")) {
-
-
-                            priority = 11;
-                        }else if (numberrr.equals("9")) {
-
-
-                            priority = 12;
-                        }else if (numberrr.equals("10")) {
-
-
                             priority = 13;
                         }
 

@@ -74,6 +74,7 @@ public class StartActivity extends AppCompatActivity {
     View flash, bind, bonus;
     CircleImageView profileIv;
     Button updateBtn   ;
+    ImageView inviteBtn ;
     public static ArrayList<Table> arrtable = new ArrayList<>();
 
     //    table_adapter Adapter_table;
@@ -105,6 +106,8 @@ public class StartActivity extends AppCompatActivity {
         flash = findViewById(R.id.flash);
         bind = findViewById(R.id.bind);
         bonus = findViewById(R.id.bonus);
+        inviteBtn = (ImageView) findViewById(R.id.inviteBtn);
+
 
         updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,6 +115,17 @@ public class StartActivity extends AppCompatActivity {
                 Uri uri = Uri.parse(getString(R.string.anouncementUrl)); // missing 'http://' will cause crashed
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
+            }
+        });
+        inviteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                String shareBody = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                startActivity(Intent.createChooser(sharingIntent, "Share via"));
             }
         });
         anouncement.setSelected(true);

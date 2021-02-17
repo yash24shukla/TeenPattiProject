@@ -72,7 +72,7 @@ public class AddcashActivity extends AppCompatActivity implements PaymentResultL
         second = findViewById(R.id.second);
         third = findViewById(R.id.third);
         fourth = findViewById(R.id.fourth);
-        renowPaykun = findViewById(R.id.renowPaykun) ;
+   
         promptsView = li.inflate(R.layout.select_aymentmethod, null);
         alertDialogBuilder = new AlertDialog.Builder(this);
 
@@ -80,26 +80,26 @@ public class AddcashActivity extends AppCompatActivity implements PaymentResultL
         razorpayselectbtn = (Button) promptsView.findViewById(R.id.selectRazorpayBtn);
         alertDialogBuilder.setView(promptsView);
 
-        renowPaykun.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (TextUtils.isEmpty(enteramount.getText().toString().trim())) {
-                    Toast.makeText(AddcashActivity.this, "Please enter amount", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                String samount = enteramount.getText().toString();
-                if (samount.equalsIgnoreCase("100")) {
-                    chips = "125";
-                } else if (samount.equalsIgnoreCase("1500")) {
-                    chips = "1530";
-                } else {
-                    chips = samount;
-                }
-                paykunPayment(samount);
-
-            }
-        });
-
+//        renowPaykun.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if (TextUtils.isEmpty(enteramount.getText().toString().trim())) {
+//                    Toast.makeText(AddcashActivity.this, "Please enter amount", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//                String samount = enteramount.getText().toString();
+//                if (samount.equalsIgnoreCase("100")) {
+//                    chips = "125";
+//                } else if (samount.equalsIgnoreCase("1500")) {
+//                    chips = "1530";
+//                } else {
+//                    chips = samount;
+//                }
+//                paykunPayment(samount);
+//
+//            }
+//        });
+//
 
         close.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,7 +125,7 @@ public class AddcashActivity extends AppCompatActivity implements PaymentResultL
                 } else {
                     chips = samount;
                 }
-                paymentCheckout(samount);
+                buildDialogBox(samount);
             }
         });
 
