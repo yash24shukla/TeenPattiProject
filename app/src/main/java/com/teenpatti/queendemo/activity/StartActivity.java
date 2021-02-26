@@ -107,6 +107,12 @@ public class StartActivity extends AppCompatActivity {
         bind = findViewById(R.id.bind);
         bonus = findViewById(R.id.bonus);
         inviteBtn = (ImageView) findViewById(R.id.inviteBtn);
+        String defaultAmt = SharedPrefs.getString(getApplicationContext(), SharedPrefs.DEFAULTAMT) ;
+        if(defaultAmt == "" || defaultAmt == null){
+            SharedPrefs.save(this, SharedPrefs.DEFAULTAMT, "0") ;
+
+
+        }
 
 
         updateBtn.setOnClickListener(new View.OnClickListener() {
@@ -667,7 +673,7 @@ public class StartActivity extends AppCompatActivity {
                 if (Sucess) {
                     JSONObject jrow = json.getJSONObject("data");
                     SharedPrefs.save(StartActivity.this, SharedPrefs.PROFILEPIC, jrow.getString("profilePic"));
-                    SharedPrefs.save(StartActivity.this, SharedPrefs.CHIPS, jrow.getString("chips"));
+//                    SharedPrefs.save(StartActivity.this, SharedPrefs.CHIPS, jrow.getString("chips"));
                     SharedPrefs.save(StartActivity.this, SharedPrefs.DISPLAY_NAME, jrow.getString("displayName"));
                 }
 

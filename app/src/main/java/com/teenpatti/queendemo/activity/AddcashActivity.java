@@ -13,6 +13,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -51,7 +52,7 @@ public class AddcashActivity extends AppCompatActivity implements PaymentResultL
     View ist, second, third, fourth;
     String chips;
     View promptsView ;
-    Button paykunselectbtn , razorpayselectbtn;
+    ImageView paykunselectbtn , razorpayselectbtn;
     AlertDialog.Builder alertDialogBuilder ;
 
     @Override
@@ -76,8 +77,8 @@ public class AddcashActivity extends AppCompatActivity implements PaymentResultL
         promptsView = li.inflate(R.layout.select_aymentmethod, null);
         alertDialogBuilder = new AlertDialog.Builder(this);
 
-        paykunselectbtn = (Button) promptsView.findViewById(R.id.selectPaykunBtn);
-        razorpayselectbtn = (Button) promptsView.findViewById(R.id.selectRazorpayBtn);
+        paykunselectbtn = (ImageView) promptsView.findViewById(R.id.selectPaykunBtn);
+        razorpayselectbtn = (ImageView ) promptsView.findViewById(R.id.selectRazorpayBtn);
         alertDialogBuilder.setView(promptsView);
 
 //        renowPaykun.setOnClickListener(new View.OnClickListener() {
@@ -193,6 +194,7 @@ public class AddcashActivity extends AppCompatActivity implements PaymentResultL
                 .setNegativeButton("Ok",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,int id) {
+                                ((ViewGroup)promptsView.getParent()).removeView(promptsView);
                                 dialog.cancel();
                             }
                         });

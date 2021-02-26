@@ -131,7 +131,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
     //    KProgressHUD ProgressbarHud;
     String tableposition;
     public static Table SelectTable = new Table();
-    int CurrentPlayerCount = 0, isSlideshow = 0;
+    int CurrentPlayerCount = 0, isSlideshow = 0 , isPackedTrack;
     ImageView imgInformation;
     Dialog dInfoValue;
     TextView txtInfoBootValue, txtInfoMaxBlind, txtInfoChaalLimit, txtInfoPotLimit, txtInfoTableType, txtInfoTableUserConnected;
@@ -1438,7 +1438,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                 String ss = SharedPrefs.getString(Table6_Activity.this, SharedPrefs.USER_ID);
                                 JSONArray jjPlayerrr = jsonTable.getJSONArray(i);
                                 //    for (int j = 0; j < jjPlayerrr.length(); j++) {
-                                Log.e("showw jj ", jjPlayerrr.toString());
+                                Log.d("showwjj ", jjPlayerrr.toString());
                                 JSONObject jj = new JSONObject();
                                 String iddds = "";
                                 jj = jjPlayerrr.getJSONObject(0);
@@ -1449,7 +1449,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                 Log.e("idds and ss", iddds + "  :   " + ss);
                                 if (iddds.equals(ss)) {
                                     CurrentCardss = jcards;
-                                    Log.e("iCurrent cardssss", CurrentCardss.toString());
+                                    Log.d("iCurrentcardssss", CurrentCardss.toString());
                                 }
 
 
@@ -1734,6 +1734,9 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                             lastbet = jsonTable.getString("lastBet");
                             txtPlayRs.setText(jsonTable.getString("lastBet"));
+                           float defaultAmt = Float.valueOf(SharedPrefs.getString(getApplicationContext(), SharedPrefs.DEFAULTAMT)) ;
+                           float temp = Float.valueOf(lastbet) + defaultAmt ;
+                            SharedPrefs.save(getApplicationContext(), SharedPrefs.DEFAULTAMT, String.valueOf(temp)) ;
 
                             txtPlayBlind.setText("Blind\n" + String.valueOf(Math.round(Double.parseDouble(jsonTable.getString("lastBet"))  * 100.0) / 100.0));
                             txtPlayChaal.setText("Chaal\n" + String.valueOf(Math.round(Double.parseDouble(jsonTable.getString("lastBet"))  * 100.0) / 100.0));
@@ -1796,7 +1799,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                                         txtPlayShowSlideshow.setVisibility(View.GONE);
 //                                                        txtPlayShowSlideshow.setAlpha(0.5f);
 //                                                        txtPlayShowSlideshow.setEnabled(false);
-                                                        txtPlayShow.setVisibility(View.INVISIBLE);
+                                                        txtPlayShow.setVisibility(View.VISIBLE);
                                                     }
                                                 } catch (JSONException e) {
                                                     e.printStackTrace();
@@ -2090,7 +2093,9 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                             lastbet = jsonTable.getString("lastBet");
                             txtPlayRs.setText(jsonTable.getString("lastBet"));
-
+                            float defaultAmt = Float.valueOf(SharedPrefs.getString(getApplicationContext(), SharedPrefs.DEFAULTAMT)) ;
+                            float temp = Float.valueOf(lastbet) + defaultAmt ;
+                            SharedPrefs.save(getApplicationContext(), SharedPrefs.DEFAULTAMT, String.valueOf(temp)) ;
                             txtPlayBlind.setText("Blind\n" + String.valueOf(Math.round(Double.parseDouble(jsonTable.getString("lastBet"))  * 100.0) / 100.0));
                             txtPlayChaal.setText("Chaal\n" + String.valueOf(Math.round(Double.parseDouble(jsonTable.getString("lastBet"))  * 100.0) / 100.0));
 
@@ -2152,7 +2157,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                                         txtPlayShowSlideshow.setVisibility(View.GONE);
 //                                                        txtPlayShowSlideshow.setAlpha(0.5f);
 //                                                        txtPlayShowSlideshow.setEnabled(false);
-                                                        txtPlayShow.setVisibility(View.INVISIBLE);
+                                                        txtPlayShow.setVisibility(View.VISIBLE);
                                                     }
                                                 } catch (JSONException e) {
                                                     e.printStackTrace();
@@ -2448,6 +2453,13 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                         try {
                             JSONObject json = new JSONObject(args[0] + "");
                             JSONArray jrow = json.getJSONArray("cardsInfo");
+                            JSONObject cardtypeObj = (JSONObject) json.get("cardType");
+                            if(!cardtypeObj.toString().isEmpty()){
+                                Log.d("cardType" , "cardTypeObject = " + cardtypeObj.toString()) ;
+                            }
+                            String displayTypeName = cardtypeObj.getString("displayName") ;
+                            txtCardSee.setText(displayTypeName);
+                            txtCardSee.setClickable(false);
                             Log.e("cardseen rs", txtPlayRs.getText().toString());
                             if (Myturn.equals("true")) {
                                 lastbet = String.valueOf(Float.parseFloat(txtPlayRs.getText().toString()) + Float.parseFloat(txtPlayRs.getText().toString())) + "";
@@ -2467,7 +2479,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                     Functions.setcard(Table6_Activity.this, imgcard3back, imgcard3num, imgcard3icon, imgcard3Big, "true", row.getString("type"), row.getString("rank"));
                                 }
                             }
-                            txtCardSee.setVisibility(View.GONE);
+
+
                         } catch (Exception e) {
                             e.printStackTrace();
                             Log.e("error", e.getMessage());
@@ -2523,7 +2536,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
         mSocket.on("showWinner", new Emitter.Listener() {
             @Override
             public void call(final Object... args) {
-                Log.e(TAG + "  on", "showWinner  " + args[0]);
+                Log.e(TAG + "  on", "showWinner" + args[0]);
                 try {
                     Thread.sleep(800);
                 } catch (Exception e) {
@@ -2560,14 +2573,14 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                 Functions.displayToast(json.getString("message"));
 
                             txtCardSee.setVisibility(View.GONE);
-                            Log.e("showwinner 1", "show winnnerrr");
+                            Log.d("showwinner1", "show winnnerrr");
                             JSONObject jjob = json.getJSONObject("bet");
                             String Placedby = json.getString("placedBy");
                             JSONObject jsonPlayer = json.getJSONObject("players");
                             ArrayList<User> arrotheruser = new ArrayList<>();
                             Iterator<String> iterator = jsonPlayer.keys();
                             while (iterator.hasNext()) {
-                                Log.e("showwinner 2", "show winnnerrr");
+                                Log.e("showwinner2", "show winnnerrr");
                                 String key = iterator.next();
                                 JSONObject jObje_Otherplayer = new JSONObject(jsonPlayer.optString(key));
                                 User otheruser = new User();
@@ -2665,8 +2678,9 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                 llTableAmountTransfer.setVisibility(View.VISIBLE);
                                 Log.e("transfer won", txtPlay6Id.getText().toString() + "   " + jObje_Otherplayer.getString("id"));
                                 if (jObje_Otherplayer.has("winner")) {
-                                    Log.e("showwinner 6", "show winnnerrr");
+                                    Log.e("showwinner6", "show winnnerrr");
                                     if (jObje_Otherplayer.getString("id").equals(txtPlay2Id.getText().toString())) {
+                                        Log.d("playerwon" , " textplay = " + txtPlay2Id.getText().toString()) ;
 
                                         new Handler().postDelayed(new Runnable() {
                                             @Override
@@ -2701,6 +2715,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         }, 500);
 
                                     } else if (jObje_Otherplayer.getString("id").equals(txtPlay3Id.getText().toString())) {
+                                        Log.d("playerwon" , " textplay = " + txtPlay3Id.getText().toString()) ;
+
                                         new Handler().postDelayed(new Runnable() {
                                             @Override
                                             public void run() {
@@ -2732,6 +2748,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                             }
                                         }, 500);
                                     } else if (jObje_Otherplayer.getString("id").equals(txtPlay4Id.getText().toString())) {
+                                        Log.d("playerwon" , " textplay = " + txtPlay4Id.getText().toString()) ;
 
                                         new Handler().postDelayed(new Runnable() {
                                             @Override
@@ -2767,6 +2784,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         }, 500);
 
                                     } else if (jObje_Otherplayer.getString("id").equals(txtPlay5Id.getText().toString())) {
+                                        Log.d("playerwon" , " textplay = " + txtPlay5Id.getText().toString()) ;
                                         new Handler().postDelayed(new Runnable() {
                                             @Override
                                             public void run() {
@@ -2799,6 +2817,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                             }
                                         }, 500);
                                     } else if (jObje_Otherplayer.getString("id").equals(txtPlay6Id.getText().toString())) {
+                                        Log.d("playerwon" , " textplay = " + txtPlay6Id.getText().toString()) ;
+
                                         new Handler().postDelayed(new Runnable() {
                                             @Override
                                             public void run() {
@@ -2901,6 +2921,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                             arrotheruser = new ArrayList<>();
                             Iterator<String> iterator = jsonPlayer.keys();
                             CurrentPlayerCount = 0;
+                             isPackedTrack = 0 ;
                             isSlideshow = 0;
                             while (iterator.hasNext()) {
                                 String key = iterator.next();
@@ -2925,6 +2946,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                 if (jObje_Otherplayer.getString("active").equals("true")) {
                                     if (jObje_Otherplayer.getString("packed").equals("false"))
                                         CurrentPlayerCount++;
+
                                     if (otheruser.getPlayerinfo().getUserId().equals(SharedPrefs.getString(Table6_Activity.this, SharedPrefs.USER_ID))) {
 
                                         if (jObje_Otherplayer.getString("packed").equals("true")) {
@@ -2987,7 +3009,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                     } else if (otheruser.getPlayerinfo().getUserId().equals(txtPlay2Id.getText().toString())) {
                                         if (jObje_Otherplayer.getString("packed").equals("true")) {
                                             txtPl2ChalBlind.setText(leftaction);
-
+                                            isPackedTrack++ ;
                                             txtPlay2Rs.setText("");
                                             llPlayer2.setAlpha(0.5f);
 
@@ -3015,7 +3037,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                             txtPl3ChalBlind.setText(leftaction);
                                             txtPlay3Rs.setText("");
                                             llPlayer3.setAlpha(0.5f);
-
+                                            isPackedTrack++ ;
 
                                         }
                                         if (jObje_Otherplayer.getString("turn").equals("true")) {
@@ -3038,6 +3060,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         if (jObje_Otherplayer.getString("turn").equals("true")) {
 
                                             if (jObje_Otherplayer.getString("packed").equals("true")) {
+                                                isPackedTrack++ ;
                                                 txtPl4ChalBlind.setText(leftaction);
                                                 txtPlay4Rs.setText("");
                                                 llPlayer4.setAlpha(0.5f);
@@ -3060,6 +3083,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         txtPlay4Rs.setText(jsonObject.getString("chips"));
                                     } else if (otheruser.getPlayerinfo().getUserId().equals(txtPlay5Id.getText().toString())) {
                                         if (jObje_Otherplayer.getString("packed").equals("true")) {
+                                            isPackedTrack++ ;
                                             txtPl5ChalBlind.setText(leftaction);
                                             txtPlay5Rs.setText("");
                                             llPlayer5.setAlpha(0.5f);
@@ -3081,6 +3105,10 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         }
                                         txtPlay5Rs.setText(jsonObject.getString("chips"));
                                     }
+                                    if(isPackedTrack == CurrentPlayerCount) {
+                                        txtCardSee.performClick();
+                                    }
+
 
                                 }
 
@@ -3204,10 +3232,12 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                             final JSONObject json = new JSONObject(args[0] + "");
                             Log.e("betPlaced: ", "json----" + json);
                             String placedby = json.getString("placedBy");
+//                            String totalPlayedAmount = json.getString("totalPlayedAmount");
                             JSONObject jjob = json.getJSONObject("bet");
                             lastAction = jjob.getString("action");
                             LastBetPlaceSideShow = placedby;
                             Log.e("LastBetPlaceSideShow", "betplace" + LastBetPlaceSideShow + " ");
+//                            Log.d("totalPlayedAmount", "totalPlayedAmount" + totalPlayedAmount + " ");
 
                             Log.e("Place By", LastBetPlaceSideShow + " ");
                             if (txtPlay2Id.getText().toString().equals(placedby)) {
@@ -3261,21 +3291,24 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                 playerin.setProfilePics(jsonObject.getString("profilePic"));
                                 otheruser.setPlayerinfo(playerin);
                                 arrotheruser.add(otheruser);
-
+                                final JSONObject jsontable = new JSONObject(json.getString("table"));
                                 if (jObje_Otherplayer.getString("active").equals("true")) {
                                     if (jObje_Otherplayer.getString("packed").equals("false"))
                                         CurrentPlayerCount++;
                                     if (otheruser.getPlayerinfo().getUserId().equals(SharedPrefs.getString(Table6_Activity.this, SharedPrefs.USER_ID))) {
 
                                         if (jObje_Otherplayer.getString("active").equals("true"))
-
-                                            Log.e("turn", jObje_Otherplayer.getString("turn"));
+                                        Log.e("turn", jObje_Otherplayer.getString("turn"));
                                         Myturn = jObje_Otherplayer.getString("turn");
 //                                        txtPlay6Rs.setText(jsonObject.getString("chips"));
                                         convertedChipformat = Math.round(Double.parseDouble(jsonObject.getString("chips"))  * 100.0) / 100.0;
 
                                         txtPlay6Rs.setText(String.valueOf(convertedChipformat));
                                         SharedPrefs.save(Table6_Activity.this, SharedPrefs.CHIPS, jsonObject.getString("chips"));
+
+                                            SharedPrefs.save(getApplicationContext(), SharedPrefs.DEFAULTAMT, jsontable.getString("amount")) ;
+
+
 
 
                                         if (Myturn.equals("true")) {
@@ -3395,7 +3428,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                 }
 
 
-                                final JSONObject jsontable = new JSONObject(json.getString("table"));
+
                                 Log.e(TAG, "jsontable--- " + jsontable);
                                 Json_Table_Info = jsontable;
                                 lastbet = jsontable.getString("lastBet");
@@ -4447,6 +4480,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                             arrotheruser = new ArrayList<>();
                             Iterator<String> iterator = jsonPlayer.keys();
                             CurrentPlayerCount = 0;
+                            isPackedTrack = 0 ;
                             isSlideshow = 0;
 
 
@@ -4542,6 +4576,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                                     } else if (otheruser.getPlayerinfo().getUserId().equals(txtPlay2Id.getText().toString())) {
                                         if (jObje_Otherplayer.getString("turn").equals("true")) {
+                                            isPackedTrack++ ;
+
                                             Functions.Stop_Player_Turn = 1;
                                             NotiMessage = jsonObject.getString("displayName") + " Turn";
                                             new Handler().postDelayed(new Runnable() {
@@ -4557,10 +4593,11 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                             }, 500);
 
                                         }
+                                        llPlayer2.setVisibility(View.GONE);
                                         txtPlay2Rs.setText(jsonObject.getString("chips"));
                                     } else if (otheruser.getPlayerinfo().getUserId().equals(txtPlay3Id.getText().toString())) {
                                         if (jObje_Otherplayer.getString("turn").equals("true")) {
-
+                                            isPackedTrack++ ;
                                             Functions.Stop_Player_Turn = 1;
                                             NotiMessage = jsonObject.getString("displayName") + " Turn";
                                             new Handler().postDelayed(new Runnable() {
@@ -4574,9 +4611,12 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                                 }
                                             }, 500);
                                         }
+                                        llPlayer3.setVisibility(View.GONE);
+
                                         txtPlay3Rs.setText(jsonObject.getString("chips"));
                                     } else if (otheruser.getPlayerinfo().getUserId().equals(txtPlay4Id.getText().toString())) {
                                         if (jObje_Otherplayer.getString("turn").equals("true")) {
+                                            isPackedTrack++ ;
 
                                             Functions.Stop_Player_Turn = 1;
                                             NotiMessage = jsonObject.getString("displayName") + " Turn";
@@ -4591,6 +4631,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                                 }
                                             }, 500);
                                         }
+                                        llPlayer4.setVisibility(View.GONE);
                                         txtPlay4Rs.setText(jsonObject.getString("chips"));
                                     } else if (otheruser.getPlayerinfo().getUserId().equals(txtPlay5Id.getText().toString())) {
                                         if (jObje_Otherplayer.getString("turn").equals("true")) {
@@ -4598,6 +4639,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                                    /*         Functions.Stop_Player_Turn = 0;
                                             Functions.ShowPlayerTurn(llPlayer5,"false");*/
+                                            isPackedTrack++ ;
+
                                             Functions.Stop_Player_Turn = 1;
                                             NotiMessage = jsonObject.getString("displayName") + " Turn";
                                             new Handler().postDelayed(new Runnable() {
@@ -4616,8 +4659,13 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                                 }
                                             }, 500);
                                         }
+                                        llPlayer5.setVisibility(View.GONE);
                                         txtPlay5Rs.setText(jsonObject.getString("chips"));
                                     }
+                                    if(isPackedTrack == CurrentPlayerCount -1){
+                                        txtCardSee.performClick();
+                                    }
+
 
                                 }
                                 final JSONObject jsontable = new JSONObject(json.getString("table"));
@@ -4892,6 +4940,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
             e.printStackTrace();
         }
         Log.e(TAG + "emit ", "joinTable " + json_userinfo.toString());
+        Log.d("emitShow ", "joinTable " + json_userinfo.toString());
         mSocket.emit("joinTable", json_userinfo, new Emitter.Listener() {
             @Override
             public void call(Object... args) {
@@ -6608,6 +6657,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                         Functions.displayToast("You Don't have enough Money!");
 
                     } else {
+
                         JSONObject json = new JSONObject();
                         try {
                             Functions.StopMusic();
@@ -6727,6 +6777,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
         StopTimer = 1;
         Log.d(TAG + " emit ", "seeMyCards " + json.toString());
+        Log.d("emitShow", "seeMyCards " + json.toString());
         mSocket.emit("seeMyCards", json);
     }
 
@@ -6756,6 +6807,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
 
         Functions.Stop_Player_Turn = 1;
+        txtCardSee.setText("SEE");
+        txtCardSee.setClickable(true);
         txtCardSee.setVisibility(View.VISIBLE);
 
 
@@ -6791,6 +6844,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
         llPlayer5.setAlpha(1f);
 
         txtPlayBlind.setVisibility(View.VISIBLE);
+        txtCardSee.setText("SEE");
+        txtCardSee.setClickable(true);
         txtCardSee.setVisibility(View.VISIBLE);
         txtPlayChaal.setVisibility(View.GONE);
 //        txtPlayShowSlideshow.setVisibility(View.GONE);
@@ -6974,7 +7029,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
-                        Rlpl2Card1.setRotation(-20);
+//                        Rlpl2Card1.setRotation(-20);
                     }
 
                     @Override
@@ -6997,7 +7052,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
-                        Rlpl3Card1.setRotation(-20);
+//                        Rlpl3Card1.setRotation(-20);
                     }
 
                     @Override
@@ -7022,7 +7077,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
-                        Rlpl4Card1.setRotation(-20);
+//                        Rlpl4Card1.setRotation(-20);
 
                     }
 
@@ -7047,7 +7102,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
-                        Rlpl5Card1.setRotation(-20);
+//                        Rlpl5Card1.setRotation(-20);
 
                     }
 
@@ -7074,7 +7129,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
-                        Rlpl6Card1.setRotation(-20);
+//                        Rlpl6Card1.setRotation(-20);
 
                     }
 
@@ -7230,7 +7285,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
-                        Rlpl2Card3.setRotation(20);
+//                        Rlpl2Card3.setRotation(20);
 
                     }
 
@@ -7256,7 +7311,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
-                        Rlpl3Card3.setRotation(20);
+//                        Rlpl3Card3.setRotation(20);
 
                     }
 
@@ -7284,7 +7339,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
-                        Rlpl4Card3.setRotation(20);
+//                        Rlpl4Card3.setRotation(20);
 
                     }
 
@@ -7311,7 +7366,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
-                        Rlpl5Card3.setRotation(20);
+//                        Rlpl5Card3.setRotation(20);
 
                     }
 
@@ -7339,7 +7394,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
-                        Rlpl6Card3.setRotation(20);
+//                        Rlpl6Card3.setRotation(20);
 
                     }
 

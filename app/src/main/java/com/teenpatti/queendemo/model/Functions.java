@@ -153,6 +153,11 @@ public class Functions {
                 }
                 d = Drawable.createFromStream(ims, null);
                 imgnum.setImageDrawable(d);
+//                if(ims == context.getAssets().open("card/BlackRank/12.png")){
+//                    LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+//                    lp.setMargins(0 , 6, 0,0);
+//                    imgicon.setLayoutParams(lp);
+//                }
 
             } else if (type.equals("club")) {
                 ims = context.getAssets().open("card/SmallImage/2.png");
@@ -254,7 +259,11 @@ public class Functions {
                 }
                 d = Drawable.createFromStream(ims, null);
                 imgnum.setImageDrawable(d);
-
+//                if(ims == context.getAssets().open("card/BlackRank/12.png")){
+//                    LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+//                    lp.setMargins(0 , 6, 0,0);
+//                    imgicon.setLayoutParams(lp);
+//                }
 
             } else if (type.equals("heart")) {
                 ims = context.getAssets().open("card/SmallImage/3.png");
@@ -367,6 +376,11 @@ public class Functions {
                 }
                 d = Drawable.createFromStream(ims, null);
                 imgnum.setImageDrawable(d);
+//                if(ims == context.getAssets().open("card/BlackRank/12.png")){
+//                    LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+//                    lp.setMargins(0 , 6, 0,0);
+//                    imgicon.setLayoutParams(lp);
+//                }
 
             } else if (type.equals("diamond")) {
                 ims = context.getAssets().open("card/SmallImage/1.png");
@@ -467,6 +481,11 @@ public class Functions {
                 }
                 d = Drawable.createFromStream(ims, null);
                 imgnum.setImageDrawable(d);
+//                if(ims == context.getAssets().open("card/BlackRank/12.png")){
+//                    LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+//                    lp.setMargins(0 , 6, 0,0);
+//                    imgicon.setLayoutParams(lp);
+//                }
 
             }
 

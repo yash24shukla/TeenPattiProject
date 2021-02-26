@@ -186,7 +186,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="@dimen/_40sdp"
+        android:layout_marginLeft="@dimen/_25sdp"
         android:layout_marginBottom="@dimen/_75sdp"
         android:orientation="horizontal">
 
@@ -250,30 +250,30 @@
 
                 <TextView
                     android:id="@+id/txtPl2ChalBlind"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
+                    android:layout_centerInParent="true"
                     android:layout_marginLeft="@dimen/_15sdp"
                     android:layout_marginRight="@dimen/_15sdp"
-                    android:layout_marginBottom="@dimen/_15sdp"
-                    android:background="@drawable/half_circle_image"
+                    android:layout_marginBottom="80dp"
+                    android:elevation="2dp"
                     android:gravity="center|bottom"
                     android:paddingBottom="@dimen/_8sdp"
                     android:text="Chaal"
-                    android:textColor="@color/w3"
-                    android:textSize="@dimen/_7sdp" />
+                    android:textColor="#fff"
+                    android:textSize="@dimen/_10sdp" />
 
 
             </RelativeLayout>
 
             <TextView
                 android:id="@+id/txtPlay2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="78dp"
+                android:layout_height="28dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/_minus7sdp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/avatars"
                 android:fontFamily="@font/regu"
                 android:gravity="center"
                 android:text="Player"
@@ -434,7 +434,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_35sdp"
         android:orientation="horizontal">
 
@@ -497,32 +497,32 @@
 
                 <TextView
                     android:id="@+id/txtPl3ChalBlind"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="-2dp"
                     android:layout_marginRight="@dimen/_15sdp"
-                    android:layout_marginBottom="@dimen/_15sdp"
-                    android:background="@drawable/half_circle_image"
+                    android:layout_marginBottom="84dp"
+                    android:elevation="2dp"
                     android:gravity="center|bottom"
                     android:paddingBottom="@dimen/_8sdp"
                     android:text="Chaal"
-                    android:textColor="@color/w3"
-                    android:textSize="@dimen/_7sdp" />
+                    android:textColor="#fff"
+                    android:textSize="@dimen/_10sdp" />
 
 
             </RelativeLayout>
 
             <TextView
                 android:id="@+id/txtPlay3"
-                android:layout_width="wrap_content"
-                android:layout_height="33dp"
+                android:layout_width="78dp"
+                android:layout_height="28dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/_minus7sdp"
+                android:background="@drawable/avatars"
                 android:fontFamily="@font/regu"
-
                 android:gravity="center"
                 android:text="Player"
                 android:textColor="@android:color/white"
@@ -734,20 +734,19 @@
 
                 <TextView
                     android:id="@+id/txtPl4ChalBlind"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
+                    android:layout_centerInParent="true"
                     android:layout_marginLeft="@dimen/_15sdp"
                     android:layout_marginRight="@dimen/_15sdp"
-                    android:layout_marginBottom="@dimen/_15sdp"
-                    android:background="@drawable/half_circle_image"
-                    android:gravity="center|bottom"
+                    android:layout_marginBottom="81dp"
+                    android:elevation="2dp"
+                    android:gravity="center|top"
                     android:paddingBottom="@dimen/_8sdp"
                     android:text="Chaal"
-                    android:textColor="@color/w3"
-                    android:textSize="@dimen/_7sdp" />
+                    android:textColor="#fff"
+                    android:textSize="10dp" />
 
 
             </RelativeLayout>
@@ -755,17 +754,16 @@
 
             <TextView
                 android:id="@+id/txtPlay4"
-                android:layout_width="wrap_content"
-                android:layout_height="33dp"
+                android:layout_width="78dp"
+                android:layout_height="29dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/_minus7sdp"
-                android:fontFamily="@font/regu"
 
+                android:background="@drawable/avatars"
+                android:fontFamily="@font/regu"
                 android:gravity="center"
                 android:text="Player"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_11sdp" />
-
 
             <TextView
                 android:id="@+id/txtPlay4Rs"
@@ -911,8 +909,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginRight="@dimen/_50sdp"
-        android:layout_marginBottom="@dimen/_85sdp"
+        android:layout_marginRight="@dimen/_45sdp"
+        android:layout_marginBottom="@dimen/_70sdp"
         android:orientation="horizontal">
 
 
@@ -922,7 +920,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <RelativeLayout
                 android:layout_width="@dimen/_85sdp"
@@ -977,20 +975,18 @@
 
                 <TextView
                     android:id="@+id/txtPl5ChalBlind"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
+                    android:layout_centerInParent="true"
                     android:layout_marginLeft="@dimen/_15sdp"
                     android:layout_marginRight="@dimen/_15sdp"
-                    android:layout_marginBottom="@dimen/_15sdp"
-                    android:background="@drawable/half_circle_image"
-                    android:gravity="center|bottom"
+                    android:layout_marginBottom="82dp"
                     android:elevation="2dp"
+                    android:gravity="center|top"
                     android:paddingBottom="@dimen/_8sdp"
                     android:text="Chaal"
-                    android:textColor="@color/w3"
+                    android:textColor="#fff"
                     android:textSize="@dimen/_7sdp" />
 
 
@@ -998,10 +994,11 @@
 
             <TextView
                 android:id="@+id/txtPlay5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="78dp"
+                android:layout_height="28dp"
                 android:layout_gravity="center"
 
+                android:background="@drawable/avatars"
                 android:fontFamily="@font/regu"
                 android:gravity="center"
                 android:text="Player"
@@ -1247,16 +1244,17 @@
 
                     <TextView
                         android:id="@+id/txtPlay6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="78dp"
+                        android:layout_height="28dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/avatars"
                         android:fontFamily="@font/regu"
                         android:gravity="center"
-                        android:text="Player"
                         android:lines="1"
+                        android:text="Player"
                         android:textColor="@android:color/white"
-                        android:textSize="@dimen/_15sdp" />
+                        android:textSize="@dimen/_12sdp" />
 
 
                 </RelativeLayout>
@@ -1445,6 +1443,7 @@
         android:layout_alignParentTop="true"
         android:layout_toLeftOf="@+id/imgInformation"
         android:padding="@dimen/_10sdp"
+
         android:scaleType="centerInside"
         android:src="@drawable/settings_2"
         android:visibility="gone" />
@@ -1459,16 +1458,16 @@
         android:src="@drawable/information"
         android:visibility="gone" />
 
-<!--    <include-->
-<!--        layout="@layout/new_table6_card_layout"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentLeft="true"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_marginStart="-2dp"-->
-<!--        android:layout_marginLeft="-2dp"-->
-<!--        android:layout_marginTop="0dp" />-->
+    <include
+        layout="@layout/new_table6_card_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginLeft="-2dp"
+        android:layout_marginTop="0dp" />
 
     <com.skydoves.elasticviews.ElasticImageView
         android:id="@+id/imgBack"
@@ -1537,7 +1536,7 @@
         android:text="Tip"
         android:textColor="@android:color/white"
         android:textSize="13dp"
-        android:visibility="visible" />
+        android:visibility="gone" />
 
     <LinearLayout
         android:id="@+id/llViewBottomBar"

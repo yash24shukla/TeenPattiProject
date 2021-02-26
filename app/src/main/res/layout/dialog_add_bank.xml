@@ -82,7 +82,7 @@
             android:background="@drawable/thatback"
             android:gravity="center"
             android:hint="IFSC Code"
-            android:inputType="number"
+
             android:padding="10dp"
             android:textColor="@color/black"
             android:textColorHint="@color/grey"

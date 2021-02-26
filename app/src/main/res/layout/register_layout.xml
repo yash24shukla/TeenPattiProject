@@ -103,6 +103,18 @@
                         android:text="Register"
                         android:textColor="#ffffff"
                         android:textSize="18sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginBottom="5dp"
+
+                        android:drawablePadding="10dp"
+                        android:fontFamily="@font/bold"
+                        android:gravity="bottom"
+                        android:text="Register now to get ₹15 bonus"
+                        android:textColor="#ffffff"
+                        android:textSize="18sp" />
 
                     <EditText
                         android:visibility="gone"

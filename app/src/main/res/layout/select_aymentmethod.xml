@@ -6,23 +6,22 @@
     android:layout_height="match_parent">
 
 
-    <Button
+    <ImageView
         android:id="@+id/selectPaykunBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-
+        android:layout_width="120dp"
+        android:layout_height="75dp"
+        android:layout_gravity="top|center"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:text="@string/select_paykun" />
+        android:background="@drawable/paykunicon" />
 
-    <Button
+    <ImageView
         android:id="@+id/selectRazorpayBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_width="133dp"
+        android:layout_height="78dp"
         android:layout_marginEnd="10dp"
+        android:src="@drawable/razorpayicon"
 
-        android:text="@string/select_razorpay" />
+        />
 
 </LinearLayout>

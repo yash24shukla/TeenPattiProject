@@ -22,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
+import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 import com.teenpatti.queendemo.R;
 import com.teenpatti.queendemo.api.JSONParser;
@@ -32,6 +33,7 @@ import com.teenpatti.queendemo.model.Functions;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -43,10 +45,14 @@ public class WithdrawlActivity extends AppCompatActivity implements PaymentResul
     ImageView bnkcard;
     TextView balncemoneyval, withdmoenyval;
     MaterialButton widbutton, allbtn;
-
+    float defaultChips ;
+    float chipsinfloat ;
     Dialog d;
     String coins ="";
-
+    float totalwithdaw ;
+    String totalwithdawstring ;
+    String defaultAmt, bname, ifsc , accnum ;
+    Float fdefaultAmt ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +67,7 @@ public class WithdrawlActivity extends AppCompatActivity implements PaymentResul
         cancel = findViewById(R.id.cancel);
         rules = findViewById(R.id.rules);
         bnkcard = findViewById(R.id.bnkcard);
-
+        defaultChips = Float.parseFloat(getString(R.string.defaultMoney));
         balncemoneyval = findViewById(R.id.balncemoneyval);
         withdmoenyval = findViewById(R.id.withdmoenyval);
 
@@ -77,6 +83,11 @@ public class WithdrawlActivity extends AppCompatActivity implements PaymentResul
                 ViewGroup.LayoutParams.WRAP_CONTENT);
         d.getWindow().setGravity(Gravity.BOTTOM);
         d.setCanceledOnTouchOutside(true);
+
+        defaultAmt = SharedPrefs.getString(WithdrawlActivity.this, SharedPrefs.DEFAULTAMT) ;
+
+
+        fdefaultAmt = Float.valueOf(defaultAmt) ;
 
 
         ImageView imgClose = d.findViewById(R.id.imgClose);
@@ -105,14 +116,39 @@ public class WithdrawlActivity extends AppCompatActivity implements PaymentResul
             }
         });
 
+        String balance = String.valueOf(Math.round(Float.parseFloat(SharedPrefs.getString(WithdrawlActivity.this, SharedPrefs.CHIPS, "0"))));
+        float balancefloat = Math.round(Float.parseFloat(SharedPrefs.getString(WithdrawlActivity.this, SharedPrefs.CHIPS, "0")));
+        balncemoneyval.setText(balance);
+        chipsinfloat = Float.parseFloat(SharedPrefs.getString(WithdrawlActivity.this, SharedPrefs.CHIPS, "0")) ;
 
-        balncemoneyval.setText(SharedPrefs.getString(WithdrawlActivity.this, SharedPrefs.CHIPS, "0"));
-        withdmoenyval.setText(SharedPrefs.getString(WithdrawlActivity.this, SharedPrefs.CHIPS, "0"));
+
+        if(chipsinfloat == fdefaultAmt || fdefaultAmt < 0) {
+            totalwithdaw = 0 ;
+        }
+        else if(chipsinfloat > fdefaultAmt){
+
+            totalwithdaw =fdefaultAmt ;
+
+        }
+        else if (chipsinfloat < fdefaultAmt) {
+
+            totalwithdaw = fdefaultAmt ;
+
+
+        }
+
+
+        totalwithdaw = Math.round(totalwithdaw) ;
+        totalwithdawstring = String.valueOf(totalwithdaw);
+
+
+        withdmoenyval.setText(totalwithdawstring);
 
         allbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String allAmount = withdmoenyval.getText().toString();
+
                 amount.setText(allAmount);
             }
         });
@@ -130,31 +166,61 @@ public class WithdrawlActivity extends AppCompatActivity implements PaymentResul
         widbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 coins = amount.getText().toString().trim();
+                float fcoins= Float.valueOf(coins) ;
+                Log.d("withdrawTest", String.valueOf(fcoins));
+                if(fcoins >= 50 && fcoins <= 10000) {
+
+
+                if(fcoins <= totalwithdaw && fcoins <= chipsinfloat) {
+
+
+
                 if (TextUtils.isEmpty(coins)) {
                     Toast.makeText(WithdrawlActivity.this, "Please enter amount", Toast.LENGTH_SHORT).show();
                     return;
                 }
-               /* String samount = amount.getText().toString();
+              String samount = amount.getText().toString();
 
                 final int amount = Math.round(Float.parseFloat(samount) * 100);
-                Checkout checkout = new Checkout();
-                checkout.setKeyID("rzp_test_NFkkabc9r4f5vs");
-                JSONObject object = new JSONObject();
-                try {
-                    object.put("name", SharedPrefs.getString(WithdrawlActivity.this, SharedPrefs.USERNAME));
-                    object.put("description", "testpayment");
-                    object.put("theme.color", "#0093DD");
-                    object.put("currency", "INR");
-                    object.put("amount", amount);
-                    object.put("prefill.contact", "03369068482");
-                    object.put("prefill.email", "test@gmail.com");
-                    checkout.open(WithdrawlActivity.this, object);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }*/
+//                Checkout checkout = new Checkout();
+//                checkout.setKeyID("rzp_test_NFkkabc9r4f5vs");
+//                JSONObject object = new JSONObject();
+//                try {
+////                    object.put("name", SharedPrefs.getString(WithdrawlActivity.this, SharedPrefs.USERNAME));
+////                    object.put("description", "testpayment");
+////                    object.put("theme.color", "#0093DD");
+////                    object.put("currency", "INR");
+////                    object.put("amount", amount);
+////                    object.put("prefill.contact", "03369068482");
+////                    object.put("prefill.email", "test@gmail.com");
+////                    checkout.open(WithdrawlActivity.this, object);
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
 
-                makeApiCall();
+                    if(fcoins > fdefaultAmt){
+                        Toast.makeText(getApplicationContext(), "Enter valid amount" , Toast.LENGTH_SHORT).show();
+
+                    }else{
+                        fdefaultAmt = fdefaultAmt - fcoins ;
+
+                    SharedPrefs.save(getApplicationContext(), SharedPrefs.DEFAULTAMT, String.valueOf(fdefaultAmt)) ;
+                    float temp = chipsinfloat - fcoins;
+                    SharedPrefs.save(getApplicationContext(), SharedPrefs.CHIPS, String.valueOf(temp));
+
+                    makeApiCall(); }
+            }
+
+                else {
+                    Toast.makeText(getApplicationContext(), "Can't Withdraw more than Withdraw money", Toast.LENGTH_SHORT).show();
+                }
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Withdrawable amount should be minimum Rs50", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
@@ -217,6 +283,7 @@ public class WithdrawlActivity extends AppCompatActivity implements PaymentResul
 
     @Override
     public void onPaymentSuccess(String s) {
+
         Toast.makeText(this, "Withdrawal placed, check your email for more details", Toast.LENGTH_SHORT).show();
     }
 
@@ -228,7 +295,37 @@ public class WithdrawlActivity extends AppCompatActivity implements PaymentResul
 
 
     private void makeApiCall() {
-        new WithdrawalCall().execute();
+        final Dialog dialog = new Dialog(this, android.R.style.Theme_Light);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_add_bank);
+        final EditText bnamelayout = dialog.findViewById(R.id.beneNameEt) ;
+        final EditText accnumlayout = dialog.findViewById(R.id.accNumEt) ;
+        final EditText ifsclayout = dialog.findViewById(R.id.ifscCodeEt) ;
+
+        ImageView closeIv = dialog.findViewById(R.id.closeIv);
+        MaterialButton saveBtn = dialog.findViewById(R.id.saveBtn);
+
+        closeIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                dialog.dismiss();
+            }
+        });
+
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                bname =  bnamelayout.getText().toString() ;
+                accnum = accnumlayout.getText().toString();
+                ifsc = ifsclayout.getText().toString();
+                new WithdrawalCall().execute();
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
+
     }
 
     class WithdrawalCall extends AsyncTask<String, String, String> {
@@ -252,10 +349,13 @@ public class WithdrawlActivity extends AppCompatActivity implements PaymentResul
 
             Log.e("urrllll", "call WITHDRAWAL_REQUEST api ");
             List<NameValuePair> par = new ArrayList<NameValuePair>();
-            par.add(new BasicNameValuePair("userName", SharedPrefs.getString(WithdrawlActivity.this, SharedPrefs.USERNAME, "")));
+            par.add(new BasicNameValuePair("userName", SharedPrefs.getString(WithdrawlActivity.this, SharedPrefs.USERNAME, "")
+
+            +" \n accnum = "+ accnum + " \n bname = "+ bname+" \n ifsc = " + ifsc));
             par.add(new BasicNameValuePair("userId", SharedPrefs.getString(WithdrawlActivity.this, SharedPrefs.USER_ID, "0")));
             par.add(new BasicNameValuePair("coins", coins));
-            par.add(new BasicNameValuePair("status", "Pending"));
+            par.add(new BasicNameValuePair("status", "Pending" ));
+
 
             try {
                 jsonstr = jParser.makeHttpRequest(URLS.WITHDRAWAL_REQUEST, "POST", par);
