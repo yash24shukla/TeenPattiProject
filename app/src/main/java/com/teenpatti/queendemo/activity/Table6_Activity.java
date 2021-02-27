@@ -204,7 +204,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
         Log.e(TAG, "tableposition: " + tableposition);
         SelectTable = (Table) getIntent().getSerializableExtra("selectTable");
         Log.e(TAG, "getPotLimit: " + SelectTable.getPotLimit());
-
+        SharedPrefs.save(this, SharedPrefs.TOTALBET, "0.0") ;
         BindView();
         BindListner();
         SocketON();
@@ -1737,6 +1737,10 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                            float defaultAmt = Float.valueOf(SharedPrefs.getString(getApplicationContext(), SharedPrefs.DEFAULTAMT)) ;
                            float temp = Float.valueOf(lastbet) + defaultAmt ;
                             SharedPrefs.save(getApplicationContext(), SharedPrefs.DEFAULTAMT, String.valueOf(temp)) ;
+                            float totalbet = Float.valueOf(SharedPrefs.getString(getApplicationContext(), SharedPrefs.TOTALBET)) ;
+                            float temptotal = Float.valueOf(totalbet) + Float.valueOf(lastbet) ;
+
+                            SharedPrefs.save(getApplicationContext(), SharedPrefs.TOTALBET, String.valueOf(temptotal)) ;
 
                             txtPlayBlind.setText("Blind\n" + String.valueOf(Math.round(Double.parseDouble(jsonTable.getString("lastBet"))  * 100.0) / 100.0));
                             txtPlayChaal.setText("Chaal\n" + String.valueOf(Math.round(Double.parseDouble(jsonTable.getString("lastBet"))  * 100.0) / 100.0));
@@ -2096,6 +2100,10 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                             float defaultAmt = Float.valueOf(SharedPrefs.getString(getApplicationContext(), SharedPrefs.DEFAULTAMT)) ;
                             float temp = Float.valueOf(lastbet) + defaultAmt ;
                             SharedPrefs.save(getApplicationContext(), SharedPrefs.DEFAULTAMT, String.valueOf(temp)) ;
+                            float totalbet = Float.valueOf(SharedPrefs.getString(getApplicationContext(), SharedPrefs.TOTALBET)) ;
+                            float temptotal = Float.valueOf(totalbet) + Float.valueOf(lastbet) ;
+
+                            SharedPrefs.save(getApplicationContext(), SharedPrefs.TOTALBET, String.valueOf(temptotal)) ;
                             txtPlayBlind.setText("Blind\n" + String.valueOf(Math.round(Double.parseDouble(jsonTable.getString("lastBet"))  * 100.0) / 100.0));
                             txtPlayChaal.setText("Chaal\n" + String.valueOf(Math.round(Double.parseDouble(jsonTable.getString("lastBet"))  * 100.0) / 100.0));
 
@@ -2672,8 +2680,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                     }
 
                                 }
-                                JSONObject jsontable = new JSONObject(json.getString("table"));
-                                txtTableAmountTransfer.setText(String.valueOf(Math.round(Double.parseDouble(jsontable.getString("amount"))  * 100.0) / 100.0));
+                                final JSONObject jsontable = new JSONObject(json.getString("table"));
+                                txtTableAmountTransfer.setText(String.valueOf(Math.round(Double.valueOf(jsontable.getString("amount"))  * 100.0) / 100.0));
                                 final JSONObject jsonObject_playerinfo = new JSONObject(jObje_Otherplayer.getString("playerInfo"));
                                 llTableAmountTransfer.setVisibility(View.VISIBLE);
                                 Log.e("transfer won", txtPlay6Id.getText().toString() + "   " + jObje_Otherplayer.getString("id"));
@@ -2826,6 +2834,12 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                                 try {
 //                                                    txtPlay6Rs.setText(jsonObject_playerinfo.getString("chips"));
                                                     convertedChipformat = Math.round(Double.parseDouble(jsonObject_playerinfo.getString("chips"))  * 100.0) / 100.0;
+                                                    float defaultAmt = Float.valueOf(SharedPrefs.getString(getApplicationContext(), SharedPrefs.DEFAULTAMT)) ;
+                                                    float totalbet = Float.valueOf(SharedPrefs.getString(getApplicationContext(), SharedPrefs.TOTALBET)) ;
+                                                    float temptotal = defaultAmt + Float.valueOf(jsontable.getString("amount"));
+                                                    float temp = temptotal - totalbet ;
+
+                                                    SharedPrefs.save(getApplicationContext(), SharedPrefs.DEFAULTAMT, String.valueOf(temp)) ;
 
                                                     txtPlay6Rs.setText(String.valueOf(convertedChipformat));
                                                     SharedPrefs.save(Table6_Activity.this, SharedPrefs.CHIPS, jsonObject_playerinfo.getString("chips"));
@@ -3306,9 +3320,6 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         txtPlay6Rs.setText(String.valueOf(convertedChipformat));
                                         SharedPrefs.save(Table6_Activity.this, SharedPrefs.CHIPS, jsonObject.getString("chips"));
 
-                                            SharedPrefs.save(getApplicationContext(), SharedPrefs.DEFAULTAMT, jsontable.getString("amount")) ;
-
-
 
 
                                         if (Myturn.equals("true")) {
@@ -3466,6 +3477,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                     }
                                 }
                                 txtPlayRs.setText(lastbet);
+
+
                                 txtPlayBlind.setText("Blind\n" + String.valueOf(Math.round(Double.parseDouble(lastbet)  * 100.0) / 100.0));
 
                                 txtPlayChaal.setText("Chaal\n" + String.valueOf(Math.round(Double.parseDouble(lastbet)  * 100.0) / 100.0));
@@ -6670,6 +6683,15 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                             txtPlayPack.setEnabled(false);
                             txtPlayBlind.setEnabled(false);
                             txtPlayShowSlideshow.setEnabled(false);
+                            Json_Table_Info.getString("lastBet") ;
+                            float defaultAmt = Float.valueOf(SharedPrefs.getString(getApplicationContext(), SharedPrefs.DEFAULTAMT)) ;
+                            float totalbet = Float.valueOf(SharedPrefs.getString(getApplicationContext(), SharedPrefs.TOTALBET)) ;
+                            float temptotal = Float.valueOf(totalbet) + Float.valueOf(Json_Table_Info.getString("lastBet") ) ;
+
+                            SharedPrefs.save(getApplicationContext(), SharedPrefs.TOTALBET, String.valueOf(temptotal)) ;
+
+                            float temp = Float.valueOf(Json_Table_Info.getString("lastBet") ) + defaultAmt ;
+                            SharedPrefs.save(getApplicationContext(), SharedPrefs.DEFAULTAMT, String.valueOf(temp)) ;
 
                             json.put("players", Json_Player_Info);
                             json.put("player", Json_Current_Player);

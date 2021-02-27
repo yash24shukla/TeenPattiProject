@@ -207,8 +207,8 @@ public class WithdrawlActivity extends AppCompatActivity implements PaymentResul
                         fdefaultAmt = fdefaultAmt - fcoins ;
 
                     SharedPrefs.save(getApplicationContext(), SharedPrefs.DEFAULTAMT, String.valueOf(fdefaultAmt)) ;
-                    float temp = chipsinfloat - fcoins;
-                    SharedPrefs.save(getApplicationContext(), SharedPrefs.CHIPS, String.valueOf(temp));
+//                    float temp = chipsinfloat - fcoins;
+//                    SharedPrefs.save(getApplicationContext(), SharedPrefs.CHIPS, String.valueOf(temp));
 
                     makeApiCall(); }
             }
