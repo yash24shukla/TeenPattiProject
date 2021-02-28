@@ -19,7 +19,7 @@ public class SharedPrefs {
     public static final String CLIENT_ID = "display name";
     public static final String USERNAME = "username";
     public static final String GUID = "guid";
-    public static final String DEFAULTAMT = "";
+    public static final String DEFAULTAMT = "0";
     public static final String TOTALBET = "0.0";
     public static final String PASSWORD = "password";
     public static final String CHIPS = "chips";

@@ -1734,8 +1734,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                             lastbet = jsonTable.getString("lastBet");
                             txtPlayRs.setText(jsonTable.getString("lastBet"));
-                           float defaultAmt = Float.valueOf(SharedPrefs.getString(getApplicationContext(), SharedPrefs.DEFAULTAMT)) ;
-                           float temp = Float.valueOf(lastbet) + defaultAmt ;
+                            float defaultAmt = Float.valueOf(SharedPrefs.getString(getApplicationContext(), SharedPrefs.DEFAULTAMT)) ;
+                            float temp = Float.valueOf(lastbet) + defaultAmt ;
                             SharedPrefs.save(getApplicationContext(), SharedPrefs.DEFAULTAMT, String.valueOf(temp)) ;
                             float totalbet = Float.valueOf(SharedPrefs.getString(getApplicationContext(), SharedPrefs.TOTALBET)) ;
                             float temptotal = Float.valueOf(totalbet) + Float.valueOf(lastbet) ;
@@ -1878,7 +1878,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         try {
                                             JSONObject jsontable = new JSONObject(json.getString("table"));
 
-                                           convertedTableCoins = Math.round(Double.parseDouble(jsontable.getString("amount"))  * 100.0) / 100.0;
+                                            convertedTableCoins = Math.round(Double.parseDouble(jsontable.getString("amount"))  * 100.0) / 100.0;
                                             txtTableAmount.setText(String.valueOf(convertedTableCoins));
                                         } catch (JSONException e) {
                                             e.printStackTrace();
@@ -1903,43 +1903,43 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                     txtPlay6.setText(otheruser.getPlayerinfo().getUserName());
                                     if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
-                                    if (otheruser.getSlot().equals("slot5")) {
-                                        txtPlay6Slot.setText("slot5");
-                                        txtPlay5Slot.setText("slot4");
-                                        txtPlay4Slot.setText("slot3");
-                                        txtPlay3Slot.setText("slot2");
-                                        txtPlay2Slot.setText("slot1");
-                                    } else if (otheruser.getSlot().equals("slot4")) {
-                                        txtPlay6Slot.setText("slot4");
-                                        txtPlay5Slot.setText("slot3");
-                                        txtPlay4Slot.setText("slot2");
-                                        txtPlay3Slot.setText("slot1");
-                                        txtPlay2Slot.setText("slot5");
-                                    } else if (otheruser.getSlot().equals("slot3")) {
-                                        txtPlay6Slot.setText("slot3");
-                                        txtPlay5Slot.setText("slot2");
-                                        txtPlay4Slot.setText("slot1");
-                                        txtPlay3Slot.setText("slot5");
-                                        txtPlay2Slot.setText("slot4");
-                                    } else if (otheruser.getSlot().equals("slot2")) {
-                                        txtPlay6Slot.setText("slot2");
-                                        txtPlay5Slot.setText("slot1");
-                                        txtPlay4Slot.setText("slot5");
-                                        txtPlay3Slot.setText("slot4");
-                                        txtPlay2Slot.setText("slot3");
-                                    } else if (otheruser.getSlot().equals("slot1")) {
-                                        txtPlay6Slot.setText("slot1");
-                                        txtPlay5Slot.setText("slot5");
-                                        txtPlay4Slot.setText("slot4");
-                                        txtPlay3Slot.setText("slot3");
-                                        txtPlay2Slot.setText("slot2");
-                                    }
+                                        if (otheruser.getSlot().equals("slot5")) {
+                                            txtPlay6Slot.setText("slot5");
+                                            txtPlay5Slot.setText("slot4");
+                                            txtPlay4Slot.setText("slot3");
+                                            txtPlay3Slot.setText("slot2");
+                                            txtPlay2Slot.setText("slot1");
+                                        } else if (otheruser.getSlot().equals("slot4")) {
+                                            txtPlay6Slot.setText("slot4");
+                                            txtPlay5Slot.setText("slot3");
+                                            txtPlay4Slot.setText("slot2");
+                                            txtPlay3Slot.setText("slot1");
+                                            txtPlay2Slot.setText("slot5");
+                                        } else if (otheruser.getSlot().equals("slot3")) {
+                                            txtPlay6Slot.setText("slot3");
+                                            txtPlay5Slot.setText("slot2");
+                                            txtPlay4Slot.setText("slot1");
+                                            txtPlay3Slot.setText("slot5");
+                                            txtPlay2Slot.setText("slot4");
+                                        } else if (otheruser.getSlot().equals("slot2")) {
+                                            txtPlay6Slot.setText("slot2");
+                                            txtPlay5Slot.setText("slot1");
+                                            txtPlay4Slot.setText("slot5");
+                                            txtPlay3Slot.setText("slot4");
+                                            txtPlay2Slot.setText("slot3");
+                                        } else if (otheruser.getSlot().equals("slot1")) {
+                                            txtPlay6Slot.setText("slot1");
+                                            txtPlay5Slot.setText("slot5");
+                                            txtPlay4Slot.setText("slot4");
+                                            txtPlay3Slot.setText("slot3");
+                                            txtPlay2Slot.setText("slot2");
+                                        }
 
                                 } else {
                                     if (otheruser.getSlot().equals(txtPlay2Slot.getText().toString())) {
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
-                                        txtPlay2.setText(otheruser.getPlayerinfo().getUserName());
+                                            txtPlay2.setText(otheruser.getPlayerinfo().getUserName());
                                         llPlayer2WaitPlayer.setVisibility(View.GONE);
                                         llPlayer2.setVisibility(View.VISIBLE);
                                         ani2.setStartOffset(300 * totalplayer);
@@ -1953,7 +1953,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                     } else if (otheruser.getSlot().equals(txtPlay3Slot.getText().toString())) {
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
-                                        txtPlay3.setText(otheruser.getPlayerinfo().getUserName());
+                                            txtPlay3.setText(otheruser.getPlayerinfo().getUserName());
                                         llPlayer3WaitPlayer.setVisibility(View.GONE);
                                         llPlayer3.setVisibility(View.VISIBLE);
                                         ani3.setStartOffset(300 * totalplayer);
@@ -1977,7 +1977,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         txtPlay4.setText(otheruser.getPlayerinfo().getUserName());
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
-                                        Log.e(TAG, otheruser.getSlot() + "  " + txtPlay4Slot.getText().toString() + "   id   " + jObje_Otherplayer.getString("id"));
+                                            Log.e(TAG, otheruser.getSlot() + "  " + txtPlay4Slot.getText().toString() + "   id   " + jObje_Otherplayer.getString("id"));
                                         txtPlay4Id.setText(jObje_Otherplayer.getString("id"));
                                         txtPlay4Rs.setText(otheruser.getPlayerinfo().getChips());
                                     } else if (otheruser.getSlot().equals(txtPlay5Slot.getText().toString())) {
@@ -1994,14 +1994,14 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         txtPlay5.setText(otheruser.getPlayerinfo().getUserName());
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
-                                        Log.e(TAG, otheruser.getSlot() + "  " + txtPlay5Slot.getText().toString() + "   id   " + jObje_Otherplayer.getString("id"));
+                                            Log.e(TAG, otheruser.getSlot() + "  " + txtPlay5Slot.getText().toString() + "   id   " + jObje_Otherplayer.getString("id"));
                                         txtPlay5Id.setText(jObje_Otherplayer.getString("id"));
                                         txtPlay5Rs.setText(otheruser.getPlayerinfo().getChips());
                                     } else if (otheruser.getSlot().equals(txtPlay6Slot.getText().toString())) {
                                         txtPlay6.setText(otheruser.getPlayerinfo().getUserName());
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
-                                        arrcurrentplayer.add("6");
+                                            arrcurrentplayer.add("6");
                                         llCoinTable6.startAnimation(ani6_back);
                                         if (jObje_Otherplayer.getString("turn").equals("true"))
                                             ani6.setStartOffset(300 * totalplayer);
@@ -2267,43 +2267,43 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                     txtPlay6.setText(otheruser.getPlayerinfo().getUserName());
                                     if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
-                                    if (otheruser.getSlot().equals("slot5")) {
-                                        txtPlay6Slot.setText("slot5");
-                                        txtPlay5Slot.setText("slot4");
-                                        txtPlay4Slot.setText("slot3");
-                                        txtPlay3Slot.setText("slot2");
-                                        txtPlay2Slot.setText("slot1");
-                                    } else if (otheruser.getSlot().equals("slot4")) {
-                                        txtPlay6Slot.setText("slot4");
-                                        txtPlay5Slot.setText("slot3");
-                                        txtPlay4Slot.setText("slot2");
-                                        txtPlay3Slot.setText("slot1");
-                                        txtPlay2Slot.setText("slot5");
-                                    } else if (otheruser.getSlot().equals("slot3")) {
-                                        txtPlay6Slot.setText("slot3");
-                                        txtPlay5Slot.setText("slot2");
-                                        txtPlay4Slot.setText("slot1");
-                                        txtPlay3Slot.setText("slot5");
-                                        txtPlay2Slot.setText("slot4");
-                                    } else if (otheruser.getSlot().equals("slot2")) {
-                                        txtPlay6Slot.setText("slot2");
-                                        txtPlay5Slot.setText("slot1");
-                                        txtPlay4Slot.setText("slot5");
-                                        txtPlay3Slot.setText("slot4");
-                                        txtPlay2Slot.setText("slot3");
-                                    } else if (otheruser.getSlot().equals("slot1")) {
-                                        txtPlay6Slot.setText("slot1");
-                                        txtPlay5Slot.setText("slot5");
-                                        txtPlay4Slot.setText("slot4");
-                                        txtPlay3Slot.setText("slot3");
-                                        txtPlay2Slot.setText("slot2");
-                                    }
+                                        if (otheruser.getSlot().equals("slot5")) {
+                                            txtPlay6Slot.setText("slot5");
+                                            txtPlay5Slot.setText("slot4");
+                                            txtPlay4Slot.setText("slot3");
+                                            txtPlay3Slot.setText("slot2");
+                                            txtPlay2Slot.setText("slot1");
+                                        } else if (otheruser.getSlot().equals("slot4")) {
+                                            txtPlay6Slot.setText("slot4");
+                                            txtPlay5Slot.setText("slot3");
+                                            txtPlay4Slot.setText("slot2");
+                                            txtPlay3Slot.setText("slot1");
+                                            txtPlay2Slot.setText("slot5");
+                                        } else if (otheruser.getSlot().equals("slot3")) {
+                                            txtPlay6Slot.setText("slot3");
+                                            txtPlay5Slot.setText("slot2");
+                                            txtPlay4Slot.setText("slot1");
+                                            txtPlay3Slot.setText("slot5");
+                                            txtPlay2Slot.setText("slot4");
+                                        } else if (otheruser.getSlot().equals("slot2")) {
+                                            txtPlay6Slot.setText("slot2");
+                                            txtPlay5Slot.setText("slot1");
+                                            txtPlay4Slot.setText("slot5");
+                                            txtPlay3Slot.setText("slot4");
+                                            txtPlay2Slot.setText("slot3");
+                                        } else if (otheruser.getSlot().equals("slot1")) {
+                                            txtPlay6Slot.setText("slot1");
+                                            txtPlay5Slot.setText("slot5");
+                                            txtPlay4Slot.setText("slot4");
+                                            txtPlay3Slot.setText("slot3");
+                                            txtPlay2Slot.setText("slot2");
+                                        }
 
                                 } else {
                                     if (otheruser.getSlot().equals(txtPlay2Slot.getText().toString())) {
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
-                                        txtPlay2.setText(otheruser.getPlayerinfo().getUserName());
+                                            txtPlay2.setText(otheruser.getPlayerinfo().getUserName());
                                         llPlayer2WaitPlayer.setVisibility(View.GONE);
                                         llPlayer2.setVisibility(View.VISIBLE);
                                         ani2.setStartOffset(300 * totalplayer);
@@ -2317,7 +2317,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                     } else if (otheruser.getSlot().equals(txtPlay3Slot.getText().toString())) {
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
-                                        txtPlay3.setText(otheruser.getPlayerinfo().getUserName());
+                                            txtPlay3.setText(otheruser.getPlayerinfo().getUserName());
                                         llPlayer3WaitPlayer.setVisibility(View.GONE);
                                         llPlayer3.setVisibility(View.VISIBLE);
                                         ani3.setStartOffset(300 * totalplayer);
@@ -2341,7 +2341,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         txtPlay4.setText(otheruser.getPlayerinfo().getUserName());
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
-                                        Log.e(TAG, otheruser.getSlot() + "  " + txtPlay4Slot.getText().toString() + "   id   " + jObje_Otherplayer.getString("id"));
+                                            Log.e(TAG, otheruser.getSlot() + "  " + txtPlay4Slot.getText().toString() + "   id   " + jObje_Otherplayer.getString("id"));
                                         txtPlay4Id.setText(jObje_Otherplayer.getString("id"));
                                         txtPlay4Rs.setText(otheruser.getPlayerinfo().getChips());
                                     } else if (otheruser.getSlot().equals(txtPlay5Slot.getText().toString())) {
@@ -2358,14 +2358,14 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         txtPlay5.setText(otheruser.getPlayerinfo().getUserName());
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
-                                        Log.e(TAG, otheruser.getSlot() + "  " + txtPlay5Slot.getText().toString() + "   id   " + jObje_Otherplayer.getString("id"));
+                                            Log.e(TAG, otheruser.getSlot() + "  " + txtPlay5Slot.getText().toString() + "   id   " + jObje_Otherplayer.getString("id"));
                                         txtPlay5Id.setText(jObje_Otherplayer.getString("id"));
                                         txtPlay5Rs.setText(otheruser.getPlayerinfo().getChips());
                                     } else if (otheruser.getSlot().equals(txtPlay6Slot.getText().toString())) {
                                         txtPlay6.setText(otheruser.getPlayerinfo().getUserName());
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
-                                        arrcurrentplayer.add("6");
+                                            arrcurrentplayer.add("6");
                                         llCoinTable6.startAnimation(ani6_back);
                                         if (jObje_Otherplayer.getString("turn").equals("true"))
                                             ani6.setStartOffset(300 * totalplayer);
@@ -2918,10 +2918,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                         txtPlayPack.setEnabled(true);
                         txtPlayBlind.setEnabled(true);
                         txtPlayShowSlideshow.setEnabled(true);
-
                         llPlayer6.setAlpha(0.5f);
                         txtPlay6.setText("Pack");
-
 */
                         String leftaction = "Pack";
 
@@ -2935,7 +2933,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                             arrotheruser = new ArrayList<>();
                             Iterator<String> iterator = jsonPlayer.keys();
                             CurrentPlayerCount = 0;
-                             isPackedTrack = 0 ;
+                            isPackedTrack = 0 ;
                             isSlideshow = 0;
                             while (iterator.hasNext()) {
                                 String key = iterator.next();
@@ -3312,7 +3310,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                     if (otheruser.getPlayerinfo().getUserId().equals(SharedPrefs.getString(Table6_Activity.this, SharedPrefs.USER_ID))) {
 
                                         if (jObje_Otherplayer.getString("active").equals("true"))
-                                        Log.e("turn", jObje_Otherplayer.getString("turn"));
+                                            Log.e("turn", jObje_Otherplayer.getString("turn"));
                                         Myturn = jObje_Otherplayer.getString("turn");
 //                                        txtPlay6Rs.setText(jsonObject.getString("chips"));
                                         convertedChipformat = Math.round(Double.parseDouble(jsonObject.getString("chips"))  * 100.0) / 100.0;
@@ -4320,37 +4318,37 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                     txtPlay6.setText(otheruser.getPlayerinfo().getUserName());
                                     if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
-                                    if (otheruser.getSlot().equals("slot5")) {
-                                        txtPlay6Slot.setText("slot5");
-                                        txtPlay5Slot.setText("slot4");
-                                        txtPlay4Slot.setText("slot3");
-                                        txtPlay3Slot.setText("slot2");
-                                        txtPlay2Slot.setText("slot1");
-                                    } else if (otheruser.getSlot().equals("slot4")) {
-                                        txtPlay6Slot.setText("slot4");
-                                        txtPlay5Slot.setText("slot3");
-                                        txtPlay4Slot.setText("slot2");
-                                        txtPlay3Slot.setText("slot1");
-                                        txtPlay2Slot.setText("slot5");
-                                    } else if (otheruser.getSlot().equals("slot3")) {
-                                        txtPlay6Slot.setText("slot3");
-                                        txtPlay5Slot.setText("slot2");
-                                        txtPlay4Slot.setText("slot1");
-                                        txtPlay3Slot.setText("slot5");
-                                        txtPlay2Slot.setText("slot4");
-                                    } else if (otheruser.getSlot().equals("slot2")) {
-                                        txtPlay6Slot.setText("slot2");
-                                        txtPlay5Slot.setText("slot1");
-                                        txtPlay4Slot.setText("slot5");
-                                        txtPlay3Slot.setText("slot4");
-                                        txtPlay2Slot.setText("slot3");
-                                    } else if (otheruser.getSlot().equals("slot1")) {
-                                        txtPlay6Slot.setText("slot1");
-                                        txtPlay5Slot.setText("slot5");
-                                        txtPlay4Slot.setText("slot4");
-                                        txtPlay3Slot.setText("slot3");
-                                        txtPlay2Slot.setText("slot2");
-                                    }
+                                        if (otheruser.getSlot().equals("slot5")) {
+                                            txtPlay6Slot.setText("slot5");
+                                            txtPlay5Slot.setText("slot4");
+                                            txtPlay4Slot.setText("slot3");
+                                            txtPlay3Slot.setText("slot2");
+                                            txtPlay2Slot.setText("slot1");
+                                        } else if (otheruser.getSlot().equals("slot4")) {
+                                            txtPlay6Slot.setText("slot4");
+                                            txtPlay5Slot.setText("slot3");
+                                            txtPlay4Slot.setText("slot2");
+                                            txtPlay3Slot.setText("slot1");
+                                            txtPlay2Slot.setText("slot5");
+                                        } else if (otheruser.getSlot().equals("slot3")) {
+                                            txtPlay6Slot.setText("slot3");
+                                            txtPlay5Slot.setText("slot2");
+                                            txtPlay4Slot.setText("slot1");
+                                            txtPlay3Slot.setText("slot5");
+                                            txtPlay2Slot.setText("slot4");
+                                        } else if (otheruser.getSlot().equals("slot2")) {
+                                            txtPlay6Slot.setText("slot2");
+                                            txtPlay5Slot.setText("slot1");
+                                            txtPlay4Slot.setText("slot5");
+                                            txtPlay3Slot.setText("slot4");
+                                            txtPlay2Slot.setText("slot3");
+                                        } else if (otheruser.getSlot().equals("slot1")) {
+                                            txtPlay6Slot.setText("slot1");
+                                            txtPlay5Slot.setText("slot5");
+                                            txtPlay4Slot.setText("slot4");
+                                            txtPlay3Slot.setText("slot3");
+                                            txtPlay2Slot.setText("slot2");
+                                        }
 
                                 } else {
                                     if (otheruser.getSlot().equals(txtPlay2Slot.getText().toString())) {
@@ -4892,7 +4890,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         txtPlay3.setText(otheruser.getPlayerinfo().getUserName());
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
-                                        txtPlay3Id.setText(jObje_Otherplayer.getString("id"));
+                                            txtPlay3Id.setText(jObje_Otherplayer.getString("id"));
                                         txtPlay3Rs.setText(otheruser.getPlayerinfo().getChips());
                                         llPlayer3WaitPlayer.setVisibility(View.GONE);
                                         llPlayer3.setVisibility(View.VISIBLE);
@@ -4901,7 +4899,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         txtPlay4.setText(otheruser.getPlayerinfo().getUserName());
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
-                                        txtPlay4Id.setText(jObje_Otherplayer.getString("id"));
+                                            txtPlay4Id.setText(jObje_Otherplayer.getString("id"));
                                         txtPlay4Rs.setText(otheruser.getPlayerinfo().getChips());
                                         llPlayer4WaitPlayer.setVisibility(View.GONE);
                                         llPlayer4.setVisibility(View.VISIBLE);
@@ -4910,7 +4908,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         txtPlay5.setText(otheruser.getPlayerinfo().getUserName());
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
-                                        txtPlay5Id.setText(jObje_Otherplayer.getString("id"));
+                                            txtPlay5Id.setText(jObje_Otherplayer.getString("id"));
                                         txtPlay5Rs.setText(otheruser.getPlayerinfo().getChips());
                                         llPlayer5WaitPlayer.setVisibility(View.GONE);
                                         llPlayer5.setVisibility(View.VISIBLE);
@@ -4918,7 +4916,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         txtPlay6.setText(otheruser.getPlayerinfo().getUserName());
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
-                                        txtPlay6Id.setText(jObje_Otherplayer.getString("id"));
+                                            txtPlay6Id.setText(jObje_Otherplayer.getString("id"));
 //                                        txtPlay6Rs.setText(otheruser.getPlayerinfo().getChips());
                                         convertedChipformat = Math.round(Double.parseDouble(otheruser.getPlayerinfo().getChips())  * 100.0) / 100.0;
 
@@ -5082,26 +5080,19 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
             @Override
             public void run() {
                 while (pStatus <= 100) {
-
                     if (Myturn.equals("true")) {
                         if (StopTimer == 1) {
                             break;
                         }
                     }
-
-
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-
                             Progresssbarrr.setProgress(pStatus);
-
-
                             if (Myturn.equals("true")) {
                                 if (pStatus == 99) {
                                     Functions.StopMusic();
                                     txtPlayPack.performLongClick();
-
                                     StopTimer = 1;
                                     Functions.StopMusic();
                                     mSocket.off();
@@ -5110,14 +5101,10 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                     mSocket.disconnect();
                                     overridePendingTransition(R.anim.intent_side_left, R.anim.intent_slide_to_right);
                                     finish();
-
                                 }
                             }
-
                         }
                     });
-
-
                     try {
                         if (Myturn.equals("true")) {
                             Thread.sleep(500);
@@ -5180,7 +5167,6 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
 
         /*anim_round4.setInterpolator(new LinearInterpolator());
-
         RotateAnimation rotateAnimation1 = new RotateAnimation(0, 360,
                 Animation.RELATIVE_TO_SELF, 0.5f,
                 Animation.RELATIVE_TO_SELF, 0.5f);
@@ -5204,7 +5190,6 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                 imgWinningImage3.setVisibility(View.VISIBLE);
                 imgWinningImage4.setVisibility(View.VISIBLE);
                 imgWinningImage5.setVisibility(View.VISIBLE);
-
                 imgWinningImage6.startAnimation(anim_round6);
                 imgWinningImage6.setVisibility(View.VISIBLE);
             }
@@ -6287,7 +6272,6 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                     json.put("table", Json_Table_Info);
                     json.put("tableId", table_id);
                     json.put("placedTo", LastSideshowplaceBy);
-
                     JSONObject json_userinfo = new JSONObject();
                     json_userinfo.put("amount", (int) Float.parseFloat(txtPlayRs.getText().toString()));
                     json_userinfo.put("blind", false);
@@ -6473,7 +6457,6 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                     e.printStackTrace();
                 }
               /*  } else {
-
                 }
 */
             }
@@ -6558,12 +6541,9 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                 dReplaceCards.show();
 
                 /*
-
-
                 JSONArray NewJsonArray = new JSONArray();
                 try {
                     Log.e("cardsss", CurrentCardss.toString());
-
                     JSONObject jCurrentCards = CurrentCardss;
                     JSONArray jrrow = jCurrentCards.getJSONArray("cards");
                     NewJsonArray = new JSONArray();
@@ -6577,11 +6557,9 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                         NewObject.put("id", jjj.getString("id"));
                         NewJsonArray.put(NewObject);
                     }
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
                 JSONObject json = new JSONObject();
                 try {
                     json.put("cards", NewJsonArray);
@@ -6592,7 +6570,6 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
                 StopTimer = 1;
                 Log.e(TAG + " emit ", "ReplaceCard " + json.toString());
                 mSocket.emit("ReplaceCard", json, new Emitter.Listener() {
