@@ -22,6 +22,7 @@ public class URLS {
     public static String URL_GIFTS = "/gift/getGifts";
 
     public static String URL_EDITUSER = Main_Domain + "/admin/action_update_user.php";
+    public static String URL_EDITUSERBYEMAIL = URLS.Domain + "/user/editUserByEmail";
 
     public static String URL_PROFILEPICUPDATE = "/user/updateProfilePic";
 
@@ -33,6 +34,7 @@ public class URLS {
 
 
     public static String URL_CHANGEPASS = "/user/changePassword";
+    public static String URL_CHANGEPASSWITHEMAil =  URLS.Domain +"/user/changePasswordByEmail";
 
     public static String PROFILE_BASE = Main_Domain + "/admin/upload/user/";
 
@@ -61,6 +63,7 @@ public class URLS {
     public static final String WITHDRAWAL_REQUEST = URLS.Domain + "/user/withdrawal_request";
 
     public static final String ADD_CHIPS = URLS.Domain + "/user/addChips";
+    public static final String REMOVE_CHIPS = URLS.Domain + "/user/removeCoin";
 
     public static final String GET_ALL_POSTS = URLS.Domain + "/user/posts";
 

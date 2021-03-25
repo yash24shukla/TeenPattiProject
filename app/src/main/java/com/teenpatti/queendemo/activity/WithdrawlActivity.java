@@ -1,6 +1,13 @@
 package com.teenpatti.queendemo.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import okhttp3.FormBody;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -21,6 +28,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.google.android.material.button.MaterialButton;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
@@ -32,6 +43,7 @@ import com.teenpatti.queendemo.files.URLS;
 import com.teenpatti.queendemo.model.Functions;
 
 import org.apache.http.NameValuePair;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -53,6 +65,12 @@ public class WithdrawlActivity extends AppCompatActivity implements PaymentResul
     String totalwithdawstring ;
     String defaultAmt, bname, ifsc , accnum ;
     Float fdefaultAmt ;
+    JSONParser jParser = new JSONParser();
+    boolean Sucess = false;
+    String jsonstr = null;
+    float fcoins ;
+    JSONObject json;
+    String msg = "Something went wrong";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,8 +88,6 @@ public class WithdrawlActivity extends AppCompatActivity implements PaymentResul
         defaultChips = Float.parseFloat(getString(R.string.defaultMoney));
         balncemoneyval = findViewById(R.id.balncemoneyval);
         withdmoenyval = findViewById(R.id.withdmoenyval);
-
-
         d = new Dialog(WithdrawlActivity.this);
         d.requestWindowFeature(Window.FEATURE_NO_TITLE);
         d.setContentView(R.layout.table_info_dialog);
@@ -83,7 +99,6 @@ public class WithdrawlActivity extends AppCompatActivity implements PaymentResul
                 ViewGroup.LayoutParams.WRAP_CONTENT);
         d.getWindow().setGravity(Gravity.BOTTOM);
         d.setCanceledOnTouchOutside(true);
-
         defaultAmt = SharedPrefs.getString(WithdrawlActivity.this, SharedPrefs.DEFAULTAMT) ;
 
 
@@ -168,7 +183,7 @@ public class WithdrawlActivity extends AppCompatActivity implements PaymentResul
             public void onClick(View v) {
 
                 coins = amount.getText().toString().trim();
-                float fcoins= Float.valueOf(coins) ;
+               fcoins= Float.valueOf(coins) ;
                 Log.d("withdrawTest", String.valueOf(fcoins));
                 if(fcoins >= 50 && fcoins <= 10000) {
 
@@ -204,13 +219,11 @@ public class WithdrawlActivity extends AppCompatActivity implements PaymentResul
                         Toast.makeText(getApplicationContext(), "Enter valid amount" , Toast.LENGTH_SHORT).show();
 
                     }else{
-                        fdefaultAmt = fdefaultAmt - fcoins ;
+                        makeApiCall();
 
-                    SharedPrefs.save(getApplicationContext(), SharedPrefs.DEFAULTAMT, String.valueOf(fdefaultAmt)) ;
-//                    float temp = chipsinfloat - fcoins;
-//                    SharedPrefs.save(getApplicationContext(), SharedPrefs.CHIPS, String.valueOf(temp));
 
-                    makeApiCall(); }
+
+                    }
             }
 
                 else {
@@ -320,7 +333,63 @@ public class WithdrawlActivity extends AppCompatActivity implements PaymentResul
                 bname =  bnamelayout.getText().toString() ;
                 accnum = accnumlayout.getText().toString();
                 ifsc = ifsclayout.getText().toString();
-                new WithdrawalCall().execute();
+                fdefaultAmt = fdefaultAmt - fcoins ;
+                float temp = chipsinfloat - fcoins;
+                fdefaultAmt = fdefaultAmt - fcoins;
+                SharedPrefs.save(getApplicationContext(), SharedPrefs.DEFAULTAMT, String.valueOf(fdefaultAmt)) ;
+
+                Log.d("withdrawTest" , "userId = " + SharedPrefs.getString(getApplicationContext(), SharedPrefs.USER_ID, "0")) ;
+                Log.d("withdrawTest" , "coins = " +String.valueOf(temp)) ;
+                SharedPrefs.save(getApplicationContext(), SharedPrefs.CHIPS, String.valueOf(temp));
+
+
+                List<NameValuePair> par = new ArrayList<NameValuePair>();
+                par.add(new BasicNameValuePair("userId", SharedPrefs.getString(getApplicationContext(), SharedPrefs.USER_ID, "0")));
+                par.add(new BasicNameValuePair("coins", String.valueOf(fcoins)));
+                Log.d("withdrawTest" , "userId = " + SharedPrefs.getString(getApplicationContext(), SharedPrefs.USER_ID, "0")) ;
+                Log.d("withdrawTest" , "coins = " +String.valueOf(fcoins)) ;
+
+                try {
+
+                    AndroidNetworking.post(URLS.REMOVE_CHIPS)
+                            .addHeaders("Content-Type" , "application/json")
+                            .addBodyParameter("userId",  SharedPrefs.getString(getApplicationContext(), SharedPrefs.USER_ID, "0"))
+                            .addBodyParameter("coins", String.valueOf(fcoins))
+                            .setTag("test")
+                            .setPriority(Priority.IMMEDIATE)
+                            .build()
+                            .getAsJSONObject(new JSONObjectRequestListener() {
+                                @Override
+                                public void onResponse(JSONObject response) {
+                                    Log.d("responseWithdraw", URLS.REMOVE_CHIPS + " => " + response.toString());
+                                    new WithdrawalCall().execute();
+
+                                }
+
+                                @Override
+                                public void onError(ANError anError) {
+
+                                }
+                            });
+
+//                            jsonstr = jParser.makeHttpRequest(URLS.REMOVE_CHIPS, "POST", par);
+//                            Log.d("responseWithdraw", URLS.REMOVE_CHIPS + " => " + jsonstr);
+//                            json = new JSONObject(jsonstr);
+//                            Sucess = json.getBoolean("success");
+//                            if (Sucess) {
+//
+//
+//                            } else {
+//                                msg = json.getString("message");
+//                            }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+
+                }
+
+
+
                 dialog.dismiss();
             }
         });
@@ -329,7 +398,7 @@ public class WithdrawlActivity extends AppCompatActivity implements PaymentResul
     }
 
     class WithdrawalCall extends AsyncTask<String, String, String> {
-        JSONParser jParser = new JSONParser();
+
         boolean Sucess = false;
         String jsonstr = null;
         JSONObject json;

@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rlTable"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,7 +19,7 @@
 
     <ImageView
         android:id="@+id/backgroundtable"
-        android:layout_width="701dp"
+        android:layout_width="650dp"
         android:layout_height="358dp"
 
         android:layout_centerHorizontal="true"
@@ -187,7 +188,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="@dimen/_25sdp"
-        android:layout_marginBottom="@dimen/_75sdp"
+        android:layout_marginBottom="@dimen/_78sdp"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -226,8 +227,8 @@
 
                 <ImageView
                     android:id="@+id/imgPl2Pic"
-                    android:layout_width="@dimen/_55sdp"
-                    android:layout_height="@dimen/_55sdp"
+                    android:layout_width="71dp"
+                    android:layout_height="63dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:elevation="1dp"
@@ -264,21 +265,26 @@
                     android:textColor="#fff"
                     android:textSize="@dimen/_10sdp" />
 
+                <TextView
+                    android:id="@+id/txtPlay2"
+                    android:layout_width="65dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="22dp"
+                    android:layout_marginBottom="1dp"
+                    android:background="@drawable/avatars"
+                    android:fontFamily="@font/regu"
+                    android:gravity="center"
+                    android:text="Player"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_7sdp" />
+
 
             </RelativeLayout>
-
-            <TextView
-                android:id="@+id/txtPlay2"
-                android:layout_width="78dp"
-                android:layout_height="28dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/avatars"
-                android:fontFamily="@font/regu"
-                android:gravity="center"
-                android:text="Player"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/_11sdp" />
 
 
             <TextView
@@ -470,16 +476,18 @@
                     android:layout_centerInParent="true"
                     android:src="@drawable/vc_gift_icon" />
 
+
                 <ImageView
                     android:id="@+id/imgPl3Pic"
-                    android:layout_width="@dimen/_55sdp"
-                    android:layout_height="@dimen/_55sdp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_width="71dp"
+                    android:layout_height="63dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:layout_marginEnd="@dimen/_1sdp"
+                    android:layout_marginBottom="@dimen/_1sdp"
                     android:elevation="1dp"
                     android:src="@drawable/ic_person_defult" />
-
 
                 <ProgressBar
                     android:id="@+id/Progresspl3"
@@ -503,9 +511,9 @@
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="@dimen/_15sdp"
-                    android:layout_marginTop="-2dp"
+                    android:layout_marginTop="7dp"
                     android:layout_marginRight="@dimen/_15sdp"
-                    android:layout_marginBottom="84dp"
+                    android:layout_marginBottom="76dp"
                     android:elevation="2dp"
                     android:gravity="center|bottom"
                     android:paddingBottom="@dimen/_8sdp"
@@ -513,20 +521,26 @@
                     android:textColor="#fff"
                     android:textSize="@dimen/_10sdp" />
 
+                <TextView
+                    android:id="@+id/txtPlay3"
+                    android:layout_width="65dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/imgPl3Pic"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginEnd="23dp"
+                    android:layout_marginBottom="3dp"
+                    android:background="@drawable/avatars"
+                    android:fontFamily="@font/regu"
+                    android:gravity="center"
+                    android:text="Player"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_7sdp" />
+
 
             </RelativeLayout>
-
-            <TextView
-                android:id="@+id/txtPlay3"
-                android:layout_width="78dp"
-                android:layout_height="28dp"
-                android:layout_gravity="center"
-                android:background="@drawable/avatars"
-                android:fontFamily="@font/regu"
-                android:gravity="center"
-                android:text="Player"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/_11sdp" />
 
 
             <TextView
@@ -705,13 +719,15 @@
 
                 <ImageView
                     android:id="@+id/imgPl4Pic"
-                    android:layout_width="@dimen/_55sdp"
-                    android:layout_height="@dimen/_55sdp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:layout_margin="@dimen/_5sdp"
-                    android:elevation="1dp"
+                    android:layout_width="78dp"
+                    android:layout_height="63dp"
 
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:elevation="1dp"
                     android:src="@drawable/ic_person_defult" />
 
 
@@ -748,22 +764,28 @@
                     android:textColor="#fff"
                     android:textSize="10dp" />
 
+                <TextView
+                    android:id="@+id/txtPlay4"
+                    android:layout_width="72dp"
+                    android:layout_height="22dp"
+                    android:layout_alignParentStart="true"
+
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="19dp"
+                    android:layout_marginBottom="1dp"
+                    android:background="@drawable/avatars"
+                    android:fontFamily="@font/regu"
+                    android:gravity="center"
+                    android:text="Player"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_8sdp" />
+
 
             </RelativeLayout>
 
-
-            <TextView
-                android:id="@+id/txtPlay4"
-                android:layout_width="78dp"
-                android:layout_height="29dp"
-                android:layout_gravity="center"
-
-                android:background="@drawable/avatars"
-                android:fontFamily="@font/regu"
-                android:gravity="center"
-                android:text="Player"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/_11sdp" />
 
             <TextView
                 android:id="@+id/txtPlay4Rs"
@@ -909,8 +931,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginRight="@dimen/_45sdp"
-        android:layout_marginBottom="@dimen/_70sdp"
+        android:layout_marginRight="@dimen/_35sdp"
+        android:layout_marginBottom="@dimen/_80sdp"
         android:orientation="horizontal">
 
 
@@ -920,21 +942,19 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <RelativeLayout
                 android:layout_width="@dimen/_85sdp"
                 android:layout_height="@dimen/_85sdp">
 
+
                 <ImageView
                     android:id="@+id/imgWinningImage5"
-                    android:layout_width="@dimen/_85sdp"
-                    android:layout_height="@dimen/_85sdp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:scaleType="centerCrop"
                     android:src="@drawable/winning_circle" />
-
 
                 <ImageView
                     android:id="@+id/imgGift5"
@@ -947,12 +967,11 @@
 
                 <ImageView
                     android:id="@+id/imgPl5Pic"
-                    android:layout_width="@dimen/_55sdp"
-                    android:layout_height="@dimen/_55sdp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:elevation="1dp"
+                    android:layout_width="71dp"
+                    android:layout_height="63dp"
+                    android:layout_centerInParent="true"
 
+                    android:elevation="1dp"
                     android:src="@drawable/ic_person_defult" />
 
 
@@ -989,21 +1008,27 @@
                     android:textColor="#fff"
                     android:textSize="@dimen/_7sdp" />
 
+                <TextView
+                    android:id="@+id/txtPlay5"
+                    android:layout_width="65dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentStart="true"
+
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="3dp"
+                    android:background="@drawable/avatars"
+                    android:fontFamily="@font/regu"
+                    android:gravity="center"
+                    android:text="Player"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_8sdp" />
+
 
             </RelativeLayout>
-
-            <TextView
-                android:id="@+id/txtPlay5"
-                android:layout_width="78dp"
-                android:layout_height="28dp"
-                android:layout_gravity="center"
-
-                android:background="@drawable/avatars"
-                android:fontFamily="@font/regu"
-                android:gravity="center"
-                android:text="Player"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/_11sdp" />
 
             <TextView
                 android:id="@+id/txtPlay5Rs"
@@ -1465,8 +1490,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="-2dp"
-        android:layout_marginLeft="-2dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
         android:layout_marginTop="0dp" />
 
     <com.skydoves.elasticviews.ElasticImageView
@@ -1546,7 +1571,8 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:paddingBottom="@dimen/_5sdp"
-        android:visibility="gone">
+        android:visibility="gone"
+        tools:visibility="gone">
 
         <LinearLayout
 

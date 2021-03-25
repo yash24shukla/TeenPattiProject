@@ -208,7 +208,7 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
         BindView();
         BindListner();
         SocketON();
-
+        llViewBottomBar.setVisibility(View.GONE);
         new Asynctask_Giftss().execute();
         new Check_Player_Asynctask().execute();
         new CheckLogin_Asyctask().execute();
@@ -1715,7 +1715,6 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                             llPlayer3WaitPlayer.setVisibility(View.VISIBLE);
                             llPlayer4WaitPlayer.setVisibility(View.VISIBLE);
                             llPlayer5WaitPlayer.setVisibility(View.VISIBLE);
-
                             llPlayer2.setVisibility(View.GONE);
                             llPlayer3.setVisibility(View.GONE);
                             llPlayer4.setVisibility(View.GONE);
@@ -1799,11 +1798,19 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                                 try {
                                                     if (jObje_Otherplayer.getString("isSideShowAvailable").equals("true")) {
                                                         isSlideshow = 1;
+
                                                     } else {
                                                         txtPlayShowSlideshow.setVisibility(View.GONE);
 //                                                        txtPlayShowSlideshow.setAlpha(0.5f);
 //                                                        txtPlayShowSlideshow.setEnabled(false);
-                                                        txtPlayShow.setVisibility(View.VISIBLE);
+//                                                        if (totalplayer == 2) {
+//                                                            txtPlayShow.setVisibility(View.VISIBLE);
+//
+//
+//                                                        }
+//                                                        else{
+//                                                            txtPlayShow.setVisibility(View.INVISIBLE);
+//                                                        }
                                                     }
                                                 } catch (JSONException e) {
                                                     e.printStackTrace();
@@ -1841,21 +1848,27 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
                                 try {
                                     if (otheruser.getPlayerinfo().getUserId().equals(txtPlay2Id.getText().toString())) {
+                                        txtPl2ChalBlind.setText("Blind");
                                         if (jObje_Otherplayer.getString("turn").equals("true")) {
                                             StopTimer = 0;
                                             StartTimer(Progresspl2);
                                         }
                                     } else if (otheruser.getPlayerinfo().getUserId().equals(txtPlay3Id.getText().toString())) {
+                                        txtPl3ChalBlind.setText("Blind");
                                         if (jObje_Otherplayer.getString("turn").equals("true")) {
                                             StopTimer = 0;
                                             StartTimer(Progresspl3);
                                         }
                                     } else if (otheruser.getPlayerinfo().getUserId().equals(txtPlay4Id.getText().toString())) {
+                                        txtPl4ChalBlind.setText("Blind");
+
                                         if (jObje_Otherplayer.getString("turn").equals("true")) {
                                             StopTimer = 0;
                                             StartTimer(Progresspl4);
                                         }
                                     } else if (otheruser.getPlayerinfo().getUserId().equals(txtPlay5Id.getText().toString())) {
+                                        txtPl5ChalBlind.setText("Blind");
+
                                         if (jObje_Otherplayer.getString("turn").equals("true")) {
                                             StopTimer = 0;
                                             StartTimer(Progresspl5);
@@ -1940,6 +1953,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
                                             txtPlay2.setText(otheruser.getPlayerinfo().getUserName());
+                                        if(txtPlay2.getText().toString().length() >=10)
+                                            txtPlay2.setText(txtPlay2.getText().toString().substring(0,7));
                                         llPlayer2WaitPlayer.setVisibility(View.GONE);
                                         llPlayer2.setVisibility(View.VISIBLE);
                                         ani2.setStartOffset(300 * totalplayer);
@@ -1954,6 +1969,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
                                             txtPlay3.setText(otheruser.getPlayerinfo().getUserName());
+                                        txtPlay3.setText(txtPlay3.getText().toString().substring(0,7));
+
                                         llPlayer3WaitPlayer.setVisibility(View.GONE);
                                         llPlayer3.setVisibility(View.VISIBLE);
                                         ani3.setStartOffset(300 * totalplayer);
@@ -1975,6 +1992,9 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         llPlayer4WaitPlayer.setVisibility(View.GONE);
                                         llPlayer4.setVisibility(View.VISIBLE);
                                         txtPlay4.setText(otheruser.getPlayerinfo().getUserName());
+                                        if(txtPlay4.getText().toString().length() >=10)
+                                        txtPlay4.setText(txtPlay4.getText().toString().substring(0,7));
+
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
                                             Log.e(TAG, otheruser.getSlot() + "  " + txtPlay4Slot.getText().toString() + "   id   " + jObje_Otherplayer.getString("id"));
@@ -1992,6 +2012,9 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         llPlayer5WaitPlayer.setVisibility(View.GONE);
                                         llPlayer5.setVisibility(View.VISIBLE);
                                         txtPlay5.setText(otheruser.getPlayerinfo().getUserName());
+                                        if(txtPlay5.getText().toString().length() >=10)
+                                        txtPlay5.setText(txtPlay5.getText().toString().substring(0,7));
+
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
                                             Log.e(TAG, otheruser.getSlot() + "  " + txtPlay5Slot.getText().toString() + "   id   " + jObje_Otherplayer.getString("id"));
@@ -2078,12 +2101,16 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                             llPlayer3WaitPlayer.setVisibility(View.VISIBLE);
                             llPlayer4WaitPlayer.setVisibility(View.VISIBLE);
                             llPlayer5WaitPlayer.setVisibility(View.VISIBLE);
+                            txtPl5ChalBlind.setText("Blind");
+                            txtPl2ChalBlind.setText("Blind");
+                            txtPl3ChalBlind.setText("Blind");
+                            txtPl4ChalBlind.setText("Blind");
+                            isPackedTrack = 0 ;
 
                             llPlayer2.setVisibility(View.GONE);
                             llPlayer3.setVisibility(View.GONE);
                             llPlayer4.setVisibility(View.GONE);
                             llPlayer5.setVisibility(View.GONE);
-
                             final JSONObject json = new JSONObject(args[0] + "");
 
                             JSONObject jsonTable = json.getJSONObject("table");
@@ -2165,7 +2192,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                                         txtPlayShowSlideshow.setVisibility(View.GONE);
 //                                                        txtPlayShowSlideshow.setAlpha(0.5f);
 //                                                        txtPlayShowSlideshow.setEnabled(false);
-                                                        txtPlayShow.setVisibility(View.VISIBLE);
+
+//                                                        txtPlayShow.setVisibility(View.VISIBLE);
                                                     }
                                                 } catch (JSONException e) {
                                                     e.printStackTrace();
@@ -2304,6 +2332,9 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
                                             txtPlay2.setText(otheruser.getPlayerinfo().getUserName());
+                                        if(txtPlay2.getText().toString().length() >=10)
+                                        txtPlay2.setText(txtPlay2.getText().toString().substring(0,7));
+
                                         llPlayer2WaitPlayer.setVisibility(View.GONE);
                                         llPlayer2.setVisibility(View.VISIBLE);
                                         ani2.setStartOffset(300 * totalplayer);
@@ -2318,6 +2349,9 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
                                             txtPlay3.setText(otheruser.getPlayerinfo().getUserName());
+                                        if(txtPlay3.getText().toString().length() >=10)
+                                        txtPlay3.setText(txtPlay3.getText().toString().substring(0,7));
+
                                         llPlayer3WaitPlayer.setVisibility(View.GONE);
                                         llPlayer3.setVisibility(View.VISIBLE);
                                         ani3.setStartOffset(300 * totalplayer);
@@ -2339,6 +2373,9 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         llPlayer4WaitPlayer.setVisibility(View.GONE);
                                         llPlayer4.setVisibility(View.VISIBLE);
                                         txtPlay4.setText(otheruser.getPlayerinfo().getUserName());
+                                        if(txtPlay4.getText().toString().length() >=10)
+                                        txtPlay4.setText(txtPlay4.getText().toString().substring(0,7));
+
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
                                             Log.e(TAG, otheruser.getSlot() + "  " + txtPlay4Slot.getText().toString() + "   id   " + jObje_Otherplayer.getString("id"));
@@ -2356,6 +2393,9 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         llPlayer5WaitPlayer.setVisibility(View.GONE);
                                         llPlayer5.setVisibility(View.VISIBLE);
                                         txtPlay5.setText(otheruser.getPlayerinfo().getUserName());
+                                        if(txtPlay5.getText().toString().length() >=10)
+                                        txtPlay5.setText(txtPlay5.getText().toString().substring(0,7));
+
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
                                             Log.e(TAG, otheruser.getSlot() + "  " + txtPlay5Slot.getText().toString() + "   id   " + jObje_Otherplayer.getString("id"));
@@ -2468,10 +2508,15 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                             String displayTypeName = cardtypeObj.getString("displayName") ;
                             txtCardSee.setText(displayTypeName);
                             txtCardSee.setClickable(false);
-                            Log.e("cardseen rs", txtPlayRs.getText().toString());
+                            Log.d("cardseen blind", txtPlayBlind.getText().toString());
+
+
+                            Log.d("cardseen rs", txtPlayRs.getText().toString());
                             if (Myturn.equals("true")) {
                                 lastbet = String.valueOf(Float.parseFloat(txtPlayRs.getText().toString()) + Float.parseFloat(txtPlayRs.getText().toString())) + "";
                                 txtPlayRs.setText(lastbet);
+                                Log.d("cardseen rs", txtPlayRs.getText().toString());
+
                                 txtPlayBlind.setText("Blind\n" + String.valueOf(Math.round(Double.parseDouble(lastbet)  * 100.0) / 100.0));
                                 txtPlayChaal.setText("Chaal\n" + String.valueOf(Math.round(Double.parseDouble(lastbet)  * 100.0) / 100.0));
                             }
@@ -2933,7 +2978,6 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                             arrotheruser = new ArrayList<>();
                             Iterator<String> iterator = jsonPlayer.keys();
                             CurrentPlayerCount = 0;
-                            isPackedTrack = 0 ;
                             isSlideshow = 0;
                             while (iterator.hasNext()) {
                                 String key = iterator.next();
@@ -3117,8 +3161,11 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         }
                                         txtPlay5Rs.setText(jsonObject.getString("chips"));
                                     }
-                                    if(isPackedTrack == CurrentPlayerCount) {
+                                    if(isPackedTrack == (Float.parseFloat(TotalTablePlayer) - 1)) {
+                                        Log.d("ispackedTest" , "isPacked = " + isPackedTrack  + "CurrentPlayerCount = " + Float.parseFloat(TotalTablePlayer));
+
                                         txtCardSee.performClick();
+
                                     }
 
 
@@ -3340,7 +3387,16 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                             }
 
                                             if (MaximumBlindcount == Float.parseFloat(SelectTable.getMaximumblind())) {
-                                                txtCardSee.performClick();
+                                                Handler handler = new Handler();
+                                                handler.postDelayed(new Runnable() {
+
+                                                    @Override
+                                                    public void run() {
+                                                             txtCardSee.performClick();
+                                                    }
+
+                                                }, 1000); // 5000ms delay
+
                                             }
                                             llViewBottomBar.setVisibility(View.VISIBLE);
                                             llViewBottomBarInfoView.setVisibility(View.GONE);
@@ -4354,6 +4410,9 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                     if (otheruser.getSlot().equals(txtPlay2Slot.getText().toString())) {
 
                                         txtPlay2.setText(otheruser.getPlayerinfo().getUserName());
+                                        if(txtPlay2.getText().toString().length() >=10)
+                                        txtPlay2.setText(txtPlay2.getText().toString().substring(0,7));
+
                                         llPlayer2WaitPlayer.setVisibility(View.GONE);
                                         llPlayer2.setVisibility(View.VISIBLE);
                                         llPlayer2.setAlpha(1f);
@@ -4363,6 +4422,9 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         txtPlay2Rs.setText(otheruser.getPlayerinfo().getChips());
                                     } else if (otheruser.getSlot().equals(txtPlay3Slot.getText().toString())) {
                                         txtPlay3.setText(otheruser.getPlayerinfo().getUserName());
+                                        if(txtPlay3.getText().toString().length() >=10)
+                                        txtPlay3.setText(txtPlay3.getText().toString().substring(0,7));
+
 
                                         llPlayer3WaitPlayer.setVisibility(View.GONE);
                                         llPlayer3.setVisibility(View.VISIBLE);
@@ -4377,6 +4439,8 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         llPlayer4.setAlpha(1f);
                                         llPlayer4.setVisibility(View.VISIBLE);
                                         txtPlay4.setText(otheruser.getPlayerinfo().getUserName());
+                                        if(txtPlay4.getText().toString().length() >=10)
+                                        txtPlay4.setText(txtPlay4.getText().toString().substring(0,7));
 
                                         txtPlay4Id.setText(jObje_Otherplayer.getString("id"));
 //                                        txtPl4ChalBlind.setText("New");
@@ -4388,6 +4452,9 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         llPlayer5.setVisibility(View.VISIBLE);
 //                                        txtPl5ChalBlind.setText("New");
                                         txtPlay5.setText(otheruser.getPlayerinfo().getUserName());
+                                        if(txtPlay5.getText().toString().length() >=10)
+                                        txtPlay5.setText(txtPlay5.getText().toString().substring(0,7));
+
                                         txtPlay5Id.setText(jObje_Otherplayer.getString("id"));
                                         txtPlay5Rs.setText(otheruser.getPlayerinfo().getChips());
                                     } else if (otheruser.getSlot().equals(txtPlay6Slot.getText().toString())) {
@@ -4491,7 +4558,6 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                             arrotheruser = new ArrayList<>();
                             Iterator<String> iterator = jsonPlayer.keys();
                             CurrentPlayerCount = 0;
-                            isPackedTrack = 0 ;
                             isSlideshow = 0;
 
 
@@ -4604,7 +4670,6 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                             }, 500);
 
                                         }
-                                        llPlayer2.setVisibility(View.GONE);
                                         txtPlay2Rs.setText(jsonObject.getString("chips"));
                                     } else if (otheruser.getPlayerinfo().getUserId().equals(txtPlay3Id.getText().toString())) {
                                         if (jObje_Otherplayer.getString("turn").equals("true")) {
@@ -4622,7 +4687,6 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                                 }
                                             }, 500);
                                         }
-                                        llPlayer3.setVisibility(View.GONE);
 
                                         txtPlay3Rs.setText(jsonObject.getString("chips"));
                                     } else if (otheruser.getPlayerinfo().getUserId().equals(txtPlay4Id.getText().toString())) {
@@ -4642,7 +4706,6 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                                 }
                                             }, 500);
                                         }
-                                        llPlayer4.setVisibility(View.GONE);
                                         txtPlay4Rs.setText(jsonObject.getString("chips"));
                                     } else if (otheruser.getPlayerinfo().getUserId().equals(txtPlay5Id.getText().toString())) {
                                         if (jObje_Otherplayer.getString("turn").equals("true")) {
@@ -4670,10 +4733,10 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                                 }
                                             }, 500);
                                         }
-                                        llPlayer5.setVisibility(View.GONE);
                                         txtPlay5Rs.setText(jsonObject.getString("chips"));
                                     }
-                                    if(isPackedTrack == CurrentPlayerCount -1){
+                                    if(isPackedTrack == (Float.parseFloat(TotalTablePlayer) - 1)){
+                                        Log.d("ispackedTest" , "isPacked = " + isPackedTrack  + "CurrentPlayerCount = " + Float.parseFloat(TotalTablePlayer));
                                         txtCardSee.performClick();
                                     }
 
@@ -4883,11 +4946,17 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                         txtPlay2Id.setText(jObje_Otherplayer.getString("id"));
                                         txtPlay2Rs.setText(otheruser.getPlayerinfo().getChips());
                                         txtPlay2.setText(otheruser.getPlayerinfo().getUserName());
+                                        if(txtPlay2.getText().toString().length() >=10)
+                                        txtPlay2.setText(txtPlay2.getText().toString().substring(0,7));
+
 
                                         llPlayer2WaitPlayer.setVisibility(View.GONE);
                                         llPlayer2.setVisibility(View.VISIBLE);
                                     } else if (otheruser.getSlot().equals(txtPlay3Slot.getText().toString())) {
                                         txtPlay3.setText(otheruser.getPlayerinfo().getUserName());
+                                        if(txtPlay3.getText().toString().length() >=10)
+                                        txtPlay3.setText(txtPlay3.getText().toString().substring(0,7));
+
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
                                             txtPlay3Id.setText(jObje_Otherplayer.getString("id"));
@@ -4897,6 +4966,9 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                     } else if (otheruser.getSlot().equals(txtPlay4Slot.getText().toString())) {
 
                                         txtPlay4.setText(otheruser.getPlayerinfo().getUserName());
+                                        if(txtPlay4.getText().toString().length() >=10)
+                                        txtPlay4.setText(txtPlay4.getText().toString().substring(0,7));
+
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
                                             txtPlay4Id.setText(jObje_Otherplayer.getString("id"));
@@ -4906,6 +4978,9 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
                                     } else if (otheruser.getSlot().equals(txtPlay5Slot.getText().toString())) {
 
                                         txtPlay5.setText(otheruser.getPlayerinfo().getUserName());
+                                        if(txtPlay5.getText().toString().length() >=10)
+                                        txtPlay5.setText(txtPlay5.getText().toString().substring(0,7));
+
                                         if (!otheruser.getPlayerinfo().getProfilePics().trim().equals(""))
 
                                             txtPlay5Id.setText(jObje_Otherplayer.getString("id"));
@@ -6750,7 +6825,10 @@ public class Table6_Activity extends AppCompatActivity implements ConnectivityRe
 
     private void turnCardToSeen() {
         Functions.startplay(Table6_Activity.this, getResources().getString(R.string.mp_buttonClick));
+        Log.d("cardseen blind at click", txtPlayBlind.getText().toString());
+        Log.d("cardseen rs at click", txtPlayRs.getText().toString());
 
+        Log.d("cardseen", "card see clicked") ;
         NotplayingCount = 0;
         iscardseen = "true";
         CurrentAction = "Chaal";

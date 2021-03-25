@@ -1,12 +1,16 @@
 package com.teenpatti.queendemo.activity;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+
+
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -21,10 +25,17 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.paykun.sdk.PaykunApiCall;
 import com.paykun.sdk.eventbus.Events;
 import com.paykun.sdk.eventbus.GlobalBus;
 import com.paykun.sdk.helper.PaykunHelper;
+import com.paytm.pgsdk.PaytmOrder;
+import com.paytm.pgsdk.PaytmPaymentTransactionCallback;
+import com.paytm.pgsdk.TransactionManager;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 import com.teenpatti.queendemo.R;
@@ -41,8 +52,16 @@ import org.greenrobot.eventbus.ThreadMode;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class AddcashActivity extends AppCompatActivity implements PaymentResultListener {
     ImageView renow, close;
@@ -54,7 +73,8 @@ public class AddcashActivity extends AppCompatActivity implements PaymentResultL
     View promptsView ;
     ImageView paykunselectbtn , razorpayselectbtn;
     AlertDialog.Builder alertDialogBuilder ;
-
+    String fxmToken  ;
+    String orderid ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -179,7 +199,13 @@ public class AddcashActivity extends AppCompatActivity implements PaymentResultL
         paykunselectbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                paykunPayment(finalamount)  ;
+                try {
+                    paykunPayment(finalamount)  ;
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         });
         razorpayselectbtn.setOnClickListener(new View.OnClickListener() {
@@ -208,24 +234,117 @@ public class AddcashActivity extends AppCompatActivity implements PaymentResultL
         alertDialog.show();
     }
 
-    private void paykunPayment(String samount) {
+    private void paykunPayment(final String samount) throws MalformedURLException, JSONException {
         final float amount = Float.parseFloat(samount) * 100;
 
-        JSONObject object = new JSONObject();
-        try {
-            object.put("merchant_id","515923232856163");
-            object.put("access_token","757D3122F51AA854783080BEE5A87FFE");
-            object.put("customer_name","");
-            object.put("customer_email","");
-            object.put("customer_phone","");
-            object.put("product_name","Teenpatti Premium");
-            object.put("order_no",System.currentTimeMillis()); // order no. should have 10 to 30 character in numeric format
-            object.put("amount",samount);  // minimum amount should be 10
-            object.put("isLive",true); // need to send false if you are in sandbox mode
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        new PaykunApiCall.Builder(AddcashActivity.this).sendJsonObject(object); // Paykun api to initialize your payment and send info.
+//        JSONObject object = new JSONObject();
+//        try {
+//            object.put("merchant_id","515923232856163");
+//            object.put("access_token","757D3122F51AA854783080BEE5A87FFE");
+//            object.put("customer_name","");
+//            object.put("customer_email","");
+//            object.put("customer_phone","");
+//            object.put("product_name","Teenpatti Premium");
+//            object.put("order_no",System.currentTimeMillis()); // order no. should have 10 to 30 character in numeric format
+//            object.put("amount",samount);  // minimum amount should be 10
+//            object.put("isLive",true); // need to send false if you are in sandbox mode
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//        new PaykunApiCall.Builder(AddcashActivity.this).sendJsonObject(object); // Paykun api to initialize your payment and send info.
+        JSONObject paytmParams = new JSONObject();
+      orderid  = UUID.randomUUID().toString().substring(0,10) ;
+        JSONObject body = new JSONObject();
+       String tempurl = "http://3.16.200.37/paytm/init_transaction.php" ;
+        AndroidNetworking.post(tempurl)
+                .addQueryParameter("orderid" ,orderid )
+                .addQueryParameter("amt" , samount)
+                .addHeaders("Content-Type" , "application/json")
+                .setTag("test")
+                .setPriority(Priority.IMMEDIATE)
+                .build()
+                .getAsJSONObject(new JSONObjectRequestListener() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                       
+
+                        if(response.has("body")) {
+                           try {
+                               JSONObject body = (JSONObject) response.get("body");
+                               fxmToken = body.getString("txnToken") ;
+
+                               PaytmOrder paytmOrder = new PaytmOrder(orderid, "URzjtZ46323021611398", fxmToken, samount, "https://securegw-stage.paytm.in/theia/paytmCallback?ORDER_ID="+orderid);
+                               TransactionManager transactionManager = new TransactionManager(paytmOrder, new PaytmPaymentTransactionCallback() {
+                                   @Override
+                                   public void onTransactionResponse(@Nullable Bundle bundle) {
+
+                                   }
+
+                                   @Override
+                                   public void networkNotAvailable() {
+
+                                   }
+
+                                   @Override
+                                   public void onErrorProceed(String s) {
+
+                                   }
+
+                                   @Override
+                                   public void clientAuthenticationFailed(String s) {
+                                        Toast.makeText(getApplicationContext() , "Client Auth failed" , Toast.LENGTH_SHORT).show();
+                                   }
+
+                                   @Override
+                                   public void someUIErrorOccurred(String s) {
+
+                                   }
+
+                                   @Override
+                                   public void onErrorLoadingWebPage(int i, String s, String s1) {
+                                       Toast.makeText(getApplicationContext() , "Client Auth failed" , Toast.LENGTH_SHORT).show();
+
+                                   }
+
+                                   @Override
+                                   public void onBackPressedCancelTransaction() {
+
+                                   }
+
+                                   @Override
+                                   public void onTransactionCancel(String s, Bundle bundle) {
+
+                                   }
+                               }); // code statement);
+                               transactionManager.setAppInvokeEnabled(false) ;
+                               transactionManager.startTransaction(AddcashActivity.this, 1);
+
+
+                           } catch (JSONException e) {
+                               Log.d("txnTokenTest"  , "reached at 268") ;
+                               Toast.makeText(getApplicationContext(),  "error", Toast.LENGTH_SHORT).show();
+
+                               e.printStackTrace();
+                           }
+
+                       }
+                    }
+
+                    @Override
+                    public void onError(ANError anError) {
+
+                    }
+                });
+
+
+
+        /* for Staging */
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
