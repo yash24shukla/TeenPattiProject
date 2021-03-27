@@ -20,6 +20,7 @@ public class URLS {
     public static String URL_CHECKAPPUPDATE = Main_Domain + "/version.json";
 
     public static String URL_GIFTS = "/gift/getGifts";
+    public static String URL_VERSION = Domain + "/user/version";
 
     public static String URL_EDITUSER = Main_Domain + "/admin/action_update_user.php";
     public static String URL_EDITUSERBYEMAIL = URLS.Domain + "/user/editUserByEmail";

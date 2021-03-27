@@ -19,10 +19,19 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.plattysoft.leonids.ParticleSystem;
 import com.teenpatti.queendemo.R;
 import com.teenpatti.queendemo.files.BaseUtils;
 import com.teenpatti.queendemo.files.SharedPrefs;
+import com.teenpatti.queendemo.files.URLS;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -36,7 +45,8 @@ public class Splash_Activity extends AppCompatActivity {
 
     TranslateAnimation mAnimation, mAnimation2, mAnimation3, mAnimation4;
     ImageView imgback1, imgback2, imgback3, imgback4;
-
+    String version ;
+    String latestVersionName ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +54,7 @@ public class Splash_Activity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.splash_layout);
 
-
+        version = getString(R.string.verison) ;
         img = findViewById(R.id.img);
 
         imgback1 = findViewById(R.id.imgback1);
@@ -108,7 +118,40 @@ public class Splash_Activity extends AppCompatActivity {
                 String DEVICEIIDDD = Settings.Secure.getString(getContentResolver(),
                         Settings.Secure.ANDROID_ID);
 
+
                 SharedPrefs.save(Splash_Activity.this, SharedPrefs.DEVICE_ID, DEVICEIIDDD);
+                AndroidNetworking.get(URLS.URL_VERSION)
+                        .addHeaders("Content-Type" , "application/json")
+                        .setTag("test")
+                        .setPriority(Priority.IMMEDIATE)
+                        .build()
+                        .getAsJSONObject(new JSONObjectRequestListener() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                latestVersionName = version  ;
+                                Log.d("responseWithdraw", URLS.REMOVE_CHIPS + " => " + response.toString());
+                                if(response.has("data")) {
+                                    try {
+                                        JSONArray data = (JSONArray) response.get("data");
+                                        int lastIndex = data.length() - 1 ;
+                                        JSONObject latestObj  = (JSONObject) data.get(lastIndex);
+
+                                        if(latestObj.has("version")){
+                                            latestVersionName  = latestObj.getString("version") ;
+
+                                        }else{
+                                            latestVersionName = getString(R.string.verison)  ;
+                                        };
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+
+                                }
+
+                if(Double.parseDouble(latestVersionName) == Double.parseDouble(version)){
+
+
+
 
                 if (!SharedPrefs.getString(Splash_Activity.this, SharedPrefs.USER_ID).equals("")) {
                     Intent i = new Intent(Splash_Activity.this, StartActivity.class);
@@ -124,7 +167,22 @@ public class Splash_Activity extends AppCompatActivity {
                     startActivity(i);
                     finish();
                 }
+                }
+                else{
+                    Log.d("versionCheck" , "current version = " + Double.valueOf(version)) ;
+                    Log.d("versionCheck" , "latestVersionName version = " + Double.valueOf(latestVersionName)) ;
+                    Intent i = new Intent(Splash_Activity.this, forcedupdate.class);
+                    i.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(i);
+                    finish();
+                }
+                }
 
+                            @Override
+                            public void onError(ANError anError) {
+
+                            }
+                        });
             }
         }, 6000);
 

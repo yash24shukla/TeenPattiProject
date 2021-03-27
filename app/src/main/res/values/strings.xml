@@ -17,5 +17,7 @@
     <string name="select_paykun" translatable="false"> Paykun </string>
     <string name="select_razorpay" translatable="false"> Razorpay </string>
     <string name="defaultMoney" translatable="false"> 10000 </string>
+    <string name="verison" translatable="false">1.0</string>
+    <string name="updateNotice" translatable="false"> You have to update the app to use it. </string>
 
 </resources>
