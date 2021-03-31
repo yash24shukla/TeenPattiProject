@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.teenpatti.queendemo">
+    package="com.teenpatti.teenpattipremium">
 
     <application
-        android:name=".activity.MyApplication"
+        android:name="com.teenpatti.teenpattipremium.activity.MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/brndicon"
         android:label="@string/app_name"
@@ -14,31 +14,31 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup"
         tools:targetApi="m">
-        <activity android:name=".activity.forcedupdate"></activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name="com.teenpatti.teenpattipremium.activity.forcedupdate"></activity>
+        <activity android:name="com.teenpatti.teenpattipremium.MainActivity" />
         <activity
-            android:name=".activity.ForgotPasswordActivity"
+            android:name="com.teenpatti.teenpattipremium.activity.ForgotPasswordActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".activity.WithdrawlActivity"
+            android:name="com.teenpatti.teenpattipremium.activity.WithdrawlActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".activity.AddcashActivity"
+            android:name="com.teenpatti.teenpattipremium.activity.AddcashActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".activity.StartActivity"
+            android:name="com.teenpatti.teenpattipremium.activity.StartActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".activity.TableFetch_All_Activity"
+            android:name="com.teenpatti.teenpattipremium.activity.TableFetch_All_Activity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".activity.Register_Activity"
+            android:name="com.teenpatti.teenpattipremium.activity.Register_Activity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".activity.UserEdit_Activity"
+            android:name="com.teenpatti.teenpattipremium.activity.UserEdit_Activity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".activity.Splash_Activity"
+            android:name="com.teenpatti.teenpattipremium.activity.Splash_Activity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,13 +47,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.Login_Activity"
+            android:name="com.teenpatti.teenpattipremium.activity.Login_Activity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".activity.Table6_Activity"
+            android:name="com.teenpatti.teenpattipremium.activity.Table6_Activity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".activity.ChangePassword_Activity"
+            android:name="com.teenpatti.teenpattipremium.activity.ChangePassword_Activity"
             android:screenOrientation="landscape" />
         <activity
             android:name="com.facebook.FacebookActivity"
@@ -97,7 +97,7 @@
         </provider>
 
         <receiver
-            android:name=".files.ConnectivityReceiver"
+            android:name="com.teenpatti.teenpattipremium.files.ConnectivityReceiver"
             android:enabled="true">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
@@ -105,7 +105,7 @@
         </receiver>
 
         <service
-            android:name=".files.MyFirebaseMessagingService"
+            android:name="com.teenpatti.teenpattipremium.files.MyFirebaseMessagingService"
             android:enabled="true"
             android:exported="true">
             <intent-filter>

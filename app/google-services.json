@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:758305150106:android:4f28984a88eaf8256abb23",
         "android_client_info": {
-          "package_name": "com.teenpatti.queendemo"
+          "package_name": "com.teenpatti.teenpattipremium"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "758305150106-4gso910teqdqleq67n3jpi5tfvbs7121.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.teenpatti.queendemo",
+            "package_name": "com.teenpatti.teenpattipremium",
             "certificate_hash": "bace6a0685c9bae814aa698eea17c0f6c1f97655"
           }
         },
